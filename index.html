@@ -197,6 +197,12 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 .bew-next-awo-banner img{width:50px;height:50px;object-fit:contain;border-radius:8px;background:#fff;padding:4px}
 .bew-next-awo-banner div{font-size:.9rem;color:rgba(255,255,255,.8)}
 .bew-next-awo-banner strong{display:block;font-family:'DM Serif Display',serif;font-size:1.1rem;color:#fff;margin-bottom:.15rem}
+
+.bew-next-type.frei{background:rgba(255,165,0,.15);color:#ffa500;border:1px solid rgba(255,165,0,.3)}
+.bew-next-frei{border-radius:12px;overflow:hidden;background:rgba(255,165,0,.06);border:1px solid rgba(255,165,0,.15);text-align:center;padding:1rem}
+.bew-next-frei img{width:120px;height:auto;margin:0 auto .8rem;display:block;opacity:.7;border-radius:8px}
+.bew-next-frei p{font-size:.9rem;color:#ffa500;font-weight:500}
+.bew-next-frei small{display:block;margin-top:.3rem;font-size:.75rem;color:rgba(255,255,255,.4);font-weight:300}
 /* Bewirtung next-event widget */
 .bew-next{border-radius:16px;background:linear-gradient(135deg,var(--blue-d) 0%,var(--blue) 100%);padding:2rem;color:#fff;position:relative;overflow:hidden}
 .bew-next::before{content:'';position:absolute;top:-40px;right:-40px;width:140px;height:140px;border-radius:50%;background:rgba(235,10,11,.1);pointer-events:none}
@@ -537,18 +543,35 @@ function goTeam(cat,team){
 var bewData=[
 {d:'2026-04-30',day:'Donnerstag, 30. April',p1:'Janina S.',p2:'Madita H.',type:'do'},
 {d:'2026-05-07',day:'Donnerstag, 7. Mai',p1:'Luisa Z.',p2:'Alina S.',type:'do'},
+{d:'2026-05-14',day:'Donnerstag, 14. Mai',p1:null,p2:null,type:'frei'},
+{d:'2026-05-17',day:'Sonntag, 17. Mai',p1:null,p2:null,type:'spieltag',info:'Spieltag Damen 1',menuImg:'img07.png',menu:'Brezeln, Belegte Brötchen',allFrei:true},
 {d:'2026-05-21',day:'Donnerstag, 21. Mai',p1:'Christian Sa.',p2:'Iris E.',type:'do'},
-{d:'2026-06-21',day:'Sonntag, 21. Juni',p1:'Melanie K.',p2:null,type:'spieltag',info:'Spieltag Damen 1'},
+{d:'2026-05-28',day:'Donnerstag, 28. Mai',p1:null,p2:null,type:'frei'},
+{d:'2026-06-04',day:'Donnerstag, 4. Juni',p1:null,p2:null,type:'frei'},
+{d:'2026-06-11',day:'Donnerstag, 11. Juni',p1:null,p2:null,type:'frei'},
+{d:'2026-06-18',day:'Donnerstag, 18. Juni',p1:null,p2:null,type:'frei'},
+{d:'2026-06-21',day:'Sonntag, 21. Juni',p1:'Melanie K.',p2:null,type:'spieltag',info:'Spieltag Damen 1',menuImg:'img07.png',menu:'Brezeln, Belegte Brötchen',halfFrei:true},
 {d:'2026-06-25',day:'Donnerstag, 25. Juni',p1:'Thorsten W.',p2:'Maximilian W.',type:'do'},
+{d:'2026-07-02',day:'Donnerstag, 2. Juli',p1:null,p2:null,type:'frei'},
 {d:'2026-07-09',day:'Donnerstag, 9. Juli',p1:'Paula W.',p2:'Thorsten W.',type:'do'},
-{d:'2026-07-11',day:'Samstag, 11. Juli',p1:'Ursula B.',p2:'Hans-Peter B.',type:'spieltag',info:'Spieltag Herren 1'},
-{d:'2026-07-12',day:'Sonntag, 12. Juli',p1:'Christian So.',p2:null,type:'spieltag',info:'Spieltag Herren 1 & Damen 1'},
-{d:'2026-07-18',day:'Samstag, 18. Juli',p1:'Uli K.',p2:'Michael L.',type:'spieltag',info:'Spieltag Herren 1'},
-{d:'2026-07-19',day:'Sonntag, 19. Juli',p1:'Julian S.',p2:'Marvin G.',type:'spieltag',info:'Spieltag Herren 1'},
-{d:'2026-07-25',day:'Samstag, 25. Juli',p1:'Lukas M.',p2:null,type:'spieltag',info:'Spieltag Herren 1'},
+{d:'2026-07-11',day:'Samstag, 11. Juli',p1:'Ursula B.',p2:'Hans-Peter B.',type:'spieltag',info:'Spieltag Herren 1',menuImg:'img07.png',menu:'Steak/Wurst im Brötchen, Brezeln'},
+{d:'2026-07-12',day:'Sonntag, 12. Juli',p1:'Christian So.',p2:null,type:'spieltag',info:'Spieltag Herren 1 & Damen 1',menuImg:'img07.png',menu:'Steak/Wurst im Brötchen, Brezeln, Belegte Brötchen',halfFrei:true},
+{d:'2026-07-16',day:'Donnerstag, 16. Juli',p1:null,p2:null,type:'frei'},
+{d:'2026-07-18',day:'Samstag, 18. Juli',p1:'Uli K.',p2:'Michael L.',type:'spieltag',info:'Spieltag Herren 1',menuImg:'img07.png',menu:'Steak/Wurst im Brötchen, Brezeln'},
+{d:'2026-07-19',day:'Sonntag, 19. Juli',p1:'Julian S.',p2:'Marvin G.',type:'spieltag',info:'Spieltag Herren 1',menuImg:'img07.png',menu:'Steak/Wurst im Brötchen, Brezeln'},
+{d:'2026-07-23',day:'Donnerstag, 23. Juli',p1:null,p2:null,type:'frei'},
+{d:'2026-07-25',day:'Samstag, 25. Juli',p1:'Lukas M.',p2:null,type:'spieltag',info:'Spieltag Herren 1',menuImg:'img07.png',menu:'Steak/Wurst im Brötchen, Brezeln',halfFrei:true},
+{d:'2026-07-30',day:'Donnerstag, 30. Juli',p1:null,p2:null,type:'frei'},
 {d:'2026-08-06',day:'Donnerstag, 6. August',p1:'Desiree H.',p2:'Sofie R.',type:'do'},
-{d:'2026-08-08',day:'Samstag, 8. August',p1:'Ronja R.',p2:null,type:'awo',info:'Albert Weber Open',menuImg:'logo_awo.jpg',menu:'Nudeln mit diversen Soßen'},
-{d:'2026-08-09',day:'Sonntag, 9. August',p1:'AWO-Team',p2:null,type:'awo',info:'Albert Weber Open',menuImg:'logo_awo.jpg',menu:'Nudeln mit diversen Soßen'}
+{d:'2026-08-08',day:'Samstag, 8. August',p1:'Ronja R.',p2:null,type:'awo',info:'Albert Weber Open',menuImg:'logo_awo.jpg',menu:'Nudeln mit diversen Soßen',halfFrei:true},
+{d:'2026-08-09',day:'Sonntag, 9. August',p1:null,p2:null,type:'awo',info:'Albert Weber Open',menuImg:'logo_awo.jpg',menu:'Nudeln mit diversen Soßen',allFrei:true},
+{d:'2026-08-13',day:'Donnerstag, 13. August',p1:null,p2:null,type:'frei'},
+{d:'2026-08-20',day:'Donnerstag, 20. August',p1:null,p2:null,type:'frei'},
+{d:'2026-08-27',day:'Donnerstag, 27. August',p1:null,p2:null,type:'frei'},
+{d:'2026-09-03',day:'Donnerstag, 3. September',p1:null,p2:null,type:'frei'},
+{d:'2026-09-10',day:'Donnerstag, 10. September',p1:null,p2:null,type:'frei'},
+{d:'2026-09-17',day:'Donnerstag, 17. September',p1:null,p2:null,type:'frei'},
+{d:'2026-09-24',day:'Donnerstag, 24. September',p1:null,p2:null,type:'frei'}
 ];
 var bewSelectedIdx=-1;
 function getNextBewIdx(){
@@ -563,14 +586,20 @@ bewSelectedIdx=idx;
 var today=new Date();today.setHours(0,0,0,0);
 var nextIdx=getNextBewIdx();
 var ev=bewData[idx];
-var crew=ev.p1+(ev.p2?' & '+ev.p2:'');
-var typeClass=ev.type==='spieltag'?'spieltag':(ev.type==='awo'?'awo':'donners');
-var typeText=ev.type==='spieltag'?ev.info:(ev.type==='awo'?ev.info:'Donnerstag 18–21 Uhr');
+var crew=ev.p1?(ev.p1+(ev.p2?' & '+ev.p2:'')):null;
+var typeClass=ev.type==='spieltag'?'spieltag':(ev.type==='awo'?'awo':(ev.type==='frei'?'frei':'donners'));
+var typeText=ev.type==='spieltag'?ev.info:(ev.type==='awo'?ev.info:(ev.type==='frei'?'Noch frei!':'Donnerstag 18–21 Uhr'));
 var isNext=idx===nextIdx;
 var labelText=isNext?'Nächster Termin':ev.day.split(',')[0];
 var foodHtml='';
-if(ev.type==='awo'){
+if(ev.type==='frei'){
+foodHtml='<div class="bew-next-frei"><img src="leerer_teller.jpg" alt="Leerer Teller"><p>Dieser Termin ist noch frei!</p><small>Melde dich über die CLUB X App</small></div>';
+}
+else if(ev.type==='awo'){
 foodHtml='<div class="bew-next-awo-banner"><img src="'+ev.menuImg+'" alt="AWO"><div><strong>'+ev.info+'</strong>🍝 '+ev.menu+'</div></div>';
+}
+else if(ev.type==='spieltag'&&ev.menuImg){
+foodHtml='<div class="bew-next-awo-banner"><img src="'+ev.menuImg+'" alt="TCM"><div><strong>'+ev.info+' — 11–18 Uhr</strong>🍔 '+ev.menu+'</div></div>';
 }
 else if(ev.type==='do'){
 if(ev.menuImg){foodHtml='<div class="bew-next-food"><div class="bew-next-food-img"><img src="'+ev.menuImg+'" alt="Abendessen"></div><div class="bew-next-food-menu"><strong>Speisekarte</strong>'+ev.menu+'</div></div>';}
@@ -587,7 +616,7 @@ chips+='<span class="'+cls+'" onclick="renderBewEvent('+i+')" style="cursor:poin
 }
 w.innerHTML='<div class="bew-next">'+
 '<div class="bew-next-head"><div><div class="bew-next-label">'+labelText+'</div><div class="bew-next-date">'+ev.day+'</div></div><span class="bew-next-type '+typeClass+'">'+typeText+'</span></div>'+
-'<div class="bew-next-crew">👨‍🍳 Bewirtung: <span>'+crew+'</span></div>'+
+(crew?'<div class="bew-next-crew">👨‍🍳 Bewirtung: <span>'+crew+'</span>'+(ev.halfFrei?' <span style="font-size:.75rem;color:#ffa500;margin-left:.5rem">⚠ Es ist noch ein Platz frei</span>':'')+'</div>':(ev.allFrei&&ev.type!=='frei'?'<div class="bew-next-crew" style="color:#ffa500">⚠ Bewirtung: Noch keine Anmeldung</div>':''))+
 foodHtml+
 '<div class="bew-dates"><div class="bew-dates-title">Alle Termine <span style="opacity:.5;font-weight:300;text-transform:none;letter-spacing:0">– klicken für Details</span></div><div class="bew-dates-list">'+chips+'</div></div>'+
 '</div>';
