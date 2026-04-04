@@ -187,6 +187,32 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 .upcoming-match:hover{background:rgba(255,255,255,.1)}
 .upcoming-match.heim{border-left:3px solid var(--red)}
 .upcoming-mname{font-size:.7rem;font-weight:600;color:rgba(255,255,255,.55);min-width:90px;text-transform:uppercase;letter-spacing:.5px}
+
+
+.bew-date-chip:not(.past):not(.active):hover{background:rgba(255,255,255,.12);color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.2);transform:translateY(-1px)}
+.bew-date-chip{transition:all .2s}
+/* Bewirtung next-event widget */
+.bew-next{border-radius:16px;background:linear-gradient(135deg,var(--blue-d) 0%,var(--blue) 100%);padding:2rem;color:#fff;position:relative;overflow:hidden}
+.bew-next::before{content:'';position:absolute;top:-40px;right:-40px;width:140px;height:140px;border-radius:50%;background:rgba(235,10,11,.1);pointer-events:none}
+.bew-next-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.5rem;margin-bottom:1.2rem}
+.bew-next-label{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--red-l);margin-bottom:.3rem}
+.bew-next-date{font-family:'DM Serif Display',serif;font-size:1.5rem}
+.bew-next-type{font-size:.7rem;padding:.25rem .7rem;border-radius:20px;font-weight:500;letter-spacing:.5px;white-space:nowrap}
+.bew-next-type.donners{background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.15)}
+.bew-next-type.spieltag{background:rgba(235,10,11,.15);color:var(--red-l);border:1px solid rgba(235,10,11,.25)}
+.bew-next-crew{display:flex;align-items:center;gap:.6rem;margin-bottom:1.2rem;font-size:.9rem;color:rgba(255,255,255,.8)}
+.bew-next-crew span{font-weight:500;color:#fff}
+.bew-next-food{border-radius:12px;overflow:hidden;background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.15)}
+.bew-next-food-img{height:160px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.2);font-size:.85rem;flex-direction:column;gap:.3rem}
+.bew-next-food-img img{width:100%;height:160px;object-fit:cover}
+.bew-next-food-menu{padding:1rem;font-size:.85rem;color:rgba(255,255,255,.5);font-weight:300;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+.bew-next-food-menu strong{color:rgba(255,255,255,.8);display:block;margin-bottom:.3rem;font-weight:500}
+.bew-dates{margin-top:1.2rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.08)}
+.bew-dates-title{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.3);margin-bottom:.6rem}
+.bew-dates-list{display:flex;flex-wrap:wrap;gap:.4rem}
+.bew-date-chip{font-size:.72rem;padding:.25rem .6rem;border-radius:6px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.08);white-space:nowrap}
+.bew-date-chip.active{background:rgba(235,10,11,.12);color:var(--red-l);border-color:rgba(235,10,11,.25);font-weight:500}
+.bew-date-chip.past{opacity:.4;text-decoration:line-through}
 </style>
 </head>
 <body>
@@ -209,7 +235,7 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 </nav>
 <section class="hero"><div class="hero-bg"></div><div class="hero-pat"></div>
     <div class="hero-content">
-        <img src="img08.png" alt="TC Markdorf – Tennis am Gehrenberg" style="display:block;margin:60px auto;max-width:min(510px,80vw);height:auto;animation:fsu .8s ease .1s both;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))">
+        <img src="img08.png" alt="TC Markdorf – Tennis am Gehrenberg" style="display:block;margin:60px auto;max-width:min(510px,80vw);height:auto;animation:fsu .8s ease .1s both;background:#fff;padding:1.2rem 2rem;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.25)">
         <div class="hero-badge" style="margin-right:auto"><span class="hero-badge-dot"></span> Saison 2026 läuft</div>
         <h1>Tennis am<br><em>Gehrenberg</em></h1>
         <p class="hero-sub">Oberhalb Markdorfs mit Blick über den Bodensee und die Alpen — seit 1954 Tennis mit Leidenschaft.</p>
@@ -389,7 +415,8 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
         </div>
         <div class="bew-info">
             <div class="bew-card fi"><h4>🍽️ Vereinsgastronomie</h4><p>Bei den Heimspielen unserer Herren 1 und Damen 1 ist das Clubhaus bewirtet — kommt vorbei und feuert unsere Teams an! Außerdem öffnet jeden Donnerstag ab 18 Uhr die Terrasse: der perfekte Ausklang nach dem Spiel, mit kühlen Getränken und netter Gesellschaft.</p></div>
-            <div class="bew-card fi"><h4>📅 Bewirtungstermine</h4><p>Die Termine werden über die TCM-App (CLUB X) bekanntgegeben. Jedes Mitglied übernimmt im Laufe der Saison einen Hüttendienst.</p></div>
+            <div class="bew-card fi"><h4>📅 Bewirtungstermine</h4><p>Donnerstags 18–21 Uhr, Spieltage Herren 1/Damen 1 11–18 Uhr. Termine können über die TCM-App (CLUB X) gebucht werden.</p></div>
+            <div id="bew-next-widget"></div>
             <div class="bew-card fi"><h4>🎉 Veranstaltungen</h4><p>Saisoneröffnung, Sommerfest, Saisonabschluss, Weihnachtsfeier. Das Vereinsheim ist nach Absprache auch privat nutzbar.</p></div>
         </div>
     </div>
@@ -499,6 +526,63 @@ function goTeam(cat,team){
         }
     }
 }
+
+// Bewirtung next-event widget
+var bewData=[
+{d:'2026-04-30',day:'Donnerstag, 30. April',p1:'Janina S.',p2:'Madita H.',type:'do'},
+{d:'2026-05-07',day:'Donnerstag, 7. Mai',p1:'Luisa Z.',p2:'Alina S.',type:'do'},
+{d:'2026-05-21',day:'Donnerstag, 21. Mai',p1:'Christian Sa.',p2:'Iris E.',type:'do'},
+{d:'2026-06-21',day:'Sonntag, 21. Juni',p1:'Melanie K.',p2:null,type:'spieltag',info:'Spieltag Damen 1'},
+{d:'2026-06-25',day:'Donnerstag, 25. Juni',p1:'Thorsten W.',p2:'Maximilian W.',type:'do'},
+{d:'2026-07-09',day:'Donnerstag, 9. Juli',p1:'Paula W.',p2:'Thorsten W.',type:'do'},
+{d:'2026-07-11',day:'Samstag, 11. Juli',p1:'Ursula B.',p2:'Hans-Peter B.',type:'spieltag',info:'Spieltag Herren 1'},
+{d:'2026-07-12',day:'Sonntag, 12. Juli',p1:'Christian So.',p2:null,type:'spieltag',info:'Spieltag Herren 1 & Damen 1'},
+{d:'2026-07-18',day:'Samstag, 18. Juli',p1:'Uli K.',p2:'Michael L.',type:'spieltag',info:'Spieltag Herren 1'},
+{d:'2026-07-19',day:'Sonntag, 19. Juli',p1:'Julian S.',p2:'Marvin G.',type:'spieltag',info:'Spieltag Herren 1'},
+{d:'2026-07-25',day:'Samstag, 25. Juli',p1:'Lukas M.',p2:null,type:'spieltag',info:'Spieltag Herren 1'},
+{d:'2026-08-06',day:'Donnerstag, 6. August',p1:'Desiree H.',p2:'Sofie R.',type:'do'},
+{d:'2026-08-08',day:'Samstag, 8. August',p1:'Ronja R.',p2:null,type:'do'}
+];
+var bewSelectedIdx=-1;
+function getNextBewIdx(){
+var today=new Date();today.setHours(0,0,0,0);
+for(var i=0;i<bewData.length;i++){var dd=new Date(bewData[i].d);dd.setHours(23,59,59);if(dd>=today)return i;}
+return -1;
+}
+function renderBewEvent(idx){
+var w=document.getElementById('bew-next-widget');if(!w)return;
+if(idx<0||idx>=bewData.length){w.innerHTML='<div class="bew-card" style="text-align:center;color:var(--tx-l)">Alle Bewirtungstermine der Saison sind abgeschlossen.</div>';return;}
+bewSelectedIdx=idx;
+var today=new Date();today.setHours(0,0,0,0);
+var nextIdx=getNextBewIdx();
+var ev=bewData[idx];
+var crew=ev.p1+(ev.p2?' & '+ev.p2:'');
+var typeClass=ev.type==='spieltag'?'spieltag':'donners';
+var typeText=ev.type==='spieltag'?ev.info:'Donnerstag 18–21 Uhr';
+var isNext=idx===nextIdx;
+var labelText=isNext?'Nächster Termin':ev.day.split(',')[0];
+var foodHtml='';
+if(ev.type==='do'){
+if(ev.menuImg){foodHtml='<div class="bew-next-food"><div class="bew-next-food-img"><img src="'+ev.menuImg+'" alt="Abendessen"></div><div class="bew-next-food-menu"><strong>Speisekarte</strong>'+ev.menu+'</div></div>';}
+else{foodHtml='<div class="bew-next-food"><div class="bew-next-food-img">🍽️<br>Speisekarte wird noch bekannt gegeben</div></div>';}
+}
+var chips='';
+for(var i=0;i<bewData.length;i++){
+var dd=new Date(bewData[i].d);dd.setHours(23,59,59);
+var cls='bew-date-chip';
+if(i===idx)cls+=' active';
+else if(dd<today)cls+=' past';
+var label=bewData[i].d.substring(8,10)+'.'+bewData[i].d.substring(5,7)+'.';
+chips+='<span class="'+cls+'" onclick="renderBewEvent('+i+')" style="cursor:pointer">'+label+'</span>';
+}
+w.innerHTML='<div class="bew-next">'+
+'<div class="bew-next-head"><div><div class="bew-next-label">'+labelText+'</div><div class="bew-next-date">'+ev.day+'</div></div><span class="bew-next-type '+typeClass+'">'+typeText+'</span></div>'+
+'<div class="bew-next-crew">👨‍🍳 Bewirtung: <span>'+crew+'</span></div>'+
+foodHtml+
+'<div class="bew-dates"><div class="bew-dates-title">Alle Termine <span style="opacity:.5;font-weight:300;text-transform:none;letter-spacing:0">– klicken für Details</span></div><div class="bew-dates-list">'+chips+'</div></div>'+
+'</div>';
+}
+renderBewEvent(getNextBewIdx());
 </script>
 
 </body></html>
