@@ -70,7 +70,7 @@ section{padding:5rem 4rem}
 .news-card{background:#fff;border-radius:14px;overflow:hidden;transition:all .4s;border:1px solid rgba(0,0,0,.04);box-shadow:0 2px 12px rgba(0,0,0,.03)}
 .news-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.08)}
 .news-card-feat{grid-row:span 2}.news-card-img{height:120px;display:flex;align-items:center;justify-content:center;font-size:2.5rem}
-.news-card-feat .news-card-img{height:160px;min-height:0}
+.news-card-feat .news-card-img{height:180px;min-height:0}
 .news-body{padding:1.5rem}.news-date{font-size:.72rem;color:var(--red);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:.6rem}
 .news-title{font-family:"DM Serif Display",serif;font-size:1.2rem;color:var(--blue-d);margin-bottom:.6rem;line-height:1.3}
 .news-ex{font-size:.88rem;color:var(--tx-l);line-height:1.6;font-weight:300}
@@ -162,7 +162,31 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
 .fi{opacity:0;transform:translateY(25px);transition:all .8s cubic-bezier(.22,1,.36,1)}.fi.v{opacity:1;transform:translateY(0)}
 @media(max-width:1024px){section{padding:3.5rem 2rem}.hero-content{padding:0 2rem 4rem}.tiles{padding:0 1.5rem}.news-grid,.bew-grid,.contact-grid{grid-template-columns:1fr}.card-grid{grid-template-columns:1fr 1fr}.tp-grid{grid-template-columns:1fr}}
-@media(max-width:768px){.nav-links{display:none}.mob-tog{display:flex}.nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(6,6,77,.98);justify-content:center;align-items:center;gap:2rem;z-index:999;backdrop-filter:blur(12px)}.nav-links.open a{font-size:1.3rem;color:#fff;opacity:0;animation:fsu .5s ease forwards}.nav-links.open li:nth-child(1) a{animation-delay:.05s}.nav-links.open li:nth-child(2) a{animation-delay:.1s}.nav-links.open li:nth-child(3) a{animation-delay:.15s}.nav-links.open li:nth-child(4) a{animation-delay:.2s}.nav-links.open li:nth-child(5) a{animation-delay:.25s}.nav-links.open li:nth-child(6) a{animation-delay:.3s}.nav-links.open li:nth-child(7) a{animation-delay:.35s}.nav-links.open li:nth-child(8) a{animation-delay:.4s}.hero-content{padding:0 1.5rem 3rem}.hero h1{font-size:2.5rem}.hero-stats{gap:1.5rem}.tiles-grid{grid-template-columns:1fr}.tile-full{grid-column:span 1}.tile{min-height:130px}.card-grid,.mitglied-grid{grid-template-columns:1fr}.anlage-grid{grid-template-columns:1fr 1fr}section{padding:3rem 1.5rem}footer{flex-direction:column;gap:.8rem;padding:1.5rem}.team-tabs{gap:.35rem}.team-tab{padding:.45rem .8rem;font-size:.78rem}.cat-tab{padding:.5rem 1rem;font-size:.9rem}.news-card-feat{grid-row:span 1}.news-card-img,.news-card-feat .news-card-img{height:100px}.cat-tabs{top:50px}#btt{bottom:1.2rem;right:1.2rem;width:42px;height:42px}}
+@media(max-width:768px){.nav-links{display:none}.mob-tog{display:flex}.nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(6,6,77,.98);justify-content:center;align-items:center;gap:2rem;z-index:999;backdrop-filter:blur(12px)}.nav-links.open a{font-size:1.3rem;color:#fff;opacity:0;animation:fsu .5s ease forwards}.nav-links.open li:nth-child(1) a{animation-delay:.05s}.nav-links.open li:nth-child(2) a{animation-delay:.1s}.nav-links.open li:nth-child(3) a{animation-delay:.15s}.nav-links.open li:nth-child(4) a{animation-delay:.2s}.nav-links.open li:nth-child(5) a{animation-delay:.25s}.nav-links.open li:nth-child(6) a{animation-delay:.3s}.nav-links.open li:nth-child(7) a{animation-delay:.35s}.nav-links.open li:nth-child(8) a{animation-delay:.4s}.hero-content{padding:0 1.5rem 3rem}.hero h1{font-size:2.5rem}.hero-stats{gap:1.5rem}.tiles-grid{grid-template-columns:1fr}.tile-full{grid-column:span 1}.tile{min-height:130px}.card-grid,.mitglied-grid{grid-template-columns:1fr}.anlage-grid{grid-template-columns:1fr 1fr}section{padding:3rem 1.5rem}footer{flex-direction:column;gap:.8rem;padding:1.5rem}.team-tabs{gap:.35rem}.team-tab{padding:.45rem .8rem;font-size:.78rem}.cat-tab{padding:.5rem 1rem;font-size:.9rem}.news-card-feat{grid-row:span 1}.news-card-img,.news-card-feat .news-card-img{height:120px}.cat-tabs{top:50px}#btt{bottom:1.2rem;right:1.2rem;width:42px;height:42px}}
+
+/* Upcoming matches widget */
+.upcoming{margin-top:2.5rem;margin-bottom:2rem;border-radius:16px;background:var(--blue);padding:2rem;color:#fff;position:relative;overflow:hidden}
+.upcoming::before{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(235,10,11,.15);pointer-events:none}
+.upcoming-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
+.upcoming-title{font-family:'DM Serif Display',serif;font-size:1.4rem}
+.upcoming-week{font-size:.75rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1.5px;font-weight:500}
+.upcoming-day{margin-bottom:1.2rem}
+.upcoming-day-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--red-l);margin-bottom:.5rem;padding-left:.5rem}
+.upcoming-match{display:flex;align-items:center;gap:.6rem;padding:.6rem .8rem;border-radius:8px;background:rgba(255,255,255,.04);margin-bottom:.35rem;font-size:.82rem;font-weight:300;color:rgba(255,255,255,.75);transition:background .2s}
+.upcoming-match:hover{background:rgba(255,255,255,.07)}
+.upcoming-match.heim{border-left:3px solid var(--red)}
+.upcoming-time{min-width:42px;font-weight:500;color:rgba(255,255,255,.5);font-size:.75rem}
+.upcoming-team{font-size:.72rem;color:rgba(255,255,255,.4);min-width:100px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.upcoming-vs{flex:1}
+.upcoming-vs b{color:#fff;font-weight:500}
+.upcoming-vs small{color:rgba(255,255,255,.25);margin:0 .25rem}
+.upcoming-badge{font-size:.55rem;text-transform:uppercase;letter-spacing:1px;color:var(--red-l);font-weight:600;background:rgba(235,10,11,.1);padding:.15rem .4rem;border-radius:3px;white-space:nowrap}
+@media(max-width:768px){.upcoming{padding:1.5rem}.upcoming-team{display:none}}
+
+.upcoming-match{display:flex;align-items:center;gap:.6rem;padding:.55rem .8rem;border-radius:8px;background:rgba(255,255,255,.04);margin-bottom:.3rem;font-size:.82rem;font-weight:300;color:rgba(255,255,255,.75);transition:background .2s;cursor:pointer;text-decoration:none}
+.upcoming-match:hover{background:rgba(255,255,255,.1)}
+.upcoming-match.heim{border-left:3px solid var(--red)}
+.upcoming-mname{font-size:.7rem;font-weight:600;color:rgba(255,255,255,.55);min-width:90px;text-transform:uppercase;letter-spacing:.5px}
 </style>
 </head>
 <body>
@@ -209,8 +233,37 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 </div></div>
 <div class="wave-divider"><svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 40L48 36.7C96 33 192 27 288 30C384 33 480 47 576 50C672 53 768 47 864 40C960 33 1056 27 1152 30C1248 33 1344 47 1392 53L1440 60V80H0V40Z" fill="#f5f2ed"/></svg></div>
 <section id="aktuelles"><div class="fi"><span class="s-label">Aktuelles</span><h2 class="s-title">Neuigkeiten vom Gehrenberg</h2><p class="s-sub">Was im Verein gerade passiert.</p></div>
+<div class="upcoming">
+<div class="upcoming-head"><div class="upcoming-title">🎾 Nächste Spielwoche</div><div class="upcoming-week">04.–10. Mai 2026</div></div>
+<div class="upcoming-day"><div class="upcoming-day-label">Mittwoch, 6. Mai</div>
+<a class="upcoming-match heim" onclick="goTeam('senioren-h','herren-70-2-tsg')"><span class="upcoming-mname">Herren 70/2 TSG</span><span class="upcoming-time">11:00</span><span class="upcoming-vs"><b>TCM/Salem 2</b> <small>vs</small> Küssaberg/Hohentengen</span><span class="upcoming-badge">Heim</span></a>
+</div>
+<div class="upcoming-day"><div class="upcoming-day-label">Donnerstag, 8. Mai</div>
+<a class="upcoming-match" onclick="goTeam('jugend','kleinfeld-u9')"><span class="upcoming-mname">Kleinfeld U9</span><span class="upcoming-time">16:00</span><span class="upcoming-vs">Schienerberg/Gaienhofen <small>vs</small> <b>TC Markdorf 1</b></span></a>
+<a class="upcoming-match" onclick="goTeam('jugend','midcourt-u10')"><span class="upcoming-mname">Midcourt U10</span><span class="upcoming-time">16:00</span><span class="upcoming-vs">TC Salem 1 <small>vs</small> <b>TC Markdorf 1</b></span></a>
+</div>
+<div class="upcoming-day"><div class="upcoming-day-label">Freitag, 9. Mai</div>
+<a class="upcoming-match heim" onclick="goTeam('jugend','junioren-u12')"><span class="upcoming-mname">Junioren U12</span><span class="upcoming-time">09:30</span><span class="upcoming-vs"><b>TC Markdorf 1</b> <small>vs</small> BW Villingen 1</span><span class="upcoming-badge">Heim</span></a>
+<a class="upcoming-match heim" onclick="goTeam('jugend','junioren-u18-1')"><span class="upcoming-mname">Junioren U18/1</span><span class="upcoming-time">09:30</span><span class="upcoming-vs"><b>TC Markdorf 1</b> <small>vs</small> BW Donaueschingen 2</span><span class="upcoming-badge">Heim</span></a>
+<a class="upcoming-match heim" onclick="goTeam('jugend','junioren-u18-2')"><span class="upcoming-mname">Junioren U18/2</span><span class="upcoming-time">09:30</span><span class="upcoming-vs"><b>TC Markdorf 2</b> <small>vs</small> TC Dauchingen 1</span><span class="upcoming-badge">Heim</span></a>
+<a class="upcoming-match" onclick="goTeam('jugend','juniorinnen-u18-2')"><span class="upcoming-mname">Juniorinnen U18w/2</span><span class="upcoming-time">09:30</span><span class="upcoming-vs">Gaienhofen/Moos/Schienerberg <small>vs</small> <b>TC Markdorf 2</b></span></a>
+<a class="upcoming-match" onclick="goTeam('senioren-h','herren-40')"><span class="upcoming-mname">Herren 40</span><span class="upcoming-time">14:00</span><span class="upcoming-vs">TC GW Bermatingen 1 <small>vs</small> <b>TC Markdorf 1</b></span></a>
+<a class="upcoming-match heim" onclick="goTeam('senioren-h','herren-50-2')"><span class="upcoming-mname">Herren 50/2</span><span class="upcoming-time">14:00</span><span class="upcoming-vs"><b>TC Markdorf 2</b> <small>vs</small> TC 1902 Überlingen 2</span><span class="upcoming-badge">Heim</span></a>
+<a class="upcoming-match heim" onclick="goTeam('senioren-d','damen-40')"><span class="upcoming-mname">Damen 40</span><span class="upcoming-time">14:00</span><span class="upcoming-vs"><b>TC Markdorf 1</b> <small>vs</small> TC 1902 Überlingen 2</span><span class="upcoming-badge">Heim</span></a>
+</div>
+<div class="upcoming-day"><div class="upcoming-day-label">Samstag, 10. Mai</div>
+<a class="upcoming-match" onclick="goTeam('herren','herren-3')"><span class="upcoming-mname">Herren 3</span><span class="upcoming-time">09:30</span><span class="upcoming-vs">FAL Frickingen 1 <small>vs</small> <b>TC Markdorf 3</b></span></a>
+<a class="upcoming-match heim" onclick="goTeam('damen','damen-2')"><span class="upcoming-mname">Damen 2</span><span class="upcoming-time">09:30</span><span class="upcoming-vs"><b>TC Markdorf 2</b> <small>vs</small> TC Nicolai Konstanz 2</span><span class="upcoming-badge">Heim</span></a>
+<a class="upcoming-match" onclick="goTeam('damen','damen-1')"><span class="upcoming-mname">Damen 1</span><span class="upcoming-time">11:00</span><span class="upcoming-vs">Freiburger TC 2 <small>vs</small> <b>TC Markdorf 1</b></span></a>
+<a class="upcoming-match" onclick="goTeam('senioren-h','herren-30')"><span class="upcoming-mname">Herren 30</span><span class="upcoming-time">11:00</span><span class="upcoming-vs">TC Insel Reichenau 1 <small>vs</small> <b>TC Markdorf 1</b></span></a>
+<a class="upcoming-match heim" onclick="goTeam('jugend','grossfeld-u12-gruen')"><span class="upcoming-mname">Großfeld U12</span><span class="upcoming-time">13:00</span><span class="upcoming-vs"><b>TC Markdorf 1</b> <small>vs</small> BW Donaueschingen 2</span><span class="upcoming-badge">Heim</span></a>
+<a class="upcoming-match" onclick="goTeam('jugend','junioren-u15-1')"><span class="upcoming-mname">Junioren U15/1</span><span class="upcoming-time">13:00</span><span class="upcoming-vs">BW Villingen 1 <small>vs</small> <b>TC Markdorf 1</b></span></a>
+<a class="upcoming-match heim" onclick="goTeam('jugend','junioren-u15-2')"><span class="upcoming-mname">Junioren U15/2</span><span class="upcoming-time">13:00</span><span class="upcoming-vs"><b>TC Markdorf 2</b> <small>vs</small> SV 1922 Emmingen/Egg 1</span><span class="upcoming-badge">Heim</span></a>
+<a class="upcoming-match heim" onclick="goTeam('jugend','junioren-u15-3')"><span class="upcoming-mname">Junioren U15/3</span><span class="upcoming-time">13:00</span><span class="upcoming-vs"><b>TC Markdorf 3</b> <small>vs</small> TC 1902 Überlingen 2</span><span class="upcoming-badge">Heim</span></a>
+</div>
+</div>
     <div class="news-grid">
-        <div class="news-card news-card-feat fi"><div class="news-card-img" style="background:url(filzkugel.jpg) center/cover;height:280px"></div><div class="news-body"><div class="news-date">April 2026</div><h3 class="news-title">Saisonstart 2026 — Doppel-Moppel eröffnet die Saison</h3><p class="news-ex">Mit dem traditionellen Doppel-Moppel und gemeinsamem Brunch im Vereinsheim startet der TCM in die neue Saison.</p></div></div>
+        <div class="news-card news-card-feat fi"><div class="news-card-img" style="background:url(filzkugel.jpg) center/cover"></div><div class="news-body"><div class="news-date">April 2026</div><h3 class="news-title">Saisonstart 2026 — Doppel-Moppel eröffnet die Saison</h3><p class="news-ex">Mit dem traditionellen Doppel-Moppel und gemeinsamem Brunch im Vereinsheim startet der TCM in die neue Saison.</p></div></div>
         <div class="news-card fi"><div class="news-body"><div class="news-date">März 2026</div><h3 class="news-title">Jugend 2026: Ballschule mit über 50 Kindern gestartet</h3><p class="news-ex">Aus der Ballschule wechselten vier Kids ins Tennisland, fünf weitere ins reguläre Training.</p></div></div>
         <div class="news-card fi"><div class="news-body"><div class="news-date">Februar 2026</div><h3 class="news-title">27 Mannschaftsmeldungen für Sommer 2026</h3><p class="news-ex">Von der Badenliga bis zur Bezirksklasse — der TCM geht mit 27 Teams in die Medenrunde.</p></div></div>
     </div>
@@ -310,7 +363,7 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
         <img src="img09.jpg" alt="Jugendarbeit TC Markdorf" style="width:100%;height:300px;object-fit:cover;object-position:top">
     </div>
     <div class="card-grid">
-        <div class="card fi"><div class="card-icon">⚽</div><h3>Ballschule (ab 4 J.)</h3><p>Spielerischer Einstieg für die Jüngsten. Über 50 Kinder sind dabei. In Kooperation mit Kindergärten und Schulen.</p></div>
+        <div class="card fi"><div class="card-icon">🎾</div><h3>Ballschule (ab 4 J.)</h3><p>Spielerischer Einstieg für die Jüngsten. Über 50 Kinder sind dabei. In Kooperation mit Kindergärten und Schulen.</p></div>
         <div class="card fi"><div class="card-icon">🎾</div><h3>Tennisland (ab 6 J.)</h3><p>Grundlagen des Tennisspiels auf dem Kleinfeld mit kindgerechtem Material.</p></div>
         <div class="card fi"><div class="card-icon">🏆</div><h3>Jugendtraining & Mannschaften</h3><p>11 Jugendmannschaften von U9 bis U18. Professionelles Training durch unser Trainerteam um Jens Goldmann.</p></div>
         <div class="card fi"><div class="card-icon">🏫</div><h3>Schulkooperationen</h3><p>Zusammenarbeit mit der Jakob-Gretser-Grundschule und der Grundschule Leimbach.</p></div>
@@ -426,6 +479,26 @@ document.getElementById('lb-prev').onclick=function(){lbIdx=(lbIdx-1+lbSrcs.leng
 document.getElementById('lb-next').onclick=function(){lbIdx=(lbIdx+1)%lbSrcs.length;document.getElementById('lb-img').src=lbSrcs[lbIdx]};
 document.getElementById('lightbox').onclick=function(e){if(e.target===this)closeLightbox()};
 document.addEventListener('keydown',function(e){if(document.getElementById('lightbox').classList.contains('active')){if(e.key==='Escape')closeLightbox();if(e.key==='ArrowLeft')document.getElementById('lb-prev').click();if(e.key==='ArrowRight')document.getElementById('lb-next').click()}});
+
+function goTeam(cat,team){
+    // Activate category
+    document.querySelectorAll('.cat-tab').forEach(function(t){t.classList.remove('active')});
+    document.querySelectorAll('.cat-panel').forEach(function(p){p.classList.remove('active')});
+    var catBtn=document.querySelector('.cat-tab[onclick*="'+cat+'"]');
+    if(catBtn)catBtn.classList.add('active');
+    var catPanel=document.getElementById('cp-'+cat);
+    if(catPanel){catPanel.classList.add('active');
+        // Activate team tab
+        catPanel.querySelectorAll('.team-tab').forEach(function(t){t.classList.remove('active')});
+        catPanel.querySelectorAll('.tp').forEach(function(p){p.classList.remove('active')});
+        var teamBtn=catPanel.querySelector('.team-tab[onclick*="'+team+'"]');
+        if(teamBtn)teamBtn.classList.add('active');
+        var teamPanel=document.getElementById('p-'+team);
+        if(teamPanel){teamPanel.classList.add('active');
+            setTimeout(function(){teamPanel.scrollIntoView({behavior:'smooth',block:'start'})},100);
+        }
+    }
+}
 </script>
 
 </body></html>
