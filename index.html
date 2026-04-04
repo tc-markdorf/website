@@ -191,6 +191,12 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 
 .bew-date-chip:not(.past):not(.active):hover{background:rgba(255,255,255,.12);color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.2);transform:translateY(-1px)}
 .bew-date-chip{transition:all .2s}
+
+.bew-next-type.awo{background:rgba(255,215,0,.15);color:#ffd700;border:1px solid rgba(255,215,0,.3)}
+.bew-next-awo-banner{display:flex;align-items:center;gap:1rem;padding:1rem;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);margin-bottom:1rem}
+.bew-next-awo-banner img{width:50px;height:50px;object-fit:contain;border-radius:8px;background:#fff;padding:4px}
+.bew-next-awo-banner div{font-size:.9rem;color:rgba(255,255,255,.8)}
+.bew-next-awo-banner strong{display:block;font-family:'DM Serif Display',serif;font-size:1.1rem;color:#fff;margin-bottom:.15rem}
 /* Bewirtung next-event widget */
 .bew-next{border-radius:16px;background:linear-gradient(135deg,var(--blue-d) 0%,var(--blue) 100%);padding:2rem;color:#fff;position:relative;overflow:hidden}
 .bew-next::before{content:'';position:absolute;top:-40px;right:-40px;width:140px;height:140px;border-radius:50%;background:rgba(235,10,11,.1);pointer-events:none}
@@ -541,7 +547,8 @@ var bewData=[
 {d:'2026-07-19',day:'Sonntag, 19. Juli',p1:'Julian S.',p2:'Marvin G.',type:'spieltag',info:'Spieltag Herren 1'},
 {d:'2026-07-25',day:'Samstag, 25. Juli',p1:'Lukas M.',p2:null,type:'spieltag',info:'Spieltag Herren 1'},
 {d:'2026-08-06',day:'Donnerstag, 6. August',p1:'Desiree H.',p2:'Sofie R.',type:'do'},
-{d:'2026-08-08',day:'Samstag, 8. August',p1:'Ronja R.',p2:null,type:'do'}
+{d:'2026-08-08',day:'Samstag, 8. August',p1:'Ronja R.',p2:null,type:'awo',info:'Albert Weber Open',menuImg:'logo_awo.jpg',menu:'Nudeln mit diversen Soßen'},
+{d:'2026-08-09',day:'Sonntag, 9. August',p1:'AWO-Team',p2:null,type:'awo',info:'Albert Weber Open',menuImg:'logo_awo.jpg',menu:'Nudeln mit diversen Soßen'}
 ];
 var bewSelectedIdx=-1;
 function getNextBewIdx(){
@@ -557,12 +564,15 @@ var today=new Date();today.setHours(0,0,0,0);
 var nextIdx=getNextBewIdx();
 var ev=bewData[idx];
 var crew=ev.p1+(ev.p2?' & '+ev.p2:'');
-var typeClass=ev.type==='spieltag'?'spieltag':'donners';
-var typeText=ev.type==='spieltag'?ev.info:'Donnerstag 18–21 Uhr';
+var typeClass=ev.type==='spieltag'?'spieltag':(ev.type==='awo'?'awo':'donners');
+var typeText=ev.type==='spieltag'?ev.info:(ev.type==='awo'?ev.info:'Donnerstag 18–21 Uhr');
 var isNext=idx===nextIdx;
 var labelText=isNext?'Nächster Termin':ev.day.split(',')[0];
 var foodHtml='';
-if(ev.type==='do'){
+if(ev.type==='awo'){
+foodHtml='<div class="bew-next-awo-banner"><img src="'+ev.menuImg+'" alt="AWO"><div><strong>'+ev.info+'</strong>🍝 '+ev.menu+'</div></div>';
+}
+else if(ev.type==='do'){
 if(ev.menuImg){foodHtml='<div class="bew-next-food"><div class="bew-next-food-img"><img src="'+ev.menuImg+'" alt="Abendessen"></div><div class="bew-next-food-menu"><strong>Speisekarte</strong>'+ev.menu+'</div></div>';}
 else{foodHtml='<div class="bew-next-food"><div class="bew-next-food-img">🍽️<br>Speisekarte wird noch bekannt gegeben</div></div>';}
 }
