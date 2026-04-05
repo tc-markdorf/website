@@ -361,6 +361,8 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 .u-panel-leg{display:flex;align-items:center;gap:.3rem;font-size:.65rem;color:rgba(255,255,255,.4);font-weight:300}
 .u-panel-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
 @media(max-width:768px){.u-panel-scroll{padding:0 1rem .8rem}.u-panel-head{padding:0 1rem .8rem}.u-panel-card{min-width:260px}.u-panel-legend{display:none}}
+
+.jugend-slide-active{opacity:1!important}
 </style>
 </head>
 <body>
@@ -540,8 +542,9 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 </section>
 <div class="wave-divider" style="background:var(--blue)"><svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 40L48 36.7C96 33 192 27 288 30C384 33 480 47 576 50C672 53 768 47 864 40C960 33 1056 27 1152 30C1248 33 1344 47 1392 53L1440 60V80H0V40Z" fill="#fff"/></svg></div>
 <section id="jugend" class="bg-w"><div class="fi"><span class="s-label">Jugendarbeit</span><h2 class="s-title">Die Zukunft des TCM</h2><p class="s-sub">Von der Ballschule bis zur Jugendmannschaft — Nachwuchsförderung hat Tradition.</p></div>
-    <div style="margin-top:2rem;margin-bottom:2rem;border-radius:14px;overflow:hidden;max-height:300px">
-        <img src="img09.jpg" alt="Jugendarbeit TC Markdorf" style="width:100%;height:300px;object-fit:cover;object-position:top">
+    <div style="margin-top:2rem;margin-bottom:2rem;border-radius:14px;overflow:hidden;position:relative;height:300px">
+        <img src="img16.jpg" class="jugend-slide jugend-slide-active" alt="Jugendtraining TC Markdorf" style="position:absolute;inset:0;width:100%;height:300px;object-fit:cover;object-position:top;opacity:0;transition:opacity 1.2s ease">
+        <img src="img17.jpg" class="jugend-slide" alt="Jugendtraining TC Markdorf" style="position:absolute;inset:0;width:100%;height:300px;object-fit:cover;object-position:top;opacity:0;transition:opacity 1.2s ease">
     </div>
     <div class="card-grid">
         <div class="card fi"><div class="card-icon">🎾</div><h3>Ballschule (ab 4 J.)</h3><p>Spielerischer Einstieg für die Jüngsten. Über 50 Kinder sind dabei. In Kooperation mit Kindergärten und Schulen.</p></div>
@@ -570,8 +573,8 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
         </div>
         <div class="bew-info">
             <div class="bew-card fi"><h4>🍽️ Vereinsgastronomie</h4><p>Bei den Heimspielen unserer Herren 1 und Damen 1 ist das Clubhaus bewirtet — kommt vorbei und feuert unsere Teams an! Außerdem öffnet jeden Donnerstag ab 18 Uhr die Terrasse: der perfekte Ausklang nach dem Spiel, mit kühlen Getränken und netter Gesellschaft.</p></div>
-            <div class="bew-card fi"><h4>📅 Bewirtungstermine</h4><p>Donnerstags 18–21 Uhr, Spieltage Herren 1/Damen 1 11–18 Uhr. Termine können über die TCM-App (CLUB X) gebucht werden.</p></div>
             <div class="bew-card fi"><h4>🎉 Veranstaltungen</h4><p>Saisoneröffnung, Sommerfest, Saisonabschluss, Weihnachtsfeier. Das Vereinsheim ist nach Absprache auch privat nutzbar.</p></div>
+            <div class="bew-card fi"><h4>📅 Bewirtungstermine</h4><p>Donnerstags 18–21 Uhr, Spieltage Herren 1/Damen 1 11–18 Uhr. Termine können über die TCM-App (CLUB X) gebucht werden.</p></div>
             <div id="bew-next-widget"></div>
         </div>
     </div>
@@ -1059,6 +1062,10 @@ setTimeout(function(){mel.scrollIntoView({behavior:'smooth',block:'nearest',inli
 }
 renderSaisonkalender();
 
+
+// Jugend gallery
+var jugSlides=document.querySelectorAll('.jugend-slide');
+if(jugSlides.length>1){var jugIdx=0;jugSlides[0].classList.add('jugend-slide-active');setInterval(function(){jugSlides[jugIdx].classList.remove('jugend-slide-active');jugIdx=(jugIdx+1)%jugSlides.length;jugSlides[jugIdx].classList.add('jugend-slide-active')},4000)}
 </script>
 
 </body></html>
