@@ -380,6 +380,13 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 
 #datenschutz-modal{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:3000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(6px);padding:2rem}
 #datenschutz-modal.active{display:flex}
+
+/* Tennis ball cursor */
+body{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23c8e620'/%3E%3Ccircle cx='16' cy='16' r='13' fill='%23d4f030'/%3E%3Cpath d='M5 10c3 8 14 12 22 4' stroke='%23fff' stroke-width='2' fill='none' opacity='.6'/%3E%3Cpath d='M5 22c5-8 16-12 22-4' stroke='%23fff' stroke-width='2' fill='none' opacity='.6'/%3E%3Ccircle cx='12' cy='11' r='3' fill='%23e0f860' opacity='.4'/%3E%3C/svg%3E") 16 16,auto}
+a,button,.tile,.team-tab,.cat-tab,.bew-sc,.nav-cta,.btn{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23c8e620'/%3E%3Ccircle cx='16' cy='16' r='13' fill='%23d4f030'/%3E%3Cpath d='M5 10c3 8 14 12 22 4' stroke='%23fff' stroke-width='2' fill='none' opacity='.6'/%3E%3Cpath d='M5 22c5-8 16-12 22-4' stroke='%23fff' stroke-width='2' fill='none' opacity='.6'/%3E%3Ccircle cx='12' cy='11' r='3' fill='%23e0f860' opacity='.4'/%3E%3C/svg%3E") 16 16,pointer}
+
+/* Comet trail */
+.trail-ball{position:fixed;pointer-events:none;z-index:8888;font-size:14px;opacity:0;transition:none;will-change:transform,opacity}
 </style>
 </head>
 <body>
@@ -403,7 +410,7 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 </nav>
 <section class="hero"><div class="hero-bg"></div><div class="hero-pat"></div>
     <div class="hero-content">
-        <img src="img08.png" alt="TC Markdorf – Tennis am Gehrenberg" style="display:block;margin:30px auto 40px;max-width:min(510px,80vw);height:auto;animation:fsu .8s ease .1s both;background:#fff;padding:1.2rem 2rem;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.25)">
+        <img src="img08.png" alt="TC Markdorf – Tennis am Gehrenberg" style="display:block;margin:50px auto 40px;max-width:min(510px,80vw);height:auto;animation:fsu .8s ease .1s both;background:#fff;padding:1.2rem 2rem;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.25)">
         <div class="hero-badge" style="margin-right:auto"><span class="hero-badge-dot"></span> Saison 2026 läuft</div>
         <h1>Tennis am<br><em>Gehrenberg</em></h1>
         <p class="hero-sub">Oberhalb Markdorfs mit Blick über den Bodensee und die Alpen — seit 1954 Tennis mit Leidenschaft.</p>
@@ -1152,6 +1159,39 @@ if(jugSlides.length>1){var jugIdx=0;jugSlides[0].classList.add('jugend-slide-act
 document.getElementById('impressum-modal').addEventListener('click',function(e){if(e.target===this){this.classList.remove('active');document.body.style.overflow='';}});
 
 document.getElementById('datenschutz-modal').addEventListener('click',function(e){if(e.target===this){this.classList.remove('active');document.body.style.overflow='';}});
+
+// Tennis ball comet trail
+(function(){
+var trail=[];
+var trailLen=8;
+for(var i=0;i<trailLen;i++){
+var el=document.createElement('span');
+el.className='trail-ball';
+el.textContent='🎾';
+document.body.appendChild(el);
+trail.push({el:el,x:0,y:0});
+}
+var mx=0,my=0;
+var hoverCheck=window.matchMedia('(hover:hover)');
+if(hoverCheck.matches){
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY});
+function animTrail(){
+var px=mx,py=my;
+for(var i=0;i<trailLen;i++){
+var t=trail[i];
+t.x+=(px-t.x)*(.35-i*.03);
+t.y+=(py-t.y)*(.35-i*.03);
+var scale=1-i/(trailLen+1);
+var alpha=(.6-i*.07);
+t.el.style.transform='translate('+(t.x-7)+'px,'+(t.y-7)+'px) scale('+scale+')';
+t.el.style.opacity=alpha>0?alpha:0;
+px=t.x;py=t.y;
+}
+requestAnimationFrame(animTrail);
+}
+animTrail();
+}
+})();
 </script>
 
 </body></html>
