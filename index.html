@@ -162,7 +162,7 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
 .fi{opacity:0;transform:translateY(25px);transition:all .8s cubic-bezier(.22,1,.36,1)}.fi.v{opacity:1;transform:translateY(0)}
 @media(max-width:1024px){section{padding:3.5rem 2rem}.hero-content{padding:0 2rem 4rem}.tiles{padding:0 1.5rem}.news-grid,.bew-grid,.contact-grid{grid-template-columns:1fr}.card-grid{grid-template-columns:1fr 1fr}.tp-grid{grid-template-columns:1fr}}
-@media(max-width:768px){.nav-links{display:none}.mob-tog{display:flex}.nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(6,6,77,.98);justify-content:center;align-items:center;gap:2rem;z-index:999;backdrop-filter:blur(12px)}.nav-links.open a{font-size:1.3rem;color:#fff;opacity:0;animation:fsu .5s ease forwards}.nav-links.open li:nth-child(1) a{animation-delay:.05s}.nav-links.open li:nth-child(2) a{animation-delay:.1s}.nav-links.open li:nth-child(3) a{animation-delay:.15s}.nav-links.open li:nth-child(4) a{animation-delay:.2s}.nav-links.open li:nth-child(5) a{animation-delay:.25s}.nav-links.open li:nth-child(6) a{animation-delay:.3s}.nav-links.open li:nth-child(7) a{animation-delay:.35s}.nav-links.open li:nth-child(8) a{animation-delay:.4s}.hero-content{padding:0 1.5rem 3rem}.hero{padding-top:60px}.hero h1{font-size:2.5rem}.hero-stats{gap:1.5rem}.tiles-grid{grid-template-columns:1fr}.tile-full{grid-column:span 1}.tile{min-height:130px}.card-grid,.mitglied-grid{grid-template-columns:1fr}.anlage-grid{grid-template-columns:1fr 1fr}section{padding:3rem 1.5rem}footer{flex-direction:column;gap:.8rem;padding:1.5rem}.team-tabs{gap:.35rem}.team-tab{padding:.45rem .8rem;font-size:.78rem}.cat-tab{padding:.5rem 1rem;font-size:.9rem}.news-card-feat{grid-row:span 1}.news-card-img,.news-card-feat .news-card-img{height:120px}.cat-tabs{top:50px}#btt{bottom:1.2rem;right:1.2rem;width:42px;height:42px}}
+@media(max-width:768px){.nav-links{display:none}.mob-tog{display:flex}.nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(6,6,77,.98);justify-content:center;align-items:center;gap:2rem;z-index:999;backdrop-filter:blur(12px)}.nav-links.open a{font-size:1.3rem;color:#fff;opacity:0;animation:fsu .5s ease forwards}.nav-links.open li:nth-child(1) a{animation-delay:.05s}.nav-links.open li:nth-child(2) a{animation-delay:.1s}.nav-links.open li:nth-child(3) a{animation-delay:.15s}.nav-links.open li:nth-child(4) a{animation-delay:.2s}.nav-links.open li:nth-child(5) a{animation-delay:.25s}.nav-links.open li:nth-child(6) a{animation-delay:.3s}.nav-links.open li:nth-child(7) a{animation-delay:.35s}.nav-links.open li:nth-child(8) a{animation-delay:.4s}.nav-links.open li:nth-child(9) a{animation-delay:.45s}.hero-content{padding:0 1.5rem 3rem}.hero{padding-top:60px}.hero h1{font-size:2.5rem}.hero-stats{gap:1.5rem}.tiles-grid{grid-template-columns:1fr}.tile-full{grid-column:span 1}.tile{min-height:130px}.card-grid,.mitglied-grid{grid-template-columns:1fr}.anlage-grid{grid-template-columns:1fr 1fr}section{padding:3rem 1.5rem}footer{flex-direction:column;gap:.8rem;padding:1.5rem}.team-tabs{gap:.35rem}.team-tab{padding:.45rem .8rem;font-size:.78rem}.cat-tab{padding:.5rem 1rem;font-size:.9rem}.news-card-feat{grid-row:span 1}.news-card-img,.news-card-feat .news-card-img{height:120px}.cat-tabs{top:50px}#btt{bottom:1.2rem;right:1.2rem;width:42px;height:42px}}
 
 /* Upcoming matches widget */
 .upcoming{margin-top:2.5rem;margin-bottom:2rem;border-radius:16px;background:var(--blue);padding:2rem;color:#fff;position:relative;overflow:hidden}
@@ -189,8 +189,8 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 .upcoming-mname{font-size:.7rem;font-weight:600;color:rgba(255,255,255,.55);min-width:90px;text-transform:uppercase;letter-spacing:.5px}
 
 
-.bew-date-chip:not(.past):not(.active):hover{background:rgba(255,255,255,.12);color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.2);transform:translateY(-1px)}
-.bew-date-chip{transition:all .2s}
+@media(hover:hover){.bew-date-chip:not(.past):not(.active):hover{background:rgba(255,255,255,.12);color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.2);transform:translateY(-1px)}}
+.bew-date-chip{transition:all .2s;-webkit-tap-highlight-color:transparent}
 
 .bew-next-type.awo{background:rgba(255,215,0,.15);color:#ffd700;border:1px solid rgba(255,215,0,.3)}
 .bew-next-awo-banner{display:flex;align-items:center;gap:1rem;padding:1rem;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);margin-bottom:1rem}
@@ -225,6 +225,50 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 .bew-date-chip{font-size:.72rem;padding:.25rem .6rem;border-radius:6px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.08);white-space:nowrap}
 .bew-date-chip.active{background:rgba(235,10,11,.12);color:var(--red-l);border-color:rgba(235,10,11,.25);font-weight:500}
 .bew-date-chip.past{opacity:.4;text-decoration:line-through}
+/* Mein TCM Dashboard */
+.dash{padding:2.5rem 2rem;max-width:1100px;margin:0 auto}
+.dash-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
+.dash-title{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--blue-d)}
+.dash-hint{font-size:.75rem;color:var(--tx-l);font-weight:300}
+.dash-empty{text-align:center;padding:3rem 1.5rem;color:var(--tx-l);font-weight:300}
+.dash-empty-icon{font-size:3rem;margin-bottom:1rem;opacity:.5}
+.dash-empty p{font-size:.95rem;line-height:1.6;max-width:400px;margin:0 auto}
+.dash-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1rem}
+.dash-card{border-radius:14px;background:#fff;border:1px solid var(--sand-d);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.04);transition:all .3s}
+.dash-card:hover{box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.dash-card-top{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.2rem;background:var(--blue);color:#fff}
+.dash-card-name{font-family:'DM Serif Display',serif;font-size:1.1rem}
+.dash-card-league{font-size:.68rem;color:rgba(255,255,255,.5);margin-top:.15rem}
+.dash-card-pos{text-align:right}
+.dash-card-pos-num{font-family:'DM Serif Display',serif;font-size:1.8rem;line-height:1}
+.dash-card-pos-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.4)}
+.dash-card-body{padding:1rem 1.2rem}
+.dash-card-next{display:flex;align-items:center;gap:.8rem;padding:.7rem;border-radius:10px;background:var(--sand);margin-bottom:.6rem}
+.dash-card-next.heim{border-left:3px solid var(--red)}
+.dash-card-date{min-width:50px}
+.dash-card-date strong{display:block;font-size:1rem;font-weight:700;color:var(--blue-d)}
+.dash-card-date small{font-size:.65rem;color:var(--tx-l)}
+.dash-card-opp{flex:1;font-size:.82rem;color:var(--tx);font-weight:300}
+.dash-card-opp b{font-weight:500}
+.dash-card-badge{font-size:.55rem;text-transform:uppercase;letter-spacing:1px;color:var(--red);font-weight:600;background:rgba(235,10,11,.08);padding:.2rem .5rem;border-radius:3px}
+.dash-card-countdown{text-align:center;padding:.5rem;font-size:.72rem;color:var(--tx-l);font-weight:300;border-top:1px solid var(--sand-d)}
+.dash-card-countdown strong{color:var(--red);font-weight:600}
+.dash-card-remove{background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:1rem;padding:.2rem;transition:color .2s;-webkit-tap-highlight-color:transparent}
+.dash-card-remove:hover{color:var(--red-l)}
+.dash-card-matches{margin-top:.5rem}
+.dash-card-match{display:flex;align-items:center;gap:.5rem;padding:.35rem 0;font-size:.78rem;color:var(--tx-l);font-weight:300;border-bottom:1px solid rgba(0,0,0,.03)}
+.dash-card-match:last-child{border:none}
+.dash-card-match.heim{color:var(--tx)}
+.dash-card-match b{font-weight:500;color:var(--blue-d)}
+.dash-card-match .hm-dot{width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0}
+.dash-card-toggle{background:none;border:none;font-size:.75rem;color:var(--blue-l);cursor:pointer;padding:.3rem 0;transition:color .2s}
+.dash-card-toggle:hover{color:var(--red)}
+/* Star button on team tabs */
+.team-tab-star{background:none;border:none;font-size:.9rem;cursor:pointer;padding:.2rem .4rem;opacity:.5;transition:all .2s;-webkit-tap-highlight-color:transparent;vertical-align:middle;margin-left:.2rem}
+.team-tab-star:hover,.team-tab-star.starred{opacity:1}
+.team-tab-star.starred{transform:scale(1.15)}
+@media(max-width:768px){.dash-grid{grid-template-columns:1fr}.dash{padding:1.5rem 1rem}}
+
 </style>
 </head>
 <body>
@@ -234,6 +278,7 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
         <span>TC Markdorf e.V.</span>
     </a>
     <ul class="nav-links" id="navLinks">
+        <li><a href="#mein-tcm">Mein TCM</a></li>
         <li><a href="#aktuelles">Aktuelles</a></li>
         <li><a href="#mannschaften">Mannschaften</a></li>
         <li><a href="#jugend">Jugend</a></li>
@@ -270,6 +315,10 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
     <a href="#anlage" class="tile tile-anlage"><div class="tile-bg"></div><div class="tile-overlay"></div><h3>Unsere Anlage</h3></a>
 </div></div>
 <div class="wave-divider"><svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 40L48 36.7C96 33 192 27 288 30C384 33 480 47 576 50C672 53 768 47 864 40C960 33 1056 27 1152 30C1248 33 1344 47 1392 53L1440 60V80H0V40Z" fill="#f5f2ed"/></svg></div>
+<section id="mein-tcm" class="dash">
+<div class="dash-head"><div><div class="dash-title">⭐ Mein TCM</div><div class="dash-hint">Markiere deine Mannschaften mit ★ — sie erscheinen hier.</div></div></div>
+<div id="dash-content"></div>
+</section>
 <section id="aktuelles"><div class="fi"><span class="s-label">Aktuelles</span><h2 class="s-title">Neuigkeiten vom Gehrenberg</h2><p class="s-sub">Was im Verein gerade passiert.</p></div>
 <div class="upcoming">
 <div class="upcoming-head"><div class="upcoming-title">🎾 Nächste Spielwoche</div><div class="upcoming-week">04.–10. Mai 2026</div></div>
@@ -606,10 +655,11 @@ if(ev.menuImg){foodHtml='<div class="bew-next-food"><div class="bew-next-food-im
 else{foodHtml='<div class="bew-next-food"><div class="bew-next-food-img">🍽️<br>Speisekarte wird noch bekannt gegeben</div></div>';}
 }
 var chips='';
+var activeDate=bewData[idx].d;
 for(var i=0;i<bewData.length;i++){
 var dd=new Date(bewData[i].d);dd.setHours(23,59,59);
 var cls='bew-date-chip';
-if(i===idx)cls+=' active';
+if(bewData[i].d===activeDate)cls+=' active';
 else if(dd<today)cls+=' past';
 var label=bewData[i].d.substring(8,10)+'.'+bewData[i].d.substring(5,7)+'.';
 chips+='<span class="'+cls+'" onclick="renderBewEvent('+i+')" style="cursor:pointer">'+label+'</span>';
@@ -622,6 +672,150 @@ foodHtml+
 '</div>';
 }
 renderBewEvent(getNextBewIdx());
+
+var tcmTeams=[
+{id:'herren-1',n:'Herren 1',lg:'Badenliga',p:7,tt:8,m:[{d:'05.07',t:'11:00',h:false,vs:'Freiburger TC 1 vs TC Markdorf 1'},{d:'11.07',t:'11:00',h:true,vs:'TC Markdorf 1 vs TC RW Tiengen 1Heim'},{d:'12.07',t:'11:00',h:false,vs:'TC Weinheim 1902 1 vs TC Markdorf 1'},{d:'18.07',t:'11:00',h:true,vs:'TC Markdorf 1 vs MTG BW Mannheim 1Heim'},{d:'19.07',t:'11:00',h:true,vs:'TC Markdorf 1 vs TC Wolfsberg Pforzheim 2Heim'},{d:'25.07',t:'11:00',h:true,vs:'TC Markdorf 1 vs TC Schönberg 1Heim'},{d:'26.07',t:'11:00',h:false,vs:'1.TC RW Wiesloch 1 vs TC Markdorf 1'}]},
+{id:'herren-2',n:'Herren 2',lg:'2. Bezirksliga',p:2,tt:5,m:[{d:'17.05',t:'09:30',h:true,vs:'TC Markdorf 2 vs TC Rebberg 1Heim'},{d:'14.06',t:'09:30',h:true,vs:'TC Markdorf 2 vs TC Salem 1Heim'},{d:'21.06',t:'09:30',h:false,vs:'TC Nicolai Konstanz 2 vs TC Markdorf 2'},{d:'05.07',t:'09:30',h:false,vs:'TC Konstanz 2 vs TC Markdorf 2'}]},
+{id:'herren-3',n:'Herren 3',lg:'2. Bezirksklasse',p:3,tt:6,m:[{d:'10.05',t:'09:30',h:false,vs:'FAL Frickingen 1 vs TC Markdorf 3'},{d:'17.05',t:'09:30',h:false,vs:'TC Immenstaad 1 vs TC Markdorf 3'},{d:'14.06',t:'09:30',h:false,vs:'TC Kreenheinstetten 1 vs TC Markdorf 3'},{d:'28.06',t:'09:30',h:true,vs:'TC Markdorf 3 vs TC GW Bermatingen 1Heim'},{d:'05.07',t:'09:30',h:true,vs:'TC Markdorf 3 vs TC Schwenningen/Heuberg 1Heim'}]},
+{id:'damen-1',n:'Damen 1',lg:'Oberliga',p:4,tt:7,m:[{d:'10.05',t:'11:00',h:false,vs:'Freiburger TC 2 vs TC Markdorf 1'},{d:'17.05',t:'11:00',h:true,vs:'TC Markdorf 1 vs Ski-Club Ettlingen 1Heim'},{d:'14.06',t:'11:00',h:false,vs:'TC Schönberg 1 vs TC Markdorf 1'},{d:'21.06',t:'11:00',h:true,vs:'TC Markdorf 1 vs TC 1923 Grenzach 1Heim'},{d:'05.07',t:'11:00',h:false,vs:'TC BW Donaueschingen 1 vs TC Markdorf 1'},{d:'12.07',t:'11:00',h:true,vs:'TC Markdorf 1 vs TC BW Villingen 1Heim'}]},
+{id:'damen-2',n:'Damen 2',lg:'1. Bezirksklasse',p:3,tt:7,m:[{d:'10.05',t:'09:30',h:true,vs:'TC Markdorf 2 vs TC Nicolai Konstanz 2Heim'},{d:'17.05',t:'09:30',h:false,vs:'TSG TC GW Geisingen/TC Immendingen 1 vs TC Markdorf 2'},{d:'14.06',t:'09:30',h:false,vs:'TSG TC Hagnau/FAL Frickingen 1 vs TC Markdorf 2'},{d:'21.06',t:'09:30',h:false,vs:'TC RW Blumberg 1 vs TC Markdorf 2'},{d:'28.06',t:'09:30',h:true,vs:'TC Markdorf 2 vs TC Kreenheinstetten 1Heim'},{d:'12.07',t:'09:30',h:true,vs:'TC Markdorf 2 vs TC Salem 2Heim'}]},
+{id:'herren-30',n:'Herren 30',lg:'Badenliga',p:2,tt:7,m:[{d:'10.05',t:'11:00',h:false,vs:'TC Insel Reichenau 1 vs TC Markdorf 1'},{d:'17.05',t:'11:00',h:false,vs:'TC 70 Sandhausen 1 vs TC Markdorf 1'},{d:'14.06',t:'11:00',h:true,vs:'TC Markdorf 1 vs TC Nicolai Konstanz 1Heim'},{d:'21.06',t:'11:00',h:true,vs:'TC Markdorf 1 vs TC BW Villingen 1Heim'},{d:'05.07',t:'11:00',h:true,vs:'TC Markdorf 1 vs TC Radolfzell 1Heim'},{d:'12.07',t:'11:00',h:false,vs:'TC BW Donaueschingen 1 vs TC Markdorf 1'}]},
+{id:'herren-40',n:'Herren 40',lg:'2. Bezirksliga',p:1,tt:7,m:[{d:'09.05',t:'14:00',h:false,vs:'TC GW Bermatingen 1 vs TC Markdorf 1'},{d:'13.06',t:'14:00',h:true,vs:'TC Markdorf 1 vs SV 1922 Emmingen/Egg 1Heim'},{d:'20.06',t:'14:00',h:true,vs:'TC Markdorf 1 vs TC Worblingen 1Heim'},{d:'27.06',t:'14:00',h:false,vs:'TC Singen 1 vs TC Markdorf 1'},{d:'04.07',t:'14:00',h:true,vs:'TC Markdorf 1 vs TSG TC Herdwangen-Schönach/TC Altbirnau 1Heim'},{d:'11.07',t:'14:00',h:false,vs:'TC Pfullendorf 1 vs TC Markdorf 1'}]},
+{id:'herren-50-1',n:'Herren 50 1',lg:'Oberliga',p:3,tt:7,m:[{d:'16.05',t:'14:00',h:false,vs:'TC Konstanz 1 vs TC Markdorf 1'},{d:'13.06',t:'14:00',h:true,vs:'TC Markdorf 1 vs FAL Frickingen 1Heim'},{d:'20.06',t:'14:00',h:false,vs:'TC BG Bad Krozingen 1 vs TC Markdorf 1'},{d:'27.06',t:'14:00',h:true,vs:'TC Markdorf 1 vs TC Pfullendorf 1Heim'},{d:'04.07',t:'14:00',h:true,vs:'TC Markdorf 1 vs TC Haslach 1Heim'},{d:'11.07',t:'14:00',h:false,vs:'TC Umkirch 1 vs TC Markdorf 1'}]},
+{id:'herren-50-2',n:'Herren 50 2',lg:'1. Bezirksklasse',p:4,tt:6,m:[{d:'09.05',t:'14:00',h:true,vs:'TC Markdorf 2 vs TC 1902 Überlingen 2Heim'},{d:'13.06',t:'14:00',h:false,vs:'TC Kreenheinstetten 1 vs TC Markdorf 2'},{d:'20.06',t:'14:00',h:false,vs:'MTC Meersburg 1 vs TC Markdorf 2'},{d:'27.06',t:'14:00',h:false,vs:'TC Altbirnau 1 vs TC Markdorf 2'},{d:'11.07',t:'14:00',h:true,vs:'TC Markdorf 2 vs TC Salem 1Heim'}]},
+{id:'herren-70-1-tsg',n:'Herren 70 1 TSG',lg:'Oberliga',p:5,tt:7,m:[{d:'12.05',t:'11:00',h:false,vs:'TSG TC BW Gaggenau/TC Blumenweg Gernsbach 1 vs TSG TC Markdorf/TC Salem 1'},{d:'19.05',t:'11:00',h:false,vs:'TC Allensbach 1 vs TSG TC Markdorf/TC Salem 1'},{d:'09.06',t:'11:00',h:true,vs:'TSG TC Markdorf/TC Salem 1 vs TC Dogern-Albbruck 1Heim'},{d:'23.06',t:'11:00',h:true,vs:'TSG TC Markdorf/TC Salem 1 vs SC Freiburg 1Heim'},{d:'30.06',t:'11:00',h:true,vs:'TSG TC Markdorf/TC Salem 1 vs TSG TC Buggingen/TC Badenweiler 1Heim'},{d:'07.07',t:'11:00',h:false,vs:'TSG TTC Nonnenweier/TC Offenburg/TuS Ottenheim 1 vs TSG TC Markdorf/TC Salem 1'}]},
+{id:'herren-70-2-tsg',n:'Herren 70 2 TSG',lg:'1. Bezirksliga',p:6,tt:9,m:[{d:'06.05',t:'11:00',h:true,vs:'TSG TC Markdorf/TC Salem 2 vs TSG TC Küssaberg/TC Hohentengen 1Heim'},{d:'13.05',t:'11:00',h:true,vs:'TSG TC Markdorf/TC Salem 2 vs TC Mönchweiler 1975 1Heim'},{d:'20.05',t:'11:00',h:false,vs:'TC Altbirnau 1 vs TSG TC Markdorf/TC Salem 2'},{d:'17.06',t:'11:00',h:false,vs:'TC St. Georgen 1 vs TSG TC Markdorf/TC Salem 2'},{d:'24.06',t:'11:00',h:true,vs:'TSG TC Markdorf/TC Salem 2 vs TC Tengen 1Heim'},{d:'01.07',t:'11:00',h:false,vs:'TC Bonndorf 1 vs TSG TC Markdorf/TC Salem 2'},{d:'08.07',t:'11:00',h:true,vs:'TSG TC Markdorf/TC Salem 2 vs TC Konstanz 1Heim'},{d:'15.07',t:'11:00',h:false,vs:'TC HW Villingen 1 vs TSG TC Markdorf/TC Salem 2'}]},
+{id:'herren-70-doppel',n:'Herren 70 Doppel',lg:'1. Bezirksliga',p:2,tt:7,m:[{d:'18.05',t:'11:00',h:true,vs:'TC Markdorf 1 vs TC Obereschach 1Heim'},{d:'08.06',t:'11:00',h:false,vs:'TC Küssaberg 1 vs TC Markdorf 1'},{d:'15.06',t:'11:00',h:false,vs:'TC GW Neustadt 1 vs TC Markdorf 1'},{d:'22.06',t:'11:00',h:false,vs:'TC Dogern-Albbruck 1 vs TC Markdorf 1'},{d:'29.06',t:'11:00',h:true,vs:'TC Markdorf 1 vs TC BW Donaueschingen 1Heim'},{d:'06.07',t:'11:00',h:true,vs:'TC Markdorf 1 vs PTSV Konstanz 1Heim'}]},
+{id:'herren-75',n:'Herren 75',lg:'Badenliga',p:3,tt:4,m:[{d:'21.05',t:'11:00',h:false,vs:'TC RW Muggensturm 1 vs TC Markdorf 1'},{d:'11.06',t:'11:00',h:true,vs:'TC Markdorf 1 vs TV Sandweier 1Heim'},{d:'18.06',t:'11:00',h:false,vs:'TC RW Staufen 1 vs TC Markdorf 1'}]},
+{id:'damen-40',n:'Damen 40',lg:'1. Bezirksklasse',p:4,tt:7,m:[{d:'09.05',t:'14:00',h:true,vs:'TC Markdorf 1 vs TC 1902 Überlingen 2Heim'},{d:'16.05',t:'14:00',h:true,vs:'TC Markdorf 1 vs SV Litzelstetten 1Heim'},{d:'13.06',t:'14:00',h:false,vs:'TC Uhldingen 1974 1 vs TC Markdorf 1'},{d:'20.06',t:'14:00',h:false,vs:'TC Owingen 1 vs TC Markdorf 1'},{d:'04.07',t:'09:30',h:true,vs:'TC Markdorf 1 vs TSG SV Illmensee/TG Deggenhausertal 1Heim'},{d:'11.07',t:'14:00',h:false,vs:'TC GW Bodman-Ludwigshafen 1 vs TC Markdorf 1'}]},
+{id:'damen-50',n:'Damen 50',lg:'1. Bezirksliga',p:1,tt:6,m:[{d:'16.05',t:'14:00',h:true,vs:'TC Markdorf 1 vs TSG TC Altbirnau/TC Owingen 1Heim'},{d:'13.06',t:'14:00',h:false,vs:'SV 1922 Emmingen/Egg 1 vs TC Markdorf 1'},{d:'20.06',t:'14:00',h:true,vs:'TC Markdorf 1 vs TC Niedereschach 1Heim'},{d:'27.06',t:'14:00',h:true,vs:'TC Markdorf 1 vs TC Pfullendorf 1Heim'},{d:'11.07',t:'14:00',h:false,vs:'SV Litzelstetten 1 vs TC Markdorf 1'}]},
+{id:'damen-60-doppel',n:'Damen 60 Doppel',lg:'2. Bezirksliga',p:2,tt:6,m:[{d:'13.05',t:'14:00',h:false,vs:'TC Uhldingen 1974 1 vs TC Markdorf 1'},{d:'20.05',t:'14:00',h:true,vs:'TC Markdorf 1 vs FAL Frickingen 1Heim'},{d:'10.06',t:'14:00',h:true,vs:'TC Markdorf 1 vs TC Salem 1Heim'},{d:'17.06',t:'14:00',h:false,vs:'TSG TC Hagnau/MTC Meersburg 1 vs TC Markdorf 1'},{d:'01.07',t:'14:00',h:false,vs:'TC Allensbach 1 vs TC Markdorf 1'}]},
+{id:'kleinfeld-u9',n:'Kleinfeld U9',lg:'2. Bezirksliga',p:4,tt:6,m:[{d:'08.05',t:'16:00',h:false,vs:'TSG TC Schienerberg/TC Gaienhofen 1 vs TC Markdorf 1'},{d:'22.05',t:'16:00',h:true,vs:'TC Markdorf 1 vs TC Salem 1Heim'},{d:'12.06',t:'16:00',h:false,vs:'TC Steisslingen 1 vs TC Markdorf 1'},{d:'26.06',t:'16:00',h:false,vs:'TC Möggingen 2 vs TC Markdorf 1'},{d:'03.07',t:'16:00',h:true,vs:'TC Markdorf 1 vs TC GW Bodman-Ludwigshafen 2Heim'}]},
+{id:'midcourt-u10',n:'Midcourt U10',lg:'1. Bezirksklasse',p:6,tt:7,m:[{d:'08.05',t:'16:00',h:false,vs:'TC Salem 1 vs TC Markdorf 1'},{d:'22.05',t:'16:00',h:true,vs:'TC Markdorf 1 vs TSG TC Kreenheinstetten/TC Messkirch/TuS Gutenstein 1Heim'},{d:'19.06',t:'16:00',h:false,vs:'SV Liptingen 1 vs TC Markdorf 1'},{d:'26.06',t:'16:00',h:true,vs:'TC Markdorf 1 vs TSG TC Dettingen-Wallhausen/ESV Konstanz/SV Litzelstetten 1Heim'},{d:'03.07',t:'16:00',h:true,vs:'TC Markdorf 1 vs TC Hohenfels-Mindersdorf 1Heim'},{d:'10.07',t:'16:00',h:false,vs:'TSG TC Steisslingen/TC Volkertshausen 1 vs TC Markdorf 1'}]},
+{id:'grossfeld-u12-gruen',n:'Großfeld U12 grün',lg:'2. Bezirksliga',p:3,tt:8,m:[{d:'10.05',t:'13:00',h:true,vs:'TC Markdorf 1 vs TC BW Donaueschingen 2Heim'},{d:'17.05',t:'13:00',h:false,vs:'TC Hohenfels-Mindersdorf 1 vs TC Markdorf 1'},{d:'14.06',t:'13:00',h:false,vs:'TSG TC Gaienhofen/TC Moos 1 vs TC Markdorf 1'},{d:'28.06',t:'13:00',h:true,vs:'TC Markdorf 1 vs TC 1902 Überlingen 2Heim'},{d:'05.07',t:'13:00',h:false,vs:'TC Hotzenwald Görwihl 1 vs TC Markdorf 1'},{d:'19.07',t:'13:00',h:false,vs:'TC GW Bodman-Ludwigshafen 1 vs TC Markdorf 1'},{d:'26.07',t:'13:00',h:true,vs:'TC Markdorf 1 vs TC Gailingen 1Heim'}]},
+{id:'junioren-u12',n:'Junioren U12',lg:'1. Bezirksliga',p:3,tt:5,m:[{d:'09.05',t:'09:30',h:true,vs:'TC Markdorf 1 vs TC BW Villingen 1Heim'},{d:'13.06',t:'09:30',h:false,vs:'TC Konstanz 1 vs TC Markdorf 1'},{d:'20.06',t:'09:30',h:true,vs:'TC Markdorf 1 vs TC Möggingen 1Heim'},{d:'11.07',t:'09:30',h:false,vs:'TC RW Tiengen 1 vs TC Markdorf 1'}]},
+{id:'junioren-u15-1',n:'Junioren U15 1',lg:'1. Bezirksliga',p:7,tt:7,m:[{d:'10.05',t:'13:00',h:false,vs:'TC BW Villingen 1 vs TC Markdorf 1'},{d:'17.05',t:'13:00',h:true,vs:'TC Markdorf 1 vs Tennis Base Konstanz 1Heim'},{d:'14.06',t:'13:00',h:true,vs:'TC Markdorf 1 vs TC RW Tiengen 1Heim'},{d:'28.06',t:'13:00',h:true,vs:'TC Markdorf 1 vs TC Konstanz 1Heim'},{d:'05.07',t:'13:00',h:false,vs:'TSG TC BW Erzingen/TC Eggingen 1 vs TC Markdorf 1'},{d:'26.07',t:'13:00',h:false,vs:'TC 1902 Überlingen 1 vs TC Markdorf 1'}]},
+{id:'junioren-u15-2',n:'Junioren U15 2',lg:'1. Bezirksklasse',p:6,tt:6,m:[{d:'10.05',t:'13:00',h:true,vs:'TC Markdorf 2 vs SV 1922 Emmingen/Egg 1Heim'},{d:'21.06',t:'13:00',h:false,vs:'TC Nicolai Konstanz 1 vs TC Markdorf 2'},{d:'28.06',t:'13:00',h:false,vs:'SV Litzelstetten 1 vs TC Markdorf 2'},{d:'05.07',t:'13:00',h:false,vs:'TC Konstanz 2 vs TC Markdorf 2'},{d:'19.07',t:'13:00',h:true,vs:'TC Markdorf 2 vs TC Hohenfels-Mindersdorf 1Heim'}]},
+{id:'junioren-u15-3',n:'Junioren U15 3',lg:'1. Bezirksklasse',p:4,tt:6,m:[{d:'10.05',t:'13:00',h:true,vs:'TC Markdorf 3 vs TC 1902 Überlingen 2Heim'},{d:'17.05',t:'13:00',h:false,vs:'TC Steisslingen 3 vs TC Markdorf 3'},{d:'14.06',t:'13:00',h:false,vs:'TC Uhldingen 1974 1 vs TC Markdorf 3'},{d:'21.06',t:'13:00',h:false,vs:'TSG TC Kreenheinstetten/TC Messkirch/SV Liptingen 1 vs TC Markdorf 3'},{d:'05.07',t:'13:00',h:true,vs:'TC Markdorf 3 vs TSG TC Volkertshausen/TC Mühlhausen 1Heim'}]},
+{id:'junioren-u18-1',n:'Junioren U18 1',lg:'2. Bezirksliga',p:3,tt:5,m:[{d:'09.05',t:'09:30',h:true,vs:'TC Markdorf 1 vs TC BW Donaueschingen 2Heim'},{d:'20.06',t:'09:30',h:false,vs:'TC 1902 Überlingen 2 vs TC Markdorf 1'},{d:'04.07',t:'09:30',h:true,vs:'TC Markdorf 1 vs TC Singen 1Heim'},{d:'11.07',t:'09:30',h:false,vs:'TSG TC GW Bodman-Ludwigshafen/TC Hohenfels-Mindersdorf 1 vs TC Markdorf 1'}]},
+{id:'junioren-u18-2',n:'Junioren U18 2',lg:'1. Bezirksklasse',p:3,tt:6,m:[{d:'09.05',t:'09:30',h:true,vs:'TC Markdorf 2 vs TC Dauchingen 1Heim'},{d:'16.05',t:'09:30',h:false,vs:'TC Salem 1 vs TC Markdorf 2'},{d:'13.06',t:'09:30',h:false,vs:'TC Südstadt Villingen 1 vs TC Markdorf 2'},{d:'20.06',t:'09:30',h:true,vs:'TC Markdorf 2 vs TC Stockach 1Heim'},{d:'04.07',t:'09:30',h:false,vs:'TSG TC Kreenheinstetten/TC Messkirch/TuS Gutenstein 1 vs TC Markdorf 2'}]},
+{id:'juniorinnen-u18-1',n:'Juniorinnen U18 1',lg:'1. Bezirksliga',p:5,tt:5,m:[{d:'13.06',t:'09:30',h:false,vs:'TSG TC Eggingen/TC BW Erzingen 2 vs TC Markdorf 1'},{d:'20.06',t:'09:30',h:true,vs:'TC Markdorf 1 vs TC Konstanz 1Heim'},{d:'27.06',t:'09:30',h:false,vs:'TC BW Donaueschingen 1 vs TC Markdorf 1'},{d:'11.07',t:'09:30',h:true,vs:'TC Markdorf 1 vs TSG TC Eggingen/TC BW Erzingen 1Heim'}]},
+{id:'juniorinnen-u18-2',n:'Juniorinnen U18 2',lg:'1. Bezirksklasse',p:2,tt:6,m:[{d:'09.05',t:'09:30',h:false,vs:'TSG TC Gaienhofen/TC Moos/TC Schienerberg 1 vs TC Markdorf 2'},{d:'16.05',t:'09:30',h:true,vs:'TC Markdorf 2 vs TSG TC Radolfzell/TC Rebberg 1Heim'},{d:'13.06',t:'09:30',h:true,vs:'TC Markdorf 2 vs TSG TC Kreenheinstetten/TC Messkirch/SV Liptingen 1Heim'},{d:'20.06',t:'09:30',h:false,vs:'TC Steisslingen 2 vs TC Markdorf 2'},{d:'04.07',t:'09:30',h:true,vs:'TC Markdorf 2 vs TC Salem 1Heim'}]}
+];
+
+// === Mein TCM Dashboard ===
+var tcmFavs=JSON.parse(localStorage.getItem('tcmFavs')||'[]');
+
+function saveFavs(){localStorage.setItem('tcmFavs',JSON.stringify(tcmFavs))}
+
+function toggleFav(id){
+var i=tcmFavs.indexOf(id);
+if(i>-1)tcmFavs.splice(i,1);else tcmFavs.push(id);
+saveFavs();renderDashboard();updateStars();
+}
+
+function updateStars(){
+document.querySelectorAll('.team-tab-star').forEach(function(btn){
+var id=btn.getAttribute('data-team');
+btn.textContent=tcmFavs.indexOf(id)>-1?'★':'☆';
+btn.classList.toggle('starred',tcmFavs.indexOf(id)>-1);
+});
+}
+
+function addStarButtons(){
+document.querySelectorAll('.team-tab').forEach(function(tab){
+var onclick=tab.getAttribute('onclick');
+if(!onclick)return;
+var m=onclick.match(/showTeam\('([^']+)'/);
+if(!m)return;
+var id=m[1];
+if(tab.querySelector('.team-tab-star'))return;
+var star=document.createElement('button');
+star.className='team-tab-star';
+star.setAttribute('data-team',id);
+star.textContent=tcmFavs.indexOf(id)>-1?'★':'☆';
+if(tcmFavs.indexOf(id)>-1)star.classList.add('starred');
+star.onclick=function(e){e.stopPropagation();toggleFav(id)};
+tab.appendChild(star);
+});
+}
+
+function getNextMatch(team){
+var today=new Date();today.setHours(0,0,0,0);
+for(var i=0;i<team.m.length;i++){
+var parts=team.m[i].d.split('.');
+var md=new Date(2026,parseInt(parts[1])-1,parseInt(parts[0]));
+if(md>=today)return{idx:i,date:md,match:team.m[i]};
+}
+return null;
+}
+
+function daysDiff(d1,d2){return Math.ceil((d2-d1)/(1000*60*60*24))}
+
+function formatCountdown(days){
+if(days===0)return'<strong>Heute!</strong>';
+if(days===1)return'<strong>Morgen!</strong>';
+return'noch <strong>'+days+' Tage</strong>';
+}
+
+var wt=['So','Mo','Di','Mi','Do','Fr','Sa'];
+var months=['Jan','Feb','Mrz','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];
+
+function renderDashboard(){
+var dc=document.getElementById('dash-content');
+if(!dc)return;
+if(tcmFavs.length===0){
+dc.innerHTML='<div class="dash-empty"><div class="dash-empty-icon">🎾</div><p>Noch keine Favoriten! Scrolle zu <a href="#mannschaften" style="color:var(--red);text-decoration:none;font-weight:500">Mannschaften</a> und tippe auf ☆ neben deinem Team.</p></div>';
+return;
+}
+var today=new Date();today.setHours(0,0,0,0);
+var cards=[];
+tcmFavs.forEach(function(favId){
+var team=null;
+for(var i=0;i<tcmTeams.length;i++){if(tcmTeams[i].id===favId){team=tcmTeams[i];break;}}
+if(!team)return;
+var next=getNextMatch(team);
+var nextHtml='<div style="padding:.5rem;font-size:.82rem;color:var(--tx-l)">Saison beendet</div>';
+var countdownHtml='';
+if(next){
+var m=next.match;
+var dd=next.date;
+var dayName=wt[dd.getDay()];
+var dayNum=m.d.split('.')[0];
+var monthName=months[dd.getMonth()];
+var homeClass=m.h?' heim':'';
+var badge=m.h?'<span class="dash-card-badge">Heim</span>':'';
+var days=daysDiff(today,dd);
+nextHtml='<div class="dash-card-next'+homeClass+'"><div class="dash-card-date"><strong>'+dayNum+'.</strong><small>'+monthName+'</small></div><div class="dash-card-opp"><b>'+dayName+' '+m.t+'</b><br>'+m.vs+'</div>'+badge+'</div>';
+countdownHtml='<div class="dash-card-countdown">'+formatCountdown(days)+'</div>';
+}
+// All upcoming matches
+var matchesHtml='';
+var upcoming=[];
+for(var i=0;i<team.m.length;i++){
+var parts=team.m[i].d.split('.');
+var md=new Date(2026,parseInt(parts[1])-1,parseInt(parts[0]));
+if(md>=today)upcoming.push(team.m[i]);
+}
+if(upcoming.length>1){
+matchesHtml='<div class="dash-card-matches" id="dm-'+team.id+'" style="display:none">';
+for(var j=1;j<upcoming.length;j++){
+var um=upcoming[j];
+var dot=um.h?'<span class="hm-dot"></span>':'<span style="width:6px"></span>';
+matchesHtml+=('<div class="dash-card-match'+(um.h?' heim':'')+'">'+dot+'<span>'+um.d+' '+um.t+'</span> <span>'+um.vs+'</span></div>');
+}
+matchesHtml+='</div><button class="dash-card-toggle" onclick="var el=document.getElementById(\'dm-'+team.id+'\');var v=el.style.display===\'none\';el.style.display=v?\'block\':\'none\';this.textContent=v?\'▲ weniger\':\'▼ alle '+upcoming.length+' Spiele\'">▼ alle '+upcoming.length+' Spiele</button>';
+}
+cards.push('<div class="dash-card"><div class="dash-card-top"><div><div class="dash-card-name">'+team.n+'</div><div class="dash-card-league">'+team.lg+'</div></div><div class="dash-card-pos"><div class="dash-card-pos-num">'+team.p+'</div><div class="dash-card-pos-label">von '+team.tt+'</div></div><button class="dash-card-remove" onclick="toggleFav(\''+team.id+'\')" title="Entfernen">✕</button></div><div class="dash-card-body">'+nextHtml+matchesHtml+'</div>'+countdownHtml+'</div>');
+});
+dc.innerHTML='<div class="dash-grid">'+cards.join('')+'</div>';
+}
+
+addStarButtons();
+renderDashboard();
+// Update countdown every minute
+setInterval(renderDashboard,60000);
+
 </script>
 
 </body></html>
