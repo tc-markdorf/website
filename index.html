@@ -628,6 +628,7 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 <div id="lightbox"><button id="lb-close">&times;</button><button id="lb-prev">&#8249;</button><img id="lb-img" src="" alt=""><button id="lb-next">&#8250;</button></div>
 <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
 <script>
+window.scrollTo(0,0);history.scrollRestoration='manual';
 var prog=document.getElementById('scroll-progress');
 window.addEventListener('scroll',function(){
     var s=window.scrollY,h=document.body.scrollHeight-window.innerHeight;
@@ -792,11 +793,11 @@ var sc2=document.getElementById('bew-scroll-widget');
 if(sc2)sc2.innerHTML=scrollHtml;
 }
 renderBewEvent(getNextBewIdx());
-// Auto-scroll to active card
+// Auto-scroll to active card (scroll container only, not page)
 setTimeout(function(){
 var sc=document.getElementById('bew-scroll-container');
 var active=sc?sc.querySelector('.bew-sc.active'):null;
-if(sc&&active){active.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});}
+if(sc&&active){sc.scrollLeft=active.offsetLeft-sc.offsetLeft-20;}
 },300);
 
 var tcmTeams=[
@@ -1056,7 +1057,7 @@ var currentMonth=today.getMonth()+1;
 monthEls.forEach(function(mel,i){
 var label=mel.querySelector('.scal-month-label').textContent;
 if(label.indexOf(monNames[currentMonth])===0){
-setTimeout(function(){mel.scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'})},500);
+setTimeout(function(){var container=mel.closest('.scal-body');if(container)container.scrollLeft=mel.offsetLeft-container.offsetLeft;},500);
 }
 });
 }
