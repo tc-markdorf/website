@@ -363,6 +363,23 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 @media(max-width:768px){.u-panel-scroll{padding:0 1rem .8rem}.u-panel-head{padding:0 1rem .8rem}.u-panel-card{min-width:260px}.u-panel-legend{display:none}}
 
 .jugend-slide-active{opacity:1!important}
+
+/* Impressum Modal */
+#impressum-modal{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:3000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(6px);padding:2rem}
+#impressum-modal.active{display:flex}
+.imp-box{background:#fff;border-radius:16px;max-width:640px;width:100%;max-height:85vh;overflow-y:auto;padding:2.5rem;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.3);color:var(--tx)}
+.imp-close{position:absolute;top:1rem;right:1.2rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--tx-l);transition:color .2s}
+.imp-close:hover{color:var(--red)}
+.imp-box h2{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--blue-d);margin-bottom:1.2rem}
+.imp-box h3{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--blue-d);margin-top:1.5rem;margin-bottom:.5rem}
+.imp-box p{font-size:.88rem;color:var(--tx-l);line-height:1.7;font-weight:300;margin-bottom:.8rem}
+.imp-box a{color:var(--red);text-decoration:none}
+.imp-box a:hover{text-decoration:underline}
+.imp-divider{border:none;border-top:1px solid var(--sand-d);margin:1.2rem 0}
+@media(max-width:768px){.imp-box{padding:1.5rem;margin:1rem;max-height:90vh}}
+
+#datenschutz-modal{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:3000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(6px);padding:2rem}
+#datenschutz-modal.active{display:flex}
 </style>
 </head>
 <body>
@@ -624,7 +641,70 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
         </div>
     </div>
 </section>
-<footer><p>© 2026 Tennisclub Markdorf e.V. — Zum Burgstall 30, 88677 Markdorf</p><div class="footer-links"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Satzung</a></div></footer>
+<footer><p>© 2026 Tennisclub Markdorf e.V. — Zum Burgstall 30, 88677 Markdorf</p><div class="footer-links"><a href="#" onclick="event.preventDefault();document.getElementById('impressum-modal').classList.add('active');document.body.style.overflow='hidden'">Impressum</a><a href="#" onclick="event.preventDefault();document.getElementById('datenschutz-modal').classList.add('active');document.body.style.overflow='hidden'">Datenschutz</a><a href="#">Satzung</a></div></footer>
+
+<div id="impressum-modal">
+<div class="imp-box">
+<button class="imp-close" onclick="document.getElementById('impressum-modal').classList.remove('active');document.body.style.overflow=''">&times;</button>
+<h2>Impressum</h2>
+<p><strong>Tennisclub Markdorf e.V.</strong><br>Zum Burgstall 30<br>88677 Markdorf</p>
+<p>Tel.: <a href="tel:+4975442464">07544 / 2464</a> · Mobil: <a href="tel:+491623661236">0162 / 366 1236</a><br>Fax: 07544-2669<br>E-Mail: <a href="mailto:info@tc-markdorf.de">info@tc-markdorf.de</a></p>
+<hr class="imp-divider">
+<h3>Vertretungsberechtigt</h3>
+<p><strong>1. Vorsitzender:</strong> Heiko Schafheutle<br>Am Sonnenhang 9, 88677 Markdorf<br>Tel.: 0170/6315884 · <a href="mailto:schafheutle@tc-markdorf.de">schafheutle@tc-markdorf.de</a></p>
+<p><strong>2. Vorsitzender:</strong> Jens Goldmann<br>Holzgasse 12, 88048 Kluftern<br>Tel.: 07544/3595 · <a href="mailto:goldmann@tc-markdorf.de">goldmann@tc-markdorf.de</a></p>
+<p>Registriert unter VR 35 beim Amtsgericht Überlingen</p>
+<hr class="imp-divider">
+<h3>Verantwortlich i.S.d. §55 II RStV</h3>
+<p>Dr. Werner Riegel · <a href="mailto:webmaster@tc-markdorf.de">webmaster@tc-markdorf.de</a></p>
+<hr class="imp-divider">
+<h3>Haftungsausschluss</h3>
+<p>Der TCM übernimmt keine Gewähr für Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Haftungsansprüche gegen den TCM sind grundsätzlich ausgeschlossen, sofern kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt.</p>
+<p>Für Inhalte externer Links übernimmt der TCM keine Verantwortung. Zum Zeitpunkt der Verlinkung waren keine rechtswidrigen Inhalte erkennbar.</p>
+<hr class="imp-divider">
+<h3>Urheberrecht</h3>
+<p>Alle vom TCM erstellten Inhalte unterliegen dem deutschen Urheberrecht. Vervielfältigung oder Verwendung ohne Zustimmung ist nicht gestattet.</p>
+<hr class="imp-divider">
+<h3>Datenschutz</h3>
+<p>Personenbezogene Daten werden nur auf freiwilliger Basis erhoben. Die Nutzung der Seite ist auch ohne Angabe persönlicher Daten möglich.</p>
+</div>
+</div>
+
+<div id="datenschutz-modal">
+<div class="imp-box">
+<button class="imp-close" onclick="document.getElementById('datenschutz-modal').classList.remove('active');document.body.style.overflow=''">&times;</button>
+<h2>Datenschutzerklärung</h2>
+
+<h3>1. Verantwortlicher</h3>
+<p>Tennisclub Markdorf e.V.<br>Zum Burgstall 30, 88677 Markdorf<br>E-Mail: <a href="mailto:info@tc-markdorf.de">info@tc-markdorf.de</a><br>Verantwortlich für den Datenschutz: Dr. Werner Riegel, <a href="mailto:webmaster@tc-markdorf.de">webmaster@tc-markdorf.de</a></p>
+
+<hr class="imp-divider">
+<h3>2. Hosting</h3>
+<p>Diese Website wird über GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) gehostet. Beim Aufruf der Seite werden automatisch technische Daten (IP-Adresse, Browsertyp, Zugriffszeit) in Server-Logfiles gespeichert. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank">GitHub Privacy Statement</a>.</p>
+
+<hr class="imp-divider">
+<h3>3. Lokale Datenspeicherung</h3>
+<p>Die Funktion „Mein TCM“ (Mannschafts-Favoriten) speichert Ihre Auswahl ausschließlich lokal in Ihrem Browser (localStorage). Diese Daten werden nicht an uns oder Dritte übermittelt. Sie können die Daten jederzeit löschen, indem Sie den Browser-Cache leeren.</p>
+
+<hr class="imp-divider">
+<h3>4. Keine Cookies, kein Tracking</h3>
+<p>Diese Website verwendet keine Cookies, kein Google Analytics und keine sonstigen Tracking-Dienste. Es werden keine personenbezogenen Daten zu Analysezwecken erhoben.</p>
+
+<hr class="imp-divider">
+<h3>5. Externe Links</h3>
+<p>Diese Website enthält Links zu externen Seiten (nuLiga, Facebook, Instagram). Für deren Datenschutzpraxis sind die jeweiligen Betreiber verantwortlich.</p>
+
+<hr class="imp-divider">
+<h3>6. E-Mail-Kontakt</h3>
+<p>Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben zur Bearbeitung der Anfrage gespeichert. Eine Weitergabe an Dritte erfolgt nicht. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
+
+<hr class="imp-divider">
+<h3>7. Ihre Rechte</h3>
+<p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Beschwerden können an die zuständige Aufsichtsbehörde gerichtet werden: Landesbeauftragter für den Datenschutz Baden-Württemberg, Lautenschlagerstraße 20, 70173 Stuttgart.</p>
+
+<p style="margin-top:1.5rem;font-size:.78rem;color:var(--tx-l)">Stand: April 2026</p>
+</div>
+</div>
 <div id="lightbox"><button id="lb-close">&times;</button><button id="lb-prev">&#8249;</button><img id="lb-img" src="" alt=""><button id="lb-next">&#8250;</button></div>
 <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
 <script>
@@ -1067,6 +1147,11 @@ renderSaisonkalender();
 // Jugend gallery
 var jugSlides=document.querySelectorAll('.jugend-slide');
 if(jugSlides.length>1){var jugIdx=0;jugSlides[0].classList.add('jugend-slide-active');setInterval(function(){jugSlides[jugIdx].classList.remove('jugend-slide-active');jugIdx=(jugIdx+1)%jugSlides.length;jugSlides[jugIdx].classList.add('jugend-slide-active')},4000)}
+
+// Impressum modal close on backdrop
+document.getElementById('impressum-modal').addEventListener('click',function(e){if(e.target===this){this.classList.remove('active');document.body.style.overflow='';}});
+
+document.getElementById('datenschutz-modal').addEventListener('click',function(e){if(e.target===this){this.classList.remove('active');document.body.style.overflow='';}});
 </script>
 
 </body></html>
