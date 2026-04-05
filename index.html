@@ -204,7 +204,7 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 .bew-next-frei p{font-size:.9rem;color:#ffa500;font-weight:500}
 .bew-next-frei small{display:block;margin-top:.3rem;font-size:.75rem;color:rgba(255,255,255,.4);font-weight:300}
 /* Bewirtung next-event widget */
-.bew-next{border-radius:16px;background:linear-gradient(135deg,var(--blue-d) 0%,var(--blue) 100%);padding:2rem;color:#fff;position:relative}
+.bew-next{border-radius:16px;background:linear-gradient(135deg,var(--blue-d) 0%,var(--blue) 100%);padding:2rem;color:#fff;position:relative;overflow:visible}
 
 .bew-next-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.5rem;margin-bottom:1.2rem}
 .bew-next-label{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--red-l);margin-bottom:.3rem}
@@ -235,7 +235,7 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 .bew-mail-btn:hover{background:rgba(255,165,0,.25);color:#fff;transform:translateY(-1px)}
 
 /* Bewirtung scrollable cards */
-.bew-scroll{overflow-x:auto;overflow-y:visible;-webkit-overflow-scrolling:touch;padding:.8rem 0 1rem;margin-top:1rem;scroll-snap-type:x mandatory;scrollbar-width:none;position:relative}
+.bew-scroll{overflow-x:scroll;-webkit-overflow-scrolling:touch;padding:.8rem 0 1rem;margin-top:1.2rem;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.2) transparent;position:relative;margin-left:-2rem;margin-right:-2rem;padding-left:2rem;padding-right:2rem}
 .bew-scroll::-webkit-scrollbar{display:none}
 .bew-scroll-track{display:flex;gap:.8rem;width:max-content;padding:0 .5rem}
 .bew-sc{min-width:260px;max-width:280px;border-radius:14px;overflow:hidden;flex-shrink:0;scroll-snap-align:center;transition:all .3s;cursor:pointer;border:2px solid transparent}
@@ -259,7 +259,7 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 .bew-sc-frei a:hover{background:rgba(255,165,0,.1)}
 .bew-sc-half{font-size:.68rem;color:#ffa500;margin-top:.3rem}
 .bew-sc-half a{color:#ffa500;text-decoration:none}
-.bew-scroll-hint{text-align:center;font-size:.68rem;color:rgba(255,255,255,.3);margin-top:.4rem;font-weight:300}
+.bew-scroll-hint{text-align:center;font-size:.68rem;color:rgba(255,255,255,.25);margin-top:.5rem;font-weight:300;padding-bottom:.3rem}
 
 /* Saisonkalender */
 .scal{margin-top:2rem;border-radius:16px;background:#fff;border:1px solid var(--sand-d);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.04)}
@@ -355,7 +355,7 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
         <li><a href="#kontakt">Kontakt</a></li>
         <li><a href="#mitglied" class="nav-cta">Mitglied werden</a></li>
     </ul>
-    <div class="mob-tog" onclick="this.classList.toggle('active');document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div>
+    <div class="mob-tog" onclick="this.classList.toggle('active');var nl=document.getElementById('navLinks');nl.classList.toggle('open');document.body.style.overflow=nl.classList.contains('open')?'hidden':''"><span></span><span></span><span></span></div>
 </nav>
 <section class="hero"><div class="hero-bg"></div><div class="hero-pat"></div>
     <div class="hero-content">
@@ -612,7 +612,8 @@ document.addEventListener('click',function(e){
         if(href==='#'){window.scrollTo({top:0,behavior:'smooth'})}
         else{var id=href.substring(1);var el=document.getElementById(id);if(el){el.scrollIntoView({behavior:'smooth',block:'start'})}}
         document.getElementById('navLinks').classList.remove('open');
-        document.querySelector('.mob-tog').classList.remove('active');
+        var tog=document.querySelector('.mob-tog');if(tog)tog.classList.remove('active');
+        document.body.style.overflow='';
     }
 });
 function showCat(id,btn){document.querySelectorAll('.cat-tab').forEach(function(t){t.classList.remove('active')});btn.classList.add('active');document.querySelectorAll('.cat-panel').forEach(function(p){p.classList.remove('active')});document.getElementById('cp-'+id).classList.add('active')}
@@ -759,7 +760,8 @@ w.innerHTML='<div class="bew-next">'+
 '<div class="bew-next-head"><div><div class="bew-next-label">'+labelText+'</div><div class="bew-next-date">'+ev.day+'</div></div><span class="bew-next-type '+typeClass+'">'+typeText+'</span></div>'+
 (crew?'<div class="bew-next-crew">👨‍🍳 Bewirtung: <span>'+crew+'</span>'+(ev.halfFrei?' <a href="mailto:info@tc-markdorf.de?subject=Bewirtung%20'+encodeURIComponent(ev.day)+'%20(2.%20Platz)&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20den%20zweiten%20Bewirtungsplatz%20am%20'+encodeURIComponent(ev.day)+'%20%C3%BCbernehmen.%0A%0AViele%20Gr%C3%BC%C3%9Fe" style="font-size:.75rem;color:#ffa500;margin-left:.5rem;text-decoration:none">⚠ Noch 1 Platz frei ✉</a>':'')+'</div>':(ev.allFrei&&ev.type!=='frei'?'<div class="bew-next-crew" style="color:#ffa500">⚠ Bewirtung: Noch keine Anmeldung <a href="mailto:info@tc-markdorf.de?subject=Bewirtung%20'+encodeURIComponent(ev.day)+'&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20mich%20f%C3%BCr%20die%20Bewirtung%20am%20'+encodeURIComponent(ev.day)+'%20anmelden.%0A%0AViele%20Gr%C3%BC%C3%9Fe" style="color:#ffa500;font-size:.75rem">✉</a></div>':''))+
 foodHtml+
-'</div>'+scrollHtml;
+scrollHtml+
+'</div>';
 }
 renderBewEvent(getNextBewIdx());
 // Auto-scroll to active card
