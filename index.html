@@ -24,7 +24,7 @@ nav.scrolled{background:rgba(6,6,77,.97);backdrop-filter:blur(16px);padding:.6re
 .nav-links a:hover::after{width:100%}
 .nav-cta{background:var(--red)!important;color:#fff!important;padding:.55rem 1.6rem;border-radius:8px;font-weight:500!important;white-space:nowrap;font-size:.85rem;letter-spacing:.3px}
 .nav-cta::after{display:none!important}
-.mob-tog{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:1001;width:28px;height:20px;position:relative}
+.mob-tog{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:1005;width:28px;height:20px;position:relative}
 .mob-tog span{width:24px;height:2px;background:#fff;transition:all .3s;position:absolute;left:2px}
 .mob-tog span:nth-child(1){top:0}.mob-tog span:nth-child(2){top:9px}.mob-tog span:nth-child(3){top:18px}
 .mob-tog.active span:nth-child(1){transform:rotate(45deg);top:9px}.mob-tog.active span:nth-child(2){opacity:0;transform:translateX(-10px)}.mob-tog.active span:nth-child(3){transform:rotate(-45deg);top:9px}
@@ -162,7 +162,7 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
 .fi{opacity:0;transform:translateY(25px);transition:all .8s cubic-bezier(.22,1,.36,1)}.fi.v{opacity:1;transform:translateY(0)}
 @media(max-width:1024px){section{padding:3.5rem 2rem}.hero-content{padding:0 2rem 4rem}.tiles{padding:0 1.5rem}.news-grid,.bew-grid,.contact-grid{grid-template-columns:1fr}.card-grid{grid-template-columns:1fr 1fr}.tp-grid{grid-template-columns:1fr}}
-@media(max-width:768px){.nav-links{display:none}.mob-tog{display:flex}.nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(6,6,77,.98);justify-content:center;align-items:center;gap:2rem;z-index:999;backdrop-filter:blur(12px)}.nav-links.open a{font-size:1.3rem;color:#fff;opacity:0;animation:fsu .5s ease forwards}.nav-links.open li:nth-child(1) a{animation-delay:.05s}.nav-links.open li:nth-child(2) a{animation-delay:.1s}.nav-links.open li:nth-child(3) a{animation-delay:.15s}.nav-links.open li:nth-child(4) a{animation-delay:.2s}.nav-links.open li:nth-child(5) a{animation-delay:.25s}.nav-links.open li:nth-child(6) a{animation-delay:.3s}.nav-links.open li:nth-child(7) a{animation-delay:.35s}.nav-links.open li:nth-child(8) a{animation-delay:.4s}.nav-links.open li:nth-child(9) a{animation-delay:.45s}.hero-content{padding:0 1.5rem 3rem}.hero{padding-top:60px}.hero h1{font-size:2.5rem}.hero-stats{gap:1.5rem}.tiles-grid{grid-template-columns:1fr}.tile-full{grid-column:span 1}.tile{min-height:130px}.card-grid,.mitglied-grid{grid-template-columns:1fr}.anlage-grid{grid-template-columns:1fr 1fr}section{padding:3rem 1.5rem}footer{flex-direction:column;gap:.8rem;padding:1.5rem}.team-tabs{gap:.35rem}.team-tab{padding:.45rem .8rem;font-size:.78rem}.cat-tab{padding:.5rem 1rem;font-size:.9rem}.news-card-feat{grid-row:span 1}.news-card-img,.news-card-feat .news-card-img{height:120px}.cat-tabs{top:50px}#btt{bottom:1.2rem;right:1.2rem;width:42px;height:42px}}
+@media(max-width:768px){.nav-links{display:none}.mob-tog{display:flex}.nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(6,6,77,.98);justify-content:center;align-items:center;gap:2rem;z-index:1002;backdrop-filter:blur(12px)}.nav-links.open a{font-size:1.3rem;color:#fff;opacity:0;animation:fsu .5s ease forwards}.nav-links.open li:nth-child(1) a{animation-delay:.05s}.nav-links.open li:nth-child(2) a{animation-delay:.1s}.nav-links.open li:nth-child(3) a{animation-delay:.15s}.nav-links.open li:nth-child(4) a{animation-delay:.2s}.nav-links.open li:nth-child(5) a{animation-delay:.25s}.nav-links.open li:nth-child(6) a{animation-delay:.3s}.nav-links.open li:nth-child(7) a{animation-delay:.35s}.nav-links.open li:nth-child(8) a{animation-delay:.4s}.nav-links.open li:nth-child(9) a{animation-delay:.45s}.hero-content{padding:0 1.5rem 3rem}.hero{padding-top:60px}.hero h1{font-size:2.5rem}.hero-stats{gap:1.5rem}.tiles-grid{grid-template-columns:1fr}.tile-full{grid-column:span 1}.tile{min-height:130px}.card-grid,.mitglied-grid{grid-template-columns:1fr}.anlage-grid{grid-template-columns:1fr 1fr}section{padding:3rem 1.5rem}footer{flex-direction:column;gap:.8rem;padding:1.5rem}.team-tabs{gap:.35rem}.team-tab{padding:.45rem .8rem;font-size:.78rem}.cat-tab{padding:.5rem 1rem;font-size:.9rem}.news-card-feat{grid-row:span 1}.news-card-img,.news-card-feat .news-card-img{height:120px}.cat-tabs{top:50px}#btt{bottom:1.2rem;right:1.2rem;width:42px;height:42px}}
 
 /* Upcoming matches widget */
 .upcoming{margin-top:2.5rem;margin-bottom:2rem;border-radius:16px;background:var(--blue);color:#fff;position:relative;overflow:visible;padding:1.5rem 0}
@@ -232,8 +232,8 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 .bew-mail-btn:hover{background:rgba(255,165,0,.25);color:#fff;transform:translateY(-1px)}
 
 /* Bewirtung scrollable cards */
-.bew-scroll{overflow-x:scroll;-webkit-overflow-scrolling:touch;padding:.8rem 0 1rem;margin-top:1.2rem;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.2) transparent;position:relative;margin-left:-2rem;margin-right:-2rem;padding-left:2rem;padding-right:2rem}
-.bew-scroll::-webkit-scrollbar{height:6px}.bew-scroll::-webkit-scrollbar-track{background:rgba(255,255,255,.05);border-radius:3px}.bew-scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:3px}.bew-scroll::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.35)}
+.bew-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;padding:.8rem 0 .5rem;margin-top:1.2rem;scroll-snap-type:x mandatory;position:relative}
+.bew-scroll::-webkit-scrollbar{height:10px}.bew-scroll::-webkit-scrollbar-track{background:rgba(255,255,255,.1);border-radius:5px;margin:0 .5rem}.bew-scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,.45);border-radius:5px}.bew-scroll::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.65)}
 .bew-scroll-track{display:flex;gap:.8rem;width:max-content;padding:0 .5rem}
 .bew-sc{min-width:260px;max-width:280px;border-radius:14px;overflow:hidden;flex-shrink:0;scroll-snap-align:center;transition:all .3s;cursor:pointer;border:2px solid transparent}
 .bew-sc:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.15)}
@@ -342,8 +342,8 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 .upcoming-day-body{padding:.5rem}
 .upcoming-hint{text-align:center;padding:.5rem;font-size:.65rem;color:rgba(255,255,255,.2);font-weight:300}
 
-.bew-scroll-standalone{margin-top:1.5rem;border-radius:16px;background:var(--blue-d);padding:1rem 0;overflow:visible}
-.bew-scroll-standalone .bew-scroll{margin-left:0;margin-right:0;padding-left:1.5rem;padding-right:1.5rem}
+.bew-scroll-standalone{margin-top:1.5rem;border-radius:16px;background:var(--blue-d);padding:1rem 0}
+.bew-scroll-standalone .bew-scroll{padding:0 1.5rem}
 .bew-scroll-standalone .bew-scroll-hint{color:rgba(255,255,255,.25)}
 </style>
 </head>
@@ -712,9 +712,6 @@ return -1;
 
 function bewCardClick(i){
 renderBewEvent(i);
-// Scroll detail into view
-var w=document.getElementById('bew-next-widget');
-if(w)w.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 function renderBewEvent(idx){
 var w=document.getElementById('bew-next-widget');if(!w)return;
