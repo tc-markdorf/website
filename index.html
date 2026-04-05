@@ -225,6 +225,10 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 .bew-date-chip{font-size:.72rem;padding:.25rem .6rem;border-radius:6px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.08);white-space:nowrap}
 .bew-date-chip.active{background:rgba(235,10,11,.12);color:var(--red-l);border-color:rgba(235,10,11,.25);font-weight:500}
 .bew-date-chip.past{opacity:.4;text-decoration:line-through}
+
+.nav-mein-tcm{background:rgba(255,215,0,.12)!important;border:1px solid rgba(255,215,0,.25)!important;padding:.4rem 1rem!important;border-radius:20px!important;color:#ffd700!important;font-weight:500!important;letter-spacing:.3px}
+.nav-mein-tcm:hover{background:rgba(255,215,0,.2)!important;color:#fff!important}
+.nav-mein-tcm::after{display:none!important}
 /* Mein TCM Dashboard */
 .dash{padding:2.5rem 2rem;max-width:1100px;margin:0 auto}
 .dash-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
@@ -264,9 +268,9 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 .dash-card-toggle{background:none;border:none;font-size:.75rem;color:var(--blue-l);cursor:pointer;padding:.3rem 0;transition:color .2s}
 .dash-card-toggle:hover{color:var(--red)}
 /* Star button on team tabs */
-.team-tab-star{background:none;border:none;font-size:.9rem;cursor:pointer;padding:.2rem .4rem;opacity:.5;transition:all .2s;-webkit-tap-highlight-color:transparent;vertical-align:middle;margin-left:.2rem}
-.team-tab-star:hover,.team-tab-star.starred{opacity:1}
-.team-tab-star.starred{transform:scale(1.15)}
+.team-tab-star{background:none;border:none;font-size:1.3rem;cursor:pointer;padding:.3rem .5rem;opacity:.6;transition:all .25s;-webkit-tap-highlight-color:transparent;vertical-align:middle;margin-left:.3rem;filter:grayscale(1)}
+.team-tab-star:hover{opacity:1;filter:grayscale(0);transform:scale(1.1)}
+.team-tab-star.starred{opacity:1;filter:grayscale(0);color:#ffd700;transform:scale(1.2);text-shadow:0 0 8px rgba(255,215,0,.5)}
 @media(max-width:768px){.dash-grid{grid-template-columns:1fr}.dash{padding:1.5rem 1rem}}
 
 </style>
@@ -278,7 +282,7 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
         <span>TC Markdorf e.V.</span>
     </a>
     <ul class="nav-links" id="navLinks">
-        <li><a href="#mein-tcm">Mein TCM</a></li>
+        <li><a href="#mein-tcm" class="nav-mein-tcm">⭐ Mein TCM</a></li>
         <li><a href="#aktuelles">Aktuelles</a></li>
         <li><a href="#mannschaften">Mannschaften</a></li>
         <li><a href="#jugend">Jugend</a></li>
