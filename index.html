@@ -268,9 +268,13 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 .dash-card-toggle{background:none;border:none;font-size:.75rem;color:var(--blue-l);cursor:pointer;padding:.3rem 0;transition:color .2s}
 .dash-card-toggle:hover{color:var(--red)}
 /* Star button on team tabs */
-.team-tab-star{background:none;border:none;font-size:1.3rem;cursor:pointer;padding:.3rem .5rem;opacity:.6;transition:all .25s;-webkit-tap-highlight-color:transparent;vertical-align:middle;margin-left:.3rem;filter:grayscale(1)}
-.team-tab-star:hover{opacity:1;filter:grayscale(0);transform:scale(1.1)}
-.team-tab-star.starred{opacity:1;filter:grayscale(0);color:#ffd700;transform:scale(1.2);text-shadow:0 0 8px rgba(255,215,0,.5)}
+.team-tab-star{background:none;border:none;font-size:1.6rem;cursor:pointer;padding:.2rem .6rem;transition:all .3s;-webkit-tap-highlight-color:transparent;vertical-align:middle;margin-left:.3rem;color:rgba(255,255,255,.35);line-height:1}
+.team-tab-star:hover{color:rgba(255,215,0,.7);transform:scale(1.15)}
+.team-tab-star.starred{color:#ffd700;transform:scale(1.25);text-shadow:0 0 12px rgba(255,215,0,.6),0 0 24px rgba(255,215,0,.3)}
+@keyframes starPop{0%{transform:scale(1)}30%{transform:scale(1.6)}50%{transform:scale(.9)}70%{transform:scale(1.3)}100%{transform:scale(1.25)}}
+.team-tab-star.pop{animation:starPop .5s ease}
+.confetti-ball{position:fixed;font-size:1.4rem;z-index:9999;pointer-events:none;animation:confettiFall var(--dur) ease-out forwards}
+@keyframes confettiFall{0%{opacity:1;transform:translate(0,0) rotate(0deg) scale(1)}40%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(var(--rot)) scale(.3)}}
 @media(max-width:768px){.dash-grid{grid-template-columns:1fr}.dash{padding:1.5rem 1rem}}
 
 </style>
@@ -726,6 +730,33 @@ btn.classList.toggle('starred',tcmFavs.indexOf(id)>-1);
 });
 }
 
+
+function tennisConfetti(el){
+var rect=el.getBoundingClientRect();
+var cx=rect.left+rect.width/2;
+var cy=rect.top+rect.height/2;
+for(var i=0;i<12;i++){
+var ball=document.createElement('span');
+ball.className='confetti-ball';
+ball.textContent='🎾';
+var angle=Math.random()*Math.PI*2;
+var dist=60+Math.random()*120;
+var dx=Math.cos(angle)*dist;
+var dy=Math.sin(angle)*dist-80;
+var dur=0.6+Math.random()*0.6;
+var rot=(Math.random()-0.5)*720;
+ball.style.left=cx+'px';
+ball.style.top=cy+'px';
+ball.style.setProperty('--dx',dx+'px');
+ball.style.setProperty('--dy',dy+'px');
+ball.style.setProperty('--dur',dur+'s');
+ball.style.setProperty('--rot',rot+'deg');
+ball.style.fontSize=(1+Math.random()*0.8)+'rem';
+document.body.appendChild(ball);
+setTimeout(function(){ball.remove()},dur*1000+100);
+}
+}
+
 function addStarButtons(){
 document.querySelectorAll('.team-tab').forEach(function(tab){
 var onclick=tab.getAttribute('onclick');
@@ -739,7 +770,7 @@ star.className='team-tab-star';
 star.setAttribute('data-team',id);
 star.textContent=tcmFavs.indexOf(id)>-1?'★':'☆';
 if(tcmFavs.indexOf(id)>-1)star.classList.add('starred');
-star.onclick=function(e){e.stopPropagation();toggleFav(id)};
+star.onclick=function(e){e.stopPropagation();var wasFav=tcmFavs.indexOf(id)>-1;toggleFav(id);if(!wasFav){this.classList.remove('pop');void this.offsetWidth;this.classList.add('pop');tennisConfetti(this)}};
 tab.appendChild(star);
 });
 }
