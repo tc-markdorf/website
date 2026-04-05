@@ -229,6 +229,65 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 .nav-mein-tcm{background:rgba(255,215,0,.12)!important;border:1px solid rgba(255,215,0,.25)!important;padding:.4rem 1rem!important;border-radius:20px!important;color:#ffd700!important;font-weight:500!important;letter-spacing:.3px}
 .nav-mein-tcm:hover{background:rgba(255,215,0,.2)!important;color:#fff!important}
 .nav-mein-tcm::after{display:none!important}
+
+
+.bew-mail-btn{display:inline-block;margin-top:.6rem;padding:.5rem 1.2rem;background:rgba(255,165,0,.15);border:1px solid rgba(255,165,0,.3);border-radius:8px;color:#ffa500;text-decoration:none;font-size:.82rem;font-weight:500;transition:all .3s}
+.bew-mail-btn:hover{background:rgba(255,165,0,.25);color:#fff;transform:translateY(-1px)}
+
+/* Bewirtung scrollable cards */
+.bew-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;padding:.5rem 0 1rem;margin-top:1rem;scroll-snap-type:x mandatory;scrollbar-width:none}
+.bew-scroll::-webkit-scrollbar{display:none}
+.bew-scroll-track{display:flex;gap:.8rem;min-width:max-content;padding:0 .5rem}
+.bew-sc{min-width:260px;max-width:280px;border-radius:14px;overflow:hidden;flex-shrink:0;scroll-snap-align:center;transition:all .3s;cursor:pointer;border:2px solid transparent}
+.bew-sc:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.15)}
+.bew-sc.active{border-color:var(--red);box-shadow:0 4px 20px rgba(235,10,11,.2)}
+.bew-sc-head{padding:.8rem 1rem;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.bew-sc-head.type-do{background:var(--blue)}
+.bew-sc-head.type-spieltag{background:linear-gradient(135deg,var(--blue-d),#8b0000)}
+.bew-sc-head.type-awo{background:linear-gradient(135deg,#2d2d2d,#555)}
+.bew-sc-head.type-frei{background:#888}
+.bew-sc-date{font-family:'DM Serif Display',serif;font-size:1.05rem}
+.bew-sc-type{font-size:.58rem;text-transform:uppercase;letter-spacing:1px;padding:.2rem .5rem;border-radius:10px;background:rgba(255,255,255,.15)}
+.bew-sc-body{padding:.8rem 1rem;background:rgba(255,255,255,.06);min-height:80px}
+.bew-sc-crew{font-size:.82rem;color:rgba(255,255,255,.8);margin-bottom:.4rem}
+.bew-sc-crew strong{color:#fff;font-weight:500}
+.bew-sc-menu{font-size:.75rem;color:rgba(255,255,255,.5);font-weight:300;line-height:1.4}
+.bew-sc-frei{text-align:center;padding:.3rem 0}
+.bew-sc-frei img{width:60px;height:40px;object-fit:cover;border-radius:6px;margin-bottom:.3rem;opacity:.7}
+.bew-sc-frei p{font-size:.78rem;color:#ffa500;font-weight:500}
+.bew-sc-frei a{font-size:.7rem;color:#ffa500;text-decoration:none;border:1px solid rgba(255,165,0,.3);padding:.2rem .5rem;border-radius:4px;display:inline-block;margin-top:.3rem}
+.bew-sc-frei a:hover{background:rgba(255,165,0,.1)}
+.bew-sc-half{font-size:.68rem;color:#ffa500;margin-top:.3rem}
+.bew-sc-half a{color:#ffa500;text-decoration:none}
+.bew-scroll-hint{text-align:center;font-size:.68rem;color:rgba(255,255,255,.3);margin-top:.4rem;font-weight:300}
+
+/* Saisonkalender */
+.scal{margin-top:2rem;border-radius:16px;background:#fff;border:1px solid var(--sand-d);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.scal-head{padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--sand-d)}
+.scal-title{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--blue-d)}
+.scal-legend{display:flex;gap:1rem;flex-wrap:wrap}
+.scal-leg{display:flex;align-items:center;gap:.3rem;font-size:.68rem;color:var(--tx-l);font-weight:300}
+.scal-leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.scal-body{overflow-x:auto;-webkit-overflow-scrolling:touch;padding:1rem 0}
+.scal-track{display:flex;min-width:max-content;padding:0 1.5rem}
+.scal-month{min-width:160px;flex-shrink:0}
+.scal-month-label{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--blue-d);padding-bottom:.5rem;border-bottom:2px solid var(--sand-d);margin-bottom:.5rem;position:sticky;top:0}
+.scal-event{display:flex;align-items:center;gap:.5rem;padding:.35rem .5rem;margin-bottom:.2rem;border-radius:6px;cursor:pointer;transition:background .2s;font-size:.75rem;color:var(--tx);font-weight:300}
+.scal-event:hover{background:var(--sand)}
+.scal-event-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.scal-event-date{font-weight:500;min-width:32px;color:var(--blue-d)}
+.scal-event-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.scal-event.type-spieltag .scal-event-dot{background:var(--red)}
+.scal-event.type-do .scal-event-dot{background:var(--blue)}
+.scal-event.type-awo .scal-event-dot{background:#ffd700}
+.scal-event.type-frei .scal-event-dot{background:#ccc;border:1px dashed #999}
+.scal-event.type-event .scal-event-dot{background:#e855a0}
+.scal-event.type-heim .scal-event-dot{background:var(--red);box-shadow:0 0 4px rgba(235,10,11,.4)}
+.scal-today{position:relative}
+.scal-today::before{content:'heute';position:absolute;left:-.1rem;top:-.7rem;font-size:.55rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:rgba(235,10,11,.08);padding:.1rem .3rem;border-radius:3px}
+.scal-hint{text-align:center;padding:.5rem;font-size:.68rem;color:var(--tx-l);font-weight:300;border-top:1px solid var(--sand-d)}
+@media(max-width:768px){.scal-legend{display:none}.scal-month{min-width:140px}}
+
 /* Mein TCM Dashboard */
 .dash{padding:2.5rem 2rem;max-width:1100px;margin:0 auto}
 .dash-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
@@ -273,7 +332,7 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 .team-tab-star.starred{color:#ffd700;transform:scale(1.25);text-shadow:0 0 12px rgba(255,215,0,.6),0 0 24px rgba(255,215,0,.3)}
 @keyframes starPop{0%{transform:scale(1)}30%{transform:scale(1.6)}50%{transform:scale(.9)}70%{transform:scale(1.3)}100%{transform:scale(1.25)}}
 .team-tab-star.pop{animation:starPop .5s ease}
-.confetti-ball{position:fixed;font-size:1.4rem;z-index:9999;pointer-events:none;animation:confettiFall var(--dur) ease-out forwards}
+.confetti-ball{position:fixed;font-size:1.4rem;z-index:9999;pointer-events:none;animation:confettiFall var(--dur,1s) ease-out forwards;will-change:transform,opacity}
 @keyframes confettiFall{0%{opacity:1;transform:translate(0,0) rotate(0deg) scale(1)}40%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(var(--rot)) scale(.3)}}
 @media(max-width:768px){.dash-grid{grid-template-columns:1fr}.dash{padding:1.5rem 1rem}}
 
@@ -362,6 +421,7 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
         <div class="news-card fi"><div class="news-body"><div class="news-date">März 2026</div><h3 class="news-title">Jugend 2026: Ballschule mit über 50 Kindern gestartet</h3><p class="news-ex">Aus der Ballschule wechselten vier Kids ins Tennisland, fünf weitere ins reguläre Training.</p></div></div>
         <div class="news-card fi"><div class="news-body"><div class="news-date">Februar 2026</div><h3 class="news-title">27 Mannschaftsmeldungen für Sommer 2026</h3><p class="news-ex">Von der Badenliga bis zur Bezirksklasse — der TCM geht mit 27 Teams in die Medenrunde.</p></div></div>
     </div>
+<div id="saisonkalender" class="scal fi"></div>
 </section>
 <div class="wave-divider"><svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 40L48 36.7C96 33 192 27 288 30C384 33 480 47 576 50C672 53 768 47 864 40C960 33 1056 27 1152 30C1248 33 1344 47 1392 53L1440 60V80H0V40Z" fill="#0b0b7a"/></svg></div>
 <section id="mannschaften" class="bg-d"><div class="fi"><span class="s-label">Mannschaften · Sommer 2026</span><h2 class="s-title">27 Teams in der Medenrunde</h2><p class="s-sub">Tabellen und Spielpläne von nuLiga. Nur TCM-Begegnungen.</p></div>
@@ -375,9 +435,9 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
     <div class="cat-panel active" id="cp-herren">
         <div class="cat-panel-info"><span>3 Mannschaften · Sommer 2026</span></div>
         <div class="team-tabs">
-            <button class="team-tab active" onclick="showTeam('herren-1',this)">Herren 1</button>
-            <button class="team-tab" onclick="showTeam('herren-2',this)">Herren 2</button>
-            <button class="team-tab" onclick="showTeam('herren-3',this)">Herren 3</button>
+            <button class="team-tab active" onclick=\"showTeam('herren-1',this,event)\">Herren 1</button>
+            <button class="team-tab" onclick=\"showTeam('herren-2',this,event)\">Herren 2</button>
+            <button class="team-tab" onclick=\"showTeam('herren-3',this,event)\">Herren 3</button>
         </div>
         <div class="tp active" id="p-herren-1"><div class="tp-head"><div><div class="tp-title">Herren 1</div><div class="tp-meta">Badenliga · Baden · MF: Noah Rockstroh · 6er</div></div><a href="https://baden.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=Baden+S+2026&group=1" target="_blank" class="tp-link">↗ nuLiga</a></div><div class="tp-grid"><div class="tp-block"><div class="tp-block-h">Tabelle</div><table class="st"><thead><tr><th>#</th><th>Mannschaft</th><th>Pkt</th></tr></thead><tbody><tr><td>1</td><td>MTG BW Mannheim 1</td><td>0:0</td></tr><tr><td>2</td><td>TC Weinheim 1902 1</td><td>0:0</td></tr><tr><td>3</td><td>1.TC RW Wiesloch 1</td><td>0:0</td></tr><tr><td>4</td><td>TC Wolfsberg Pforzheim 2</td><td>0:0</td></tr><tr><td>5</td><td>Freiburger TC 1</td><td>0:0</td></tr><tr><td>6</td><td>TC Schönberg 1</td><td>0:0</td></tr><tr class=tcm><td>7</td><td>TC Markdorf 1</td><td>0:0</td></tr><tr><td>8</td><td>TC RW Tiengen 1</td><td>0:0</td></tr></tbody></table></div><div class="tp-block"><div class="tp-block-h">Spielplan (nur TCM)</div><div class="sp-row"><span class="sp-date"><strong>05.07</strong> 11:00</span><span class="sp-match">Freiburger TC 1 <small>vs</small> <b>TC Markdorf 1</b></span></div><div class="sp-row"><span class="sp-date"><strong>11.07</strong> 11:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TC RW Tiengen 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>12.07</strong> 11:00</span><span class="sp-match">TC Weinheim 1902 1 <small>vs</small> <b>TC Markdorf 1</b></span></div><div class="sp-row"><span class="sp-date"><strong>18.07</strong> 11:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> MTG BW Mannheim 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>19.07</strong> 11:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TC Wolfsberg Pforzheim 2<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>25.07</strong> 11:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TC Schönberg 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>26.07</strong> 11:00</span><span class="sp-match">1.TC RW Wiesloch 1 <small>vs</small> <b>TC Markdorf 1</b></span></div></div></div></div>
         <div class="tp" id="p-herren-2"><div class="tp-head"><div><div class="tp-title">Herren 2</div><div class="tp-meta">2. Bezirksliga · Bezirk 4 · MF: Florian Ehmke · 6er</div></div><a href="https://baden.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=B4+S+2026&group=3" target="_blank" class="tp-link">↗ nuLiga</a></div><div class="tp-grid"><div class="tp-block"><div class="tp-block-h">Tabelle</div><table class="st"><thead><tr><th>#</th><th>Mannschaft</th><th>Pkt</th></tr></thead><tbody><tr><td>1</td><td>TC Nicolai Konstanz 2</td><td>0:0</td></tr><tr class=tcm><td>2</td><td>TC Markdorf 2</td><td>0:0</td></tr><tr><td>3</td><td>TC Konstanz 2</td><td>0:0</td></tr><tr><td>4</td><td>TC Rebberg 1</td><td>0:0</td></tr><tr><td>5</td><td>TC Salem 1</td><td>0:0</td></tr></tbody></table></div><div class="tp-block"><div class="tp-block-h">Spielplan (nur TCM)</div><div class="sp-row"><span class="sp-date"><strong>17.05</strong> 09:30</span><span class="sp-match"><b>TC Markdorf 2</b> <small>vs</small> TC Rebberg 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>14.06</strong> 09:30</span><span class="sp-match"><b>TC Markdorf 2</b> <small>vs</small> TC Salem 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>21.06</strong> 09:30</span><span class="sp-match">TC Nicolai Konstanz 2 <small>vs</small> <b>TC Markdorf 2</b></span></div><div class="sp-row"><span class="sp-date"><strong>05.07</strong> 09:30</span><span class="sp-match">TC Konstanz 2 <small>vs</small> <b>TC Markdorf 2</b></span></div></div></div></div>
@@ -386,8 +446,8 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
     <div class="cat-panel" id="cp-damen">
         <div class="cat-panel-info"><span>2 Mannschaften · Sommer 2026</span></div>
         <div class="team-tabs">
-            <button class="team-tab active" onclick="showTeam('damen-1',this)">Damen 1</button>
-            <button class="team-tab" onclick="showTeam('damen-2',this)">Damen 2</button>
+            <button class="team-tab active" onclick=\"showTeam('damen-1',this,event)\">Damen 1</button>
+            <button class="team-tab" onclick=\"showTeam('damen-2',this,event)\">Damen 2</button>
         </div>
         <div class="tp active" id="p-damen-1"><div class="tp-head"><div><div class="tp-title">Damen 1</div><div class="tp-meta">Oberliga · Baden · MF: Vanessa Gläser-Buchbinder · 6er</div></div><a href="https://baden.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=Baden+S+2026&group=6" target="_blank" class="tp-link">↗ nuLiga</a></div><div class="tp-grid"><div class="tp-block"><div class="tp-block-h">Tabelle</div><table class="st"><thead><tr><th>#</th><th>Mannschaft</th><th>Pkt</th></tr></thead><tbody><tr><td>1</td><td>TC Schönberg 1</td><td>0:0</td></tr><tr><td>2</td><td>TC 1923 Grenzach 1</td><td>0:0</td></tr><tr><td>3</td><td>TC BW Donaueschingen 1</td><td>0:0</td></tr><tr class=tcm><td>4</td><td>TC Markdorf 1</td><td>0:0</td></tr><tr><td>5</td><td>TC BW Villingen 1</td><td>0:0</td></tr><tr><td>6</td><td>Ski-Club Ettlingen 1</td><td>0:0</td></tr><tr><td>7</td><td>Freiburger TC 2</td><td>0:0</td></tr></tbody></table></div><div class="tp-block"><div class="tp-block-h">Spielplan (nur TCM)</div><div class="sp-row"><span class="sp-date"><strong>10.05</strong> 11:00</span><span class="sp-match">Freiburger TC 2 <small>vs</small> <b>TC Markdorf 1</b></span></div><div class="sp-row"><span class="sp-date"><strong>17.05</strong> 11:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> Ski-Club Ettlingen 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>14.06</strong> 11:00</span><span class="sp-match">TC Schönberg 1 <small>vs</small> <b>TC Markdorf 1</b></span></div><div class="sp-row"><span class="sp-date"><strong>21.06</strong> 11:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TC 1923 Grenzach 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>05.07</strong> 11:00</span><span class="sp-match">TC BW Donaueschingen 1 <small>vs</small> <b>TC Markdorf 1</b></span></div><div class="sp-row"><span class="sp-date"><strong>12.07</strong> 11:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TC BW Villingen 1<span class="hm">Heim</span></span></div></div></div></div>
         <div class="tp" id="p-damen-2"><div class="tp-head"><div><div class="tp-title">Damen 2</div><div class="tp-meta">1. Bezirksklasse · Bezirk 4 · MF: Savannah Schiefelbein · 6er</div></div><a href="https://baden.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=B4+S+2026&group=22" target="_blank" class="tp-link">↗ nuLiga</a></div><div class="tp-grid"><div class="tp-block"><div class="tp-block-h">Tabelle</div><table class="st"><thead><tr><th>#</th><th>Mannschaft</th><th>Pkt</th></tr></thead><tbody><tr><td>1</td><td>TSG TC Hagnau/FAL Frickingen 1</td><td>0:0</td></tr><tr><td>2</td><td>TC Kreenheinstetten 1</td><td>0:0</td></tr><tr class=tcm><td>3</td><td>TC Markdorf 2</td><td>0:0</td></tr><tr><td>4</td><td>TC Salem 2</td><td>0:0</td></tr><tr><td>5</td><td>TSG TC GW Geisingen/TC Immendingen 1</td><td>0:0</td></tr><tr><td>6</td><td>TC Nicolai Konstanz 2</td><td>0:0</td></tr><tr><td>7</td><td>TC RW Blumberg 1</td><td>0:0</td></tr></tbody></table></div><div class="tp-block"><div class="tp-block-h">Spielplan (nur TCM)</div><div class="sp-row"><span class="sp-date"><strong>10.05</strong> 09:30</span><span class="sp-match"><b>TC Markdorf 2</b> <small>vs</small> TC Nicolai Konstanz 2<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>17.05</strong> 09:30</span><span class="sp-match">TSG TC GW Geisingen/TC Immendingen 1 <small>vs</small> <b>TC Markdorf 2</b></span></div><div class="sp-row"><span class="sp-date"><strong>14.06</strong> 09:30</span><span class="sp-match">TSG TC Hagnau/FAL Frickingen 1 <small>vs</small> <b>TC Markdorf 2</b></span></div><div class="sp-row"><span class="sp-date"><strong>21.06</strong> 09:30</span><span class="sp-match">TC RW Blumberg 1 <small>vs</small> <b>TC Markdorf 2</b></span></div><div class="sp-row"><span class="sp-date"><strong>28.06</strong> 09:30</span><span class="sp-match"><b>TC Markdorf 2</b> <small>vs</small> TC Kreenheinstetten 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>12.07</strong> 09:30</span><span class="sp-match"><b>TC Markdorf 2</b> <small>vs</small> TC Salem 2<span class="hm">Heim</span></span></div></div></div></div>
@@ -395,14 +455,14 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
     <div class="cat-panel" id="cp-senioren-h">
         <div class="cat-panel-info"><span>8 Mannschaften · Sommer 2026</span></div>
         <div class="team-tabs">
-            <button class="team-tab active" onclick="showTeam('herren-30',this)">Herren 30</button>
-            <button class="team-tab" onclick="showTeam('herren-40',this)">Herren 40</button>
-            <button class="team-tab" onclick="showTeam('herren-50-1',this)">Herren 50 1</button>
-            <button class="team-tab" onclick="showTeam('herren-50-2',this)">Herren 50 2</button>
-            <button class="team-tab" onclick="showTeam('herren-70-1-tsg',this)">Herren 70 1 TSG</button>
-            <button class="team-tab" onclick="showTeam('herren-70-2-tsg',this)">Herren 70 2 TSG</button>
-            <button class="team-tab" onclick="showTeam('herren-70-doppel',this)">Herren 70 Doppel</button>
-            <button class="team-tab" onclick="showTeam('herren-75',this)">Herren 75</button>
+            <button class="team-tab active" onclick=\"showTeam('herren-30',this,event)\">Herren 30</button>
+            <button class="team-tab" onclick=\"showTeam('herren-40',this,event)\">Herren 40</button>
+            <button class="team-tab" onclick=\"showTeam('herren-50-1',this,event)\">Herren 50 1</button>
+            <button class="team-tab" onclick=\"showTeam('herren-50-2',this,event)\">Herren 50 2</button>
+            <button class="team-tab" onclick=\"showTeam('herren-70-1-tsg',this,event)\">Herren 70 1 TSG</button>
+            <button class="team-tab" onclick=\"showTeam('herren-70-2-tsg',this,event)\">Herren 70 2 TSG</button>
+            <button class="team-tab" onclick=\"showTeam('herren-70-doppel',this,event)\">Herren 70 Doppel</button>
+            <button class="team-tab" onclick=\"showTeam('herren-75',this,event)\">Herren 75</button>
         </div>
         <div class="tp active" id="p-herren-30"><div class="tp-head"><div><div class="tp-title">Herren 30</div><div class="tp-meta">Badenliga · Baden · MF: Felix Baur · 6er</div></div><a href="https://baden.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=Baden+S+2026&group=7" target="_blank" class="tp-link">↗ nuLiga</a></div><div class="tp-grid"><div class="tp-block"><div class="tp-block-h">Tabelle</div><table class="st"><thead><tr><th>#</th><th>Mannschaft</th><th>Pkt</th></tr></thead><tbody><tr><td>1</td><td>TC 70 Sandhausen 1</td><td>0:0</td></tr><tr class=tcm><td>2</td><td>TC Markdorf 1</td><td>0:0</td></tr><tr><td>3</td><td>TC Radolfzell 1</td><td>0:0</td></tr><tr><td>4</td><td>TC BW Villingen 1</td><td>0:0</td></tr><tr><td>5</td><td>TC Insel Reichenau 1</td><td>0:0</td></tr><tr><td>6</td><td>TC BW Donaueschingen 1</td><td>0:0</td></tr><tr><td>7</td><td>TC Nicolai Konstanz 1</td><td>0:0</td></tr></tbody></table></div><div class="tp-block"><div class="tp-block-h">Spielplan (nur TCM)</div><div class="sp-row"><span class="sp-date"><strong>10.05</strong> 11:00</span><span class="sp-match">TC Insel Reichenau 1 <small>vs</small> <b>TC Markdorf 1</b></span></div><div class="sp-row"><span class="sp-date"><strong>17.05</strong> 11:00</span><span class="sp-match">TC 70 Sandhausen 1 <small>vs</small> <b>TC Markdorf 1</b></span></div><div class="sp-row"><span class="sp-date"><strong>14.06</strong> 11:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TC Nicolai Konstanz 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>21.06</strong> 11:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TC BW Villingen 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>05.07</strong> 11:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TC Radolfzell 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>12.07</strong> 11:00</span><span class="sp-match">TC BW Donaueschingen 1 <small>vs</small> <b>TC Markdorf 1</b></span></div></div></div></div>
         <div class="tp" id="p-herren-40"><div class="tp-head"><div><div class="tp-title">Herren 40</div><div class="tp-meta">2. Bezirksliga · Bezirk 4 · MF: Kai Schafheutle · 6er</div></div><a href="https://baden.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=B4+S+2026&group=36" target="_blank" class="tp-link">↗ nuLiga</a></div><div class="tp-grid"><div class="tp-block"><div class="tp-block-h">Tabelle</div><table class="st"><thead><tr><th>#</th><th>Mannschaft</th><th>Pkt</th></tr></thead><tbody><tr class=tcm><td>1</td><td>TC Markdorf 1</td><td>0:0</td></tr><tr><td>2</td><td>TC Pfullendorf 1</td><td>0:0</td></tr><tr><td>3</td><td>TC Worblingen 1</td><td>0:0</td></tr><tr><td>4</td><td>SV 1922 Emmingen/Egg 1</td><td>0:0</td></tr><tr><td>5</td><td>TSG TC Herdwangen-Schönach/TC Altbirnau 1</td><td>0:0</td></tr><tr><td>6</td><td>TC GW Bermatingen 1</td><td>0:0</td></tr><tr><td>7</td><td>TC Singen 1</td><td>0:0</td></tr></tbody></table></div><div class="tp-block"><div class="tp-block-h">Spielplan (nur TCM)</div><div class="sp-row"><span class="sp-date"><strong>09.05</strong> 14:00</span><span class="sp-match">TC GW Bermatingen 1 <small>vs</small> <b>TC Markdorf 1</b></span></div><div class="sp-row"><span class="sp-date"><strong>13.06</strong> 14:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> SV 1922 Emmingen/Egg 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>20.06</strong> 14:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TC Worblingen 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>27.06</strong> 14:00</span><span class="sp-match">TC Singen 1 <small>vs</small> <b>TC Markdorf 1</b></span></div><div class="sp-row"><span class="sp-date"><strong>04.07</strong> 14:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TSG TC Herdwangen-Schönach/TC Altbirnau 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>11.07</strong> 14:00</span><span class="sp-match">TC Pfullendorf 1 <small>vs</small> <b>TC Markdorf 1</b></span></div></div></div></div>
@@ -416,9 +476,9 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
     <div class="cat-panel" id="cp-senioren-d">
         <div class="cat-panel-info"><span>3 Mannschaften · Sommer 2026</span></div>
         <div class="team-tabs">
-            <button class="team-tab active" onclick="showTeam('damen-40',this)">Damen 40</button>
-            <button class="team-tab" onclick="showTeam('damen-50',this)">Damen 50</button>
-            <button class="team-tab" onclick="showTeam('damen-60-doppel',this)">Damen 60 Doppel</button>
+            <button class="team-tab active" onclick=\"showTeam('damen-40',this,event)\">Damen 40</button>
+            <button class="team-tab" onclick=\"showTeam('damen-50',this,event)\">Damen 50</button>
+            <button class="team-tab" onclick=\"showTeam('damen-60-doppel',this,event)\">Damen 60 Doppel</button>
         </div>
         <div class="tp active" id="p-damen-40"><div class="tp-head"><div><div class="tp-title">Damen 40</div><div class="tp-meta">1. Bezirksklasse · Bezirk 4 · MF: Margit Lachmann · 4er</div></div><a href="https://baden.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=B4+S+2026&group=68" target="_blank" class="tp-link">↗ nuLiga</a></div><div class="tp-grid"><div class="tp-block"><div class="tp-block-h">Tabelle</div><table class="st"><thead><tr><th>#</th><th>Mannschaft</th><th>Pkt</th></tr></thead><tbody><tr><td>1</td><td>TC 1902 Überlingen 2</td><td>0:0</td></tr><tr><td>2</td><td>TC Uhldingen 1974 1</td><td>0:0</td></tr><tr><td>3</td><td>TSG SV Illmensee/TG Deggenhausertal 1</td><td>0:0</td></tr><tr class=tcm><td>4</td><td>TC Markdorf 1</td><td>0:0</td></tr><tr><td>5</td><td>SV Litzelstetten 1</td><td>0:0</td></tr><tr><td>6</td><td>TC Owingen 1</td><td>0:0</td></tr><tr><td>7</td><td>TC GW Bodman-Ludwigshafen 1</td><td>0:0</td></tr></tbody></table></div><div class="tp-block"><div class="tp-block-h">Spielplan (nur TCM)</div><div class="sp-row"><span class="sp-date"><strong>09.05</strong> 14:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TC 1902 Überlingen 2<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>16.05</strong> 14:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> SV Litzelstetten 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>13.06</strong> 14:00</span><span class="sp-match">TC Uhldingen 1974 1 <small>vs</small> <b>TC Markdorf 1</b></span></div><div class="sp-row"><span class="sp-date"><strong>20.06</strong> 14:00</span><span class="sp-match">TC Owingen 1 <small>vs</small> <b>TC Markdorf 1</b></span></div><div class="sp-row"><span class="sp-date"><strong>04.07</strong> 09:30</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TSG SV Illmensee/TG Deggenhausertal 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>11.07</strong> 14:00</span><span class="sp-match">TC GW Bodman-Ludwigshafen 1 <small>vs</small> <b>TC Markdorf 1</b></span></div></div></div></div>
         <div class="tp" id="p-damen-50"><div class="tp-head"><div><div class="tp-title">Damen 50</div><div class="tp-meta">1. Bezirksliga · Bezirk 4 · MF: Karin Kremer-Krolik · 4er</div></div><a href="https://baden.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=B4+S+2026&group=69" target="_blank" class="tp-link">↗ nuLiga</a></div><div class="tp-grid"><div class="tp-block"><div class="tp-block-h">Tabelle</div><table class="st"><thead><tr><th>#</th><th>Mannschaft</th><th>Pkt</th></tr></thead><tbody><tr class=tcm><td>1</td><td>TC Markdorf 1</td><td>0:0</td></tr><tr><td>2</td><td>SV 1922 Emmingen/Egg 1</td><td>0:0</td></tr><tr><td>3</td><td>SV Litzelstetten 1</td><td>0:0</td></tr><tr><td>4</td><td>TC Niedereschach 1</td><td>0:0</td></tr><tr><td>5</td><td>TSG TC Altbirnau/TC Owingen 1</td><td>0:0</td></tr><tr><td>6</td><td>TC Pfullendorf 1</td><td>0:0</td></tr></tbody></table></div><div class="tp-block"><div class="tp-block-h">Spielplan (nur TCM)</div><div class="sp-row"><span class="sp-date"><strong>16.05</strong> 14:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TSG TC Altbirnau/TC Owingen 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>13.06</strong> 14:00</span><span class="sp-match">SV 1922 Emmingen/Egg 1 <small>vs</small> <b>TC Markdorf 1</b></span></div><div class="sp-row"><span class="sp-date"><strong>20.06</strong> 14:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TC Niedereschach 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>27.06</strong> 14:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TC Pfullendorf 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>11.07</strong> 14:00</span><span class="sp-match">SV Litzelstetten 1 <small>vs</small> <b>TC Markdorf 1</b></span></div></div></div></div>
@@ -427,17 +487,17 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
     <div class="cat-panel" id="cp-jugend">
         <div class="cat-panel-info"><span>11 Mannschaften · Sommer 2026</span></div>
         <div class="team-tabs">
-            <button class="team-tab active" onclick="showTeam('kleinfeld-u9',this)">Kleinfeld U9</button>
-            <button class="team-tab" onclick="showTeam('midcourt-u10',this)">Midcourt U10</button>
-            <button class="team-tab" onclick="showTeam('grossfeld-u12-gruen',this)">Großfeld U12 grün</button>
-            <button class="team-tab" onclick="showTeam('junioren-u12',this)">Junioren U12</button>
-            <button class="team-tab" onclick="showTeam('junioren-u15-1',this)">Junioren U15 1</button>
-            <button class="team-tab" onclick="showTeam('junioren-u15-2',this)">Junioren U15 2</button>
-            <button class="team-tab" onclick="showTeam('junioren-u15-3',this)">Junioren U15 3</button>
-            <button class="team-tab" onclick="showTeam('junioren-u18-1',this)">Junioren U18 1</button>
-            <button class="team-tab" onclick="showTeam('junioren-u18-2',this)">Junioren U18 2</button>
-            <button class="team-tab" onclick="showTeam('juniorinnen-u18-1',this)">Juniorinnen U18 1</button>
-            <button class="team-tab" onclick="showTeam('juniorinnen-u18-2',this)">Juniorinnen U18 2</button>
+            <button class="team-tab active" onclick=\"showTeam('kleinfeld-u9',this,event)\">Kleinfeld U9</button>
+            <button class="team-tab" onclick=\"showTeam('midcourt-u10',this,event)\">Midcourt U10</button>
+            <button class="team-tab" onclick=\"showTeam('grossfeld-u12-gruen',this,event)\">Großfeld U12 grün</button>
+            <button class="team-tab" onclick=\"showTeam('junioren-u12',this,event)\">Junioren U12</button>
+            <button class="team-tab" onclick=\"showTeam('junioren-u15-1',this,event)\">Junioren U15 1</button>
+            <button class="team-tab" onclick=\"showTeam('junioren-u15-2',this,event)\">Junioren U15 2</button>
+            <button class="team-tab" onclick=\"showTeam('junioren-u15-3',this,event)\">Junioren U15 3</button>
+            <button class="team-tab" onclick=\"showTeam('junioren-u18-1',this,event)\">Junioren U18 1</button>
+            <button class="team-tab" onclick=\"showTeam('junioren-u18-2',this,event)\">Junioren U18 2</button>
+            <button class="team-tab" onclick=\"showTeam('juniorinnen-u18-1',this,event)\">Juniorinnen U18 1</button>
+            <button class="team-tab" onclick=\"showTeam('juniorinnen-u18-2',this,event)\">Juniorinnen U18 2</button>
         </div>
         <div class="tp active" id="p-kleinfeld-u9"><div class="tp-head"><div><div class="tp-title">Kleinfeld U9</div><div class="tp-meta">2. Bezirksliga · Bezirk 4 · MF: Emil Waldenmayer · 4er</div></div><a href="https://baden.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=B4+S+2026&group=108" target="_blank" class="tp-link">↗ nuLiga</a></div><div class="tp-grid"><div class="tp-block"><div class="tp-block-h">Tabelle</div><table class="st"><thead><tr><th>#</th><th>Mannschaft</th><th>Pkt</th></tr></thead><tbody><tr><td>1</td><td>TC Möggingen 2</td><td>0:0</td></tr><tr><td>2</td><td>TC Steisslingen 1</td><td>0:0</td></tr><tr><td>3</td><td>TSG TC Schienerberg/TC Gaienhofen 1</td><td>0:0</td></tr><tr class=tcm><td>4</td><td>TC Markdorf 1</td><td>0:0</td></tr><tr><td>5</td><td>TC Salem 1</td><td>0:0</td></tr><tr><td>6</td><td>TC GW Bodman-Ludwigshafen 2</td><td>0:0</td></tr></tbody></table></div><div class="tp-block"><div class="tp-block-h">Spielplan (nur TCM)</div><div class="sp-row"><span class="sp-date"><strong>08.05</strong> 16:00</span><span class="sp-match">TSG TC Schienerberg/TC Gaienhofen 1 <small>vs</small> <b>TC Markdorf 1</b></span></div><div class="sp-row"><span class="sp-date"><strong>22.05</strong> 16:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TC Salem 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>12.06</strong> 16:00</span><span class="sp-match">TC Steisslingen 1 <small>vs</small> <b>TC Markdorf 1</b></span></div><div class="sp-row"><span class="sp-date"><strong>26.06</strong> 16:00</span><span class="sp-match">TC Möggingen 2 <small>vs</small> <b>TC Markdorf 1</b></span></div><div class="sp-row"><span class="sp-date"><strong>03.07</strong> 16:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TC GW Bodman-Ludwigshafen 2<span class="hm">Heim</span></span></div></div></div></div>
         <div class="tp" id="p-midcourt-u10"><div class="tp-head"><div><div class="tp-title">Midcourt U10</div><div class="tp-meta">1. Bezirksklasse · Bezirk 4 · MF: Tim Hildebrand · 4er</div></div><a href="https://baden.liga.nu/cgi-bin/WebObjects/nuLigaTENDE.woa/wa/groupPage?championship=B4+S+2026&group=113" target="_blank" class="tp-link">↗ nuLiga</a></div><div class="tp-grid"><div class="tp-block"><div class="tp-block-h">Tabelle</div><table class="st"><thead><tr><th>#</th><th>Mannschaft</th><th>Pkt</th></tr></thead><tbody><tr><td>1</td><td>TC Hohenfels-Mindersdorf 1</td><td>0:0</td></tr><tr><td>2</td><td>TC Salem 1</td><td>0:0</td></tr><tr><td>3</td><td>TSG TC Dettingen-Wallhausen/ESV Konstanz/SV Litzelstetten 1</td><td>0:0</td></tr><tr><td>4</td><td>TSG TC Kreenheinstetten/TC Messkirch/TuS Gutenstein 1</td><td>0:0</td></tr><tr><td>5</td><td>TSG TC Steisslingen/TC Volkertshausen 1</td><td>0:0</td></tr><tr class=tcm><td>6</td><td>TC Markdorf 1</td><td>0:0</td></tr><tr><td>7</td><td>SV Liptingen 1</td><td>0:0</td></tr></tbody></table></div><div class="tp-block"><div class="tp-block-h">Spielplan (nur TCM)</div><div class="sp-row"><span class="sp-date"><strong>08.05</strong> 16:00</span><span class="sp-match">TC Salem 1 <small>vs</small> <b>TC Markdorf 1</b></span></div><div class="sp-row"><span class="sp-date"><strong>22.05</strong> 16:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TSG TC Kreenheinstetten/TC Messkirch/TuS Gutenstein 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>19.06</strong> 16:00</span><span class="sp-match">SV Liptingen 1 <small>vs</small> <b>TC Markdorf 1</b></span></div><div class="sp-row"><span class="sp-date"><strong>26.06</strong> 16:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TSG TC Dettingen-Wallhausen/ESV Konstanz/SV Litzelstetten 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>03.07</strong> 16:00</span><span class="sp-match"><b>TC Markdorf 1</b> <small>vs</small> TC Hohenfels-Mindersdorf 1<span class="hm">Heim</span></span></div><div class="sp-row"><span class="sp-date"><strong>10.07</strong> 16:00</span><span class="sp-match">TSG TC Steisslingen/TC Volkertshausen 1 <small>vs</small> <b>TC Markdorf 1</b></span></div></div></div></div>
@@ -556,7 +616,7 @@ document.addEventListener('click',function(e){
     }
 });
 function showCat(id,btn){document.querySelectorAll('.cat-tab').forEach(function(t){t.classList.remove('active')});btn.classList.add('active');document.querySelectorAll('.cat-panel').forEach(function(p){p.classList.remove('active')});document.getElementById('cp-'+id).classList.add('active')}
-function showTeam(id,btn){var panel=btn.closest('.cat-panel');panel.querySelectorAll('.team-tab').forEach(function(t){t.classList.remove('active')});btn.classList.add('active');panel.querySelectorAll('.tp').forEach(function(p){p.classList.remove('active')});document.getElementById('p-'+id).classList.add('active')}
+function showTeam(id,btn,ev){if(ev&&ev.target.classList.contains('team-tab-star'))return;var panel=btn.closest('.cat-panel');panel.querySelectorAll('.team-tab').forEach(function(t){t.classList.remove('active')});btn.classList.add('active');panel.querySelectorAll('.tp').forEach(function(p){p.classList.remove('active')});document.getElementById('p-'+id).classList.add('active')}
 function animateCounter(el,target,suffix){var start=0,dur=1500,st=null;function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/dur,1);var ease=1-Math.pow(1-p,3);el.textContent=Math.floor(ease*target)+(suffix||'');if(p<1)requestAnimationFrame(step)}requestAnimationFrame(step)}
 var counterDone=false;
 var obs=new IntersectionObserver(function(entries){entries.forEach(function(en,i){if(en.isIntersecting){setTimeout(function(){en.target.classList.add('v')},i*80);obs.unobserve(en.target)}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
@@ -650,7 +710,7 @@ var isNext=idx===nextIdx;
 var labelText=isNext?'Nächster Termin':ev.day.split(',')[0];
 var foodHtml='';
 if(ev.type==='frei'){
-foodHtml='<div class="bew-next-frei"><img src="leerer_teller.jpg" alt="Leerer Teller"><p>Dieser Termin ist noch frei!</p><small>Melde dich über die CLUB X App</small></div>';
+foodHtml='<div class="bew-next-frei"><img src="leerer_teller.jpg" alt="Leerer Teller"><p>Dieser Termin ist noch frei!</p><a href="mailto:info@tc-markdorf.de?subject=Bewirtung%20'+encodeURIComponent(ev.day)+'&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20mich%20f%C3%BCr%20die%20Bewirtung%20am%20'+encodeURIComponent(ev.day)+'%20anmelden.%0A%0AViele%20Gr%C3%BC%C3%9Fe" class="bew-mail-btn">✉ Ich möchte bewirten</a></div>';
 }
 else if(ev.type==='awo'){
 foodHtml='<div class="bew-next-awo-banner"><img src="'+ev.menuImg+'" alt="AWO"><div><strong>'+ev.info+'</strong>🍝 '+ev.menu+'</div></div>';
@@ -662,24 +722,44 @@ else if(ev.type==='do'){
 if(ev.menuImg){foodHtml='<div class="bew-next-food"><div class="bew-next-food-img"><img src="'+ev.menuImg+'" alt="Abendessen"></div><div class="bew-next-food-menu"><strong>Speisekarte</strong>'+ev.menu+'</div></div>';}
 else{foodHtml='<div class="bew-next-food"><div class="bew-next-food-img">🍽️<br>Speisekarte wird noch bekannt gegeben</div></div>';}
 }
-var chips='';
+var cards='';
 var activeDate=bewData[idx].d;
 for(var i=0;i<bewData.length;i++){
-var dd=new Date(bewData[i].d);dd.setHours(23,59,59);
-var cls='bew-date-chip';
-if(bewData[i].d===activeDate)cls+=' active';
-else if(dd<today)cls+=' past';
-var label=bewData[i].d.substring(8,10)+'.'+bewData[i].d.substring(5,7)+'.';
-chips+='<span class="'+cls+'" onclick="renderBewEvent('+i+')" style="cursor:pointer">'+label+'</span>';
+var b=bewData[i];
+var dd=new Date(b.d);dd.setHours(23,59,59);
+var isPast=dd<today;
+var isActive=b.d===activeDate;
+var cls='bew-sc'+(isActive?' active':'')+(isPast?' past':'');
+var typeLabel={'do':'18–21 Uhr','spieltag':'Spieltag','awo':'AWO','frei':'Frei'}[b.type]||'';
+var shortDay=b.day.split(',')[0].substring(0,2)+' '+b.d.substring(8,10)+'.'+b.d.substring(5,7)+'.';
+var bodyHtml='';
+if(b.type==='frei'){
+bodyHtml='<div class="bew-sc-frei"><img src="leerer_teller.jpg" alt=""><p>Noch frei!</p><a href="mailto:info@tc-markdorf.de?subject=Bewirtung%20'+encodeURIComponent(b.day)+'&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20bewirten%20am%20'+encodeURIComponent(b.day)+'.%0A%0AViele%20Gr%C3%BC%C3%9Fe">✉ Anmelden</a></div>';
+}else{
+var crew=b.p1?(b.p1+(b.p2?' & '+b.p2:'')):'';
+bodyHtml='<div class="bew-sc-crew">'+(crew?'👨‍🍳 <strong>'+crew+'</strong>':'')+'</div>';
+if(b.menu)bodyHtml+='<div class="bew-sc-menu">'+b.menu+'</div>';
+if(b.halfFrei)bodyHtml+='<div class="bew-sc-half"><a href="mailto:info@tc-markdorf.de?subject=Bewirtung%20'+encodeURIComponent(b.day)+'%20(2.Platz)&body=Hallo%2C%0A%0A2.%20Platz%20am%20'+encodeURIComponent(b.day)+'.%0A%0AViele%20Gr%C3%BC%C3%9Fe">⚠ 1 Platz frei ✉</a></div>';
+if(b.allFrei&&b.type!=='frei')bodyHtml+='<div class="bew-sc-half"><a href="mailto:info@tc-markdorf.de?subject=Bewirtung%20'+encodeURIComponent(b.day)+'&body=Hallo%2C%0A%0ABewirtung%20am%20'+encodeURIComponent(b.day)+'.%0A%0AViele%20Gr%C3%BC%C3%9Fe">⚠ Noch frei ✉</a></div>';
 }
+var opacity=isPast?'opacity:.45;':'';
+cards+='<div class="'+cls+'" onclick="renderBewEvent('+i+')" style="'+opacity+'"><div class="bew-sc-head type-'+b.type+'"><span class="bew-sc-date">'+shortDay+'</span><span class="bew-sc-type">'+typeLabel+'</span></div><div class="bew-sc-body">'+bodyHtml+'</div></div>';
+}
+var scrollHtml='<div class="bew-scroll" id="bew-scroll-container"><div class="bew-scroll-track">'+cards+'</div></div><div class="bew-scroll-hint">← scrollen →</div>';
 w.innerHTML='<div class="bew-next">'+
 '<div class="bew-next-head"><div><div class="bew-next-label">'+labelText+'</div><div class="bew-next-date">'+ev.day+'</div></div><span class="bew-next-type '+typeClass+'">'+typeText+'</span></div>'+
-(crew?'<div class="bew-next-crew">👨‍🍳 Bewirtung: <span>'+crew+'</span>'+(ev.halfFrei?' <span style="font-size:.75rem;color:#ffa500;margin-left:.5rem">⚠ Es ist noch ein Platz frei</span>':'')+'</div>':(ev.allFrei&&ev.type!=='frei'?'<div class="bew-next-crew" style="color:#ffa500">⚠ Bewirtung: Noch keine Anmeldung</div>':''))+
+(crew?'<div class="bew-next-crew">👨‍🍳 Bewirtung: <span>'+crew+'</span>'+(ev.halfFrei?' <a href="mailto:info@tc-markdorf.de?subject=Bewirtung%20'+encodeURIComponent(ev.day)+'%20(2.%20Platz)&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20den%20zweiten%20Bewirtungsplatz%20am%20'+encodeURIComponent(ev.day)+'%20%C3%BCbernehmen.%0A%0AViele%20Gr%C3%BC%C3%9Fe" style="font-size:.75rem;color:#ffa500;margin-left:.5rem;text-decoration:none">⚠ Noch 1 Platz frei ✉</a>':'')+'</div>':(ev.allFrei&&ev.type!=='frei'?'<div class="bew-next-crew" style="color:#ffa500">⚠ Bewirtung: Noch keine Anmeldung <a href="mailto:info@tc-markdorf.de?subject=Bewirtung%20'+encodeURIComponent(ev.day)+'&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20mich%20f%C3%BCr%20die%20Bewirtung%20am%20'+encodeURIComponent(ev.day)+'%20anmelden.%0A%0AViele%20Gr%C3%BC%C3%9Fe" style="color:#ffa500;font-size:.75rem">✉</a></div>':''))+
 foodHtml+
 '<div class="bew-dates"><div class="bew-dates-title">Alle Termine <span style="opacity:.5;font-weight:300;text-transform:none;letter-spacing:0">– klicken für Details</span></div><div class="bew-dates-list">'+chips+'</div></div>'+
 '</div>';
 }
 renderBewEvent(getNextBewIdx());
+// Auto-scroll to active card
+setTimeout(function(){
+var sc=document.getElementById('bew-scroll-container');
+var active=sc?sc.querySelector('.bew-sc.active'):null;
+if(sc&&active){active.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});}
+},300);
 
 var tcmTeams=[
 {id:'herren-1',n:'Herren 1',lg:'Badenliga',p:7,tt:8,m:[{d:'05.07',t:'11:00',h:false,vs:'Freiburger TC 1 vs TC Markdorf 1'},{d:'11.07',t:'11:00',h:true,vs:'TC Markdorf 1 vs TC RW Tiengen 1Heim'},{d:'12.07',t:'11:00',h:false,vs:'TC Weinheim 1902 1 vs TC Markdorf 1'},{d:'18.07',t:'11:00',h:true,vs:'TC Markdorf 1 vs MTG BW Mannheim 1Heim'},{d:'19.07',t:'11:00',h:true,vs:'TC Markdorf 1 vs TC Wolfsberg Pforzheim 2Heim'},{d:'25.07',t:'11:00',h:true,vs:'TC Markdorf 1 vs TC Schönberg 1Heim'},{d:'26.07',t:'11:00',h:false,vs:'1.TC RW Wiesloch 1 vs TC Markdorf 1'}]},
@@ -719,7 +799,7 @@ function saveFavs(){localStorage.setItem('tcmFavs',JSON.stringify(tcmFavs))}
 function toggleFav(id){
 var i=tcmFavs.indexOf(id);
 if(i>-1)tcmFavs.splice(i,1);else tcmFavs.push(id);
-saveFavs();renderDashboard();updateStars();
+saveFavs();var scrollY=window.scrollY;renderDashboard();window.scrollTo(0,scrollY);updateStars();
 }
 
 function updateStars(){
@@ -770,7 +850,7 @@ star.className='team-tab-star';
 star.setAttribute('data-team',id);
 star.textContent=tcmFavs.indexOf(id)>-1?'★':'☆';
 if(tcmFavs.indexOf(id)>-1)star.classList.add('starred');
-star.onclick=function(e){e.stopPropagation();var wasFav=tcmFavs.indexOf(id)>-1;toggleFav(id);if(!wasFav){this.classList.remove('pop');void this.offsetWidth;this.classList.add('pop');tennisConfetti(this)}};
+star.onclick=function(e){e.stopPropagation();e.preventDefault();var wasFav=tcmFavs.indexOf(id)>-1;toggleFav(id);if(!wasFav){var self=this;self.classList.remove('pop');void self.offsetWidth;self.classList.add('pop');tennisConfetti(self)}};
 tab.appendChild(star);
 });
 }
@@ -850,6 +930,90 @@ addStarButtons();
 renderDashboard();
 // Update countdown every minute
 setInterval(renderDashboard,60000);
+
+
+// === Saisonkalender ===
+function renderSaisonkalender(){
+var el=document.getElementById('saisonkalender');if(!el)return;
+var today=new Date();today.setHours(0,0,0,0);
+var todayStr=today.getFullYear()+'-'+(today.getMonth()+1<10?'0':'')+( today.getMonth()+1)+'-'+(today.getDate()<10?'0':'')+today.getDate();
+
+// Collect all events
+var events=[];
+var monNames=['','Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+var wt=['So','Mo','Di','Mi','Do','Fr','Sa'];
+
+// Bewirtung events
+bewData.forEach(function(b){
+var parts=b.d.split('-');
+var dt=new Date(parseInt(parts[0]),parseInt(parts[1])-1,parseInt(parts[2]));
+var dayName=wt[dt.getDay()];
+var label='';
+if(b.type==='do'){var names=b.p1||'';if(b.p2)names+=' & '+b.p2;label='🍽 Bewirtung: '+names;}
+else if(b.type==='spieltag'){var sh=b.p1?(' — '+b.p1+(b.p2?' & '+b.p2:'')):'';label='⚽ '+b.info+sh;}
+else if(b.type==='awo'){label='🏆 '+b.info;}
+else if(b.type==='frei'){label='🍽 Bewirtung (frei)';}
+events.push({d:b.d,date:dt,day:parseInt(parts[2]),mon:parseInt(parts[1]),type:b.type,label:label,wt:dayName});
+});
+
+// Special events
+var specials=[
+{d:'2026-04-26',label:'🎉 Saisonöffnung & Doppel-Moppel',type:'event'},
+{d:'2026-07-18',label:'🎉 Sommerfest',type:'event'},
+{d:'2026-08-08',label:'🏆 Albert Weber Open (Tag 1)',type:'awo'},
+{d:'2026-08-09',label:'🏆 Albert Weber Open (Tag 2)',type:'awo'},
+{d:'2026-09-26',label:'🎉 Saisonabschluss',type:'event'}
+];
+specials.forEach(function(s){
+var parts=s.d.split('-');
+var dt=new Date(parseInt(parts[0]),parseInt(parts[1])-1,parseInt(parts[2]));
+var dayName=wt[dt.getDay()];
+// Don't add if already exists from bewData
+var exists=false;
+events.forEach(function(e){if(e.d===s.d&&e.type===s.type)exists=true;});
+if(!exists)events.push({d:s.d,date:dt,day:parseInt(parts[2]),mon:parseInt(parts[1]),type:s.type,label:s.label,wt:dayName});
+});
+
+// Sort by date
+events.sort(function(a,b){return a.date-b.date;});
+
+// Group by month
+var months={};
+events.forEach(function(e){
+if(!months[e.mon])months[e.mon]=[];
+months[e.mon].push(e);
+});
+
+// Build HTML
+var trackHtml='';
+for(var m=4;m<=9;m++){
+if(!months[m])continue;
+trackHtml+='<div class="scal-month"><div class="scal-month-label">'+monNames[m]+' 2026</div>';
+months[m].forEach(function(e){
+var isToday=e.d===todayStr;
+var todayCls=isToday?' scal-today':'';
+trackHtml+='<div class="scal-event type-'+e.type+todayCls+'">';
+trackHtml+='<span class="scal-event-dot"></span>';
+trackHtml+='<span class="scal-event-date">'+e.day+'.</span>';
+trackHtml+='<span class="scal-event-text">'+e.wt+' '+e.label+'</span>';
+trackHtml+='</div>';
+});
+trackHtml+='</div>';
+}
+
+el.innerHTML='<div class="scal-head"><div class="scal-title">📅 Saisonkalender 2026</div><div class="scal-legend"><span class="scal-leg"><span class="scal-leg-dot" style="background:var(--blue)"></span>Bewirtung</span><span class="scal-leg"><span class="scal-leg-dot" style="background:var(--red)"></span>Spieltag</span><span class="scal-leg"><span class="scal-leg-dot" style="background:#ffd700"></span>AWO</span><span class="scal-leg"><span class="scal-leg-dot" style="background:#e855a0"></span>Event</span><span class="scal-leg"><span class="scal-leg-dot" style="background:#ccc;border:1px dashed #999"></span>Frei</span></div></div><div class="scal-body"><div class="scal-track">'+trackHtml+'</div></div><div class="scal-hint">← horizontal scrollen →</div>';
+
+// Scroll to current month
+var monthEls=el.querySelectorAll('.scal-month');
+var currentMonth=today.getMonth()+1;
+monthEls.forEach(function(mel,i){
+var label=mel.querySelector('.scal-month-label').textContent;
+if(label.indexOf(monNames[currentMonth])===0){
+setTimeout(function(){mel.scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'})},500);
+}
+});
+}
+renderSaisonkalender();
 
 </script>
 
