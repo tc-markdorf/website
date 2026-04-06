@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Letzte Aktualisierung: 2026-04-06 via Cowork -->
 <html lang="de">
 <head>
 <meta charset="UTF-8">
@@ -164,8 +163,9 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 @keyframes fsu{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
 .fi{opacity:0;transform:translateY(25px);transition:all .8s cubic-bezier(.22,1,.36,1)}.fi.v{opacity:1;transform:translateY(0)}
-@media(max-width:1024px){section{padding:3.5rem 2rem}.hero-content{padding:0 2rem 4rem}.tiles{padding:0 1.5rem}.news-grid,.bew-grid,.contact-grid{grid-template-columns:1fr}.card-grid{grid-template-columns:1fr 1fr}.tp-grid{grid-template-columns:1fr}}
-@media(max-width:768px){.nav-links{display:none}.mob-tog{display:flex}.nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(6,6,77,.98);justify-content:center;align-items:center;gap:2rem;z-index:1002;backdrop-filter:blur(12px)}.nav-links.open a{font-size:1.3rem;color:#fff;opacity:0;animation:fsu .5s ease forwards}.nav-links.open li:nth-child(1) a{animation-delay:.05s}.nav-links.open li:nth-child(2) a{animation-delay:.1s}.nav-links.open li:nth-child(3) a{animation-delay:.15s}.nav-links.open li:nth-child(4) a{animation-delay:.2s}.nav-links.open li:nth-child(5) a{animation-delay:.25s}.nav-links.open li:nth-child(6) a{animation-delay:.3s}.nav-links.open li:nth-child(7) a{animation-delay:.35s}.nav-links.open li:nth-child(8) a{animation-delay:.4s}.nav-links.open li:nth-child(9) a{animation-delay:.45s}.hero-content{padding:0 1.5rem 3rem}.hero{padding-top:60px}.hero h1{font-size:2.5rem}.hero-stats{gap:1.5rem}.tiles-grid{grid-template-columns:1fr}.tile-full{grid-column:span 1}.tile{min-height:130px}.card-grid,.mitglied-grid{grid-template-columns:1fr}.anlage-grid{grid-template-columns:1fr 1fr}section{padding:3rem 1.5rem}footer{flex-direction:column;gap:.8rem;padding:1.5rem}.team-tabs{gap:.35rem}.team-tab{padding:.45rem .8rem;font-size:.78rem}.cat-tab{padding:.5rem 1rem;font-size:.9rem}.news-card-feat{grid-row:span 1}.news-card-img,.news-card-feat .news-card-img{height:120px}.cat-tabs{top:50px}#btt{bottom:1.2rem;right:1.2rem;width:42px;height:42px}}
+@media(max-width:1024px){.nav-links{display:none}.mob-tog{display:flex}section{padding:3.5rem 2rem}.hero-content{padding:0 2rem 4rem}.tiles{padding:0 1.5rem}.news-grid,.bew-grid,.contact-grid{grid-template-columns:1fr}.card-grid{grid-template-columns:1fr 1fr}.tp-grid{grid-template-columns:1fr}}
+@media(max-width:1024px){.nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(6,6,77,.98);justify-content:center;align-items:center;gap:2rem;z-index:1002;backdrop-filter:blur(12px)}.nav-links.open a{font-size:1.3rem;color:#fff;opacity:0;animation:fsu .5s ease forwards}.nav-links.open li:nth-child(1) a{animation-delay:.05s}.nav-links.open li:nth-child(2) a{animation-delay:.1s}.nav-links.open li:nth-child(3) a{animation-delay:.15s}.nav-links.open li:nth-child(4) a{animation-delay:.2s}.nav-links.open li:nth-child(5) a{animation-delay:.25s}.nav-links.open li:nth-child(6) a{animation-delay:.3s}.nav-links.open li:nth-child(7) a{animation-delay:.35s}.nav-links.open li:nth-child(8) a{animation-delay:.4s}.nav-links.open li:nth-child(9) a{animation-delay:.45s}}
+@media(max-width:768px){.hero-content{padding:0 1.5rem 3rem}.hero{padding-top:60px}.hero h1{font-size:2.5rem}.hero-stats{gap:1.5rem}.tiles-grid{grid-template-columns:1fr}.tile-full{grid-column:span 1}.tile{min-height:130px}.card-grid,.mitglied-grid{grid-template-columns:1fr}.anlage-grid{grid-template-columns:1fr 1fr}section{padding:3rem 1.5rem}footer{flex-direction:column;gap:.8rem;padding:1.5rem}.team-tabs{gap:.35rem}.team-tab{padding:.45rem .8rem;font-size:.78rem}.cat-tab{padding:.5rem 1rem;font-size:.9rem}.news-card-feat{grid-row:span 1}.news-card-img,.news-card-feat .news-card-img{height:120px}.cat-tabs{top:50px}#btt{bottom:1.2rem;right:1.2rem;width:42px;height:42px}}
 
 /* Upcoming matches widget */
 .upcoming{margin-top:2.5rem;margin-bottom:2rem;border-radius:16px;background:var(--blue);color:#fff;position:relative;overflow:visible;padding:1.5rem 0}
@@ -315,11 +315,14 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 .dash-card-remove{background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:1rem;padding:.2rem;transition:color .2s;-webkit-tap-highlight-color:transparent}
 .dash-card-remove:hover{color:var(--red-l)}
 .dash-card-matches{margin-top:.5rem}
-.dash-card-match{display:flex;align-items:center;gap:.5rem;padding:.35rem 0;font-size:.78rem;color:var(--tx-l);font-weight:300;border-bottom:1px solid rgba(0,0,0,.03)}
+.dash-card-match{display:flex;align-items:baseline;gap:0;padding:.35rem 0;font-size:.78rem;color:var(--tx-l);font-weight:300;border-bottom:1px solid rgba(0,0,0,.03)}
 .dash-card-match:last-child{border:none}
 .dash-card-match.heim{color:var(--tx)}
 .dash-card-match b{font-weight:500;color:var(--blue-d)}
-.dash-card-match .hm-dot{width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0}
+.dash-card-match .hm-dot{width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0;margin-right:.4rem;align-self:center}
+.dash-card-match .dm-date{min-width:42px;font-weight:500;color:var(--tx);flex-shrink:0}
+.dash-card-match .dm-time{min-width:40px;color:var(--tx-l);flex-shrink:0}
+.dash-card-match .dm-vs{flex:1}
 .dash-card-toggle{background:none;border:none;font-size:.75rem;color:var(--blue-l);cursor:pointer;padding:.3rem 0;transition:color .2s}
 .dash-card-toggle:hover{color:var(--red)}
 /* Star button on team tabs */
@@ -411,7 +414,7 @@ a,button,.tile,.team-tab,.cat-tab,.bew-sc,.nav-cta,.btn{cursor:url("data:image/s
 </nav>
 <section class="hero"><div class="hero-bg"></div><div class="hero-pat"></div>
     <div class="hero-content">
-        <img src="img08.png" alt="TC Markdorf – Tennis am Gehrenberg" style="display:block;margin:60px auto 40px;max-width:min(510px,80vw);height:auto;animation:fsu .8s ease .1s both;background:#fff;padding:1.2rem 2rem;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.25)">
+        <img src="img08.png" alt="TC Markdorf – Tennis am Gehrenberg" style="display:block;margin:50px auto 40px;max-width:min(510px,80vw);height:auto;animation:fsu .8s ease .1s both;background:#fff;padding:1.2rem 2rem;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.25)">
         <div class="hero-badge" style="margin-right:auto"><span class="hero-badge-dot"></span> Saison 2026 läuft</div>
         <h1>Tennis am<br><em>Gehrenberg</em></h1>
         <p class="hero-sub">Oberhalb Markdorfs mit Blick über den Bodensee und die Alpen — seit 1954 Tennis mit Leidenschaft.</p>
@@ -716,6 +719,9 @@ a,button,.tile,.team-tab,.cat-tab,.bew-sc,.nav-cta,.btn{cursor:url("data:image/s
 <div id="lightbox"><button id="lb-close">&times;</button><button id="lb-prev">&#8249;</button><img id="lb-img" src="" alt=""><button id="lb-next">&#8250;</button></div>
 <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
 <script>
+
+// Break out of iframe (fixes mobile viewport in frame redirects)
+if(window.top!==window.self){try{window.top.location=window.self.location}catch(e){}}
 window.scrollTo(0,0);history.scrollRestoration='manual';
 var prog=document.getElementById('scroll-progress');
 window.addEventListener('scroll',function(){
@@ -781,18 +787,18 @@ function goTeam(cat,team){
 // Bewirtung next-event widget
 var bewData=[
 {d:'2026-04-30',day:'Donnerstag, 30. April',p1:'Janina S.',p2:'Madita H.',type:'do'},
-{d:'2026-05-07',day:'Donnerstag, 07. Mai',p1:'Luisa Z.',p2:'Alina S.',type:'do'},
+{d:'2026-05-07',day:'Donnerstag, 7. Mai',p1:'Luisa Z.',p2:'Alina S.',type:'do'},
 {d:'2026-05-14',day:'Donnerstag, 14. Mai',p1:null,p2:null,type:'frei'},
 {d:'2026-05-17',day:'Sonntag, 17. Mai',p1:null,p2:null,type:'spieltag',info:'Spieltag Damen 1',menuImg:'img07.png',menu:'Brezeln, Belegte Brötchen',allFrei:true},
 {d:'2026-05-21',day:'Donnerstag, 21. Mai',p1:'Christian Sa.',p2:'Iris E.',type:'do'},
 {d:'2026-05-28',day:'Donnerstag, 28. Mai',p1:null,p2:null,type:'frei'},
-{d:'2026-06-04',day:'Donnerstag, 04. Juni',p1:null,p2:null,type:'frei'},
+{d:'2026-06-04',day:'Donnerstag, 4. Juni',p1:null,p2:null,type:'frei'},
 {d:'2026-06-11',day:'Donnerstag, 11. Juni',p1:null,p2:null,type:'frei'},
 {d:'2026-06-18',day:'Donnerstag, 18. Juni',p1:null,p2:null,type:'frei'},
 {d:'2026-06-21',day:'Sonntag, 21. Juni',p1:'Melanie K.',p2:null,type:'spieltag',info:'Spieltag Damen 1',menuImg:'img07.png',menu:'Brezeln, Belegte Brötchen',halfFrei:true},
 {d:'2026-06-25',day:'Donnerstag, 25. Juni',p1:'Thorsten W.',p2:'Maximilian W.',type:'do'},
-{d:'2026-07-02',day:'Donnerstag, 02. Juli',p1:null,p2:null,type:'frei'},
-{d:'2026-07-09',day:'Donnerstag, 09. Juli',p1:'Paula W.',p2:'Thorsten W.',type:'do'},
+{d:'2026-07-02',day:'Donnerstag, 2. Juli',p1:null,p2:null,type:'frei'},
+{d:'2026-07-09',day:'Donnerstag, 9. Juli',p1:'Paula W.',p2:'Thorsten W.',type:'do'},
 {d:'2026-07-11',day:'Samstag, 11. Juli',p1:'Ursula B.',p2:'Hans-Peter B.',type:'spieltag',info:'Spieltag Herren 1',menuImg:'img07.png',menu:'Steak/Wurst im Brötchen, Brezeln'},
 {d:'2026-07-12',day:'Sonntag, 12. Juli',p1:'Christian So.',p2:null,type:'spieltag',info:'Spieltag Herren 1 & Damen 1',menuImg:'img07.png',menu:'Steak/Wurst im Brötchen, Brezeln, Belegte Brötchen',halfFrei:true},
 {d:'2026-07-16',day:'Donnerstag, 16. Juli',p1:null,p2:null,type:'frei'},
@@ -801,13 +807,13 @@ var bewData=[
 {d:'2026-07-23',day:'Donnerstag, 23. Juli',p1:null,p2:null,type:'frei'},
 {d:'2026-07-25',day:'Samstag, 25. Juli',p1:'Lukas M.',p2:null,type:'spieltag',info:'Spieltag Herren 1',menuImg:'img07.png',menu:'Steak/Wurst im Brötchen, Brezeln',halfFrei:true},
 {d:'2026-07-30',day:'Donnerstag, 30. Juli',p1:null,p2:null,type:'frei'},
-{d:'2026-08-06',day:'Donnerstag, 06. August',p1:'Desiree H.',p2:'Sofie R.',type:'do'},
-{d:'2026-08-08',day:'Samstag, 08. August',p1:'Ronja R.',p2:null,type:'awo',info:'Albert Weber Open',menuImg:'logo_awo.jpg',menu:'Nudeln mit diversen Soßen',halfFrei:true},
-{d:'2026-08-09',day:'Sonntag, 09. August',p1:null,p2:null,type:'awo',info:'Albert Weber Open',menuImg:'logo_awo.jpg',menu:'Nudeln mit diversen Soßen',allFrei:true},
+{d:'2026-08-06',day:'Donnerstag, 6. August',p1:'Desiree H.',p2:'Sofie R.',type:'do'},
+{d:'2026-08-08',day:'Samstag, 8. August',p1:'Ronja R.',p2:null,type:'awo',info:'Albert Weber Open',menuImg:'logo_awo.jpg',menu:'Nudeln mit diversen Soßen',halfFrei:true},
+{d:'2026-08-09',day:'Sonntag, 9. August',p1:null,p2:null,type:'awo',info:'Albert Weber Open',menuImg:'logo_awo.jpg',menu:'Nudeln mit diversen Soßen',allFrei:true},
 {d:'2026-08-13',day:'Donnerstag, 13. August',p1:null,p2:null,type:'frei'},
 {d:'2026-08-20',day:'Donnerstag, 20. August',p1:null,p2:null,type:'frei'},
 {d:'2026-08-27',day:'Donnerstag, 27. August',p1:null,p2:null,type:'frei'},
-{d:'2026-09-03',day:'Donnerstag, 03. September',p1:null,p2:null,type:'frei'},
+{d:'2026-09-03',day:'Donnerstag, 3. September',p1:null,p2:null,type:'frei'},
 {d:'2026-09-10',day:'Donnerstag, 10. September',p1:null,p2:null,type:'frei'},
 {d:'2026-09-17',day:'Donnerstag, 17. September',p1:null,p2:null,type:'frei'},
 {d:'2026-09-24',day:'Donnerstag, 24. September',p1:null,p2:null,type:'frei'}
@@ -1053,7 +1059,7 @@ matchesHtml='<div class="dash-card-matches" id="dm-'+team.id+'" style="display:n
 for(var j=1;j<upcoming.length;j++){
 var um=upcoming[j];
 var dot=um.h?'<span class="hm-dot"></span>':'<span style="width:6px"></span>';
-matchesHtml+=('<div class="dash-card-match'+(um.h?' heim':'')+'">'+dot+'<span>'+um.d+' '+um.t+'</span> <span>'+um.vs+'</span></div>');
+matchesHtml+=('<div class="dash-card-match'+(um.h?' heim':'')+'">'+dot+'<span class="dm-date">'+um.d+'</span><span class="dm-time">'+um.t+'</span><span class="dm-vs">'+um.vs+'</span></div>');
 }
 matchesHtml+='</div><button class="dash-card-toggle" onclick="var el=document.getElementById(\'dm-'+team.id+'\');var v=el.style.display===\'none\';el.style.display=v?\'block\':\'none\';this.textContent=v?\'▲ weniger\':\'▼ alle '+upcoming.length+' Spiele\'">▼ alle '+upcoming.length+' Spiele</button>';
 }
