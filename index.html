@@ -142,6 +142,12 @@ section{padding:5rem 4rem}
 .anlage-f-icon{font-size:1.8rem;margin-bottom:.6rem}
 .anlage-f h4{font-size:.9rem;font-weight:600;color:var(--blue-d);margin-bottom:.25rem}
 .anlage-f p{font-size:.78rem;color:var(--tx-l);font-weight:300}
+.gastspieler-box{margin-top:2.5rem;padding:2rem 2.5rem;border-radius:14px;background:linear-gradient(135deg,rgba(11,11,122,.04) 0%,rgba(235,10,11,.04) 100%);border:1px solid rgba(11,11,122,.12);display:flex;align-items:flex-start;gap:1.5rem}
+.gastspieler-box-icon{font-size:2.2rem;flex-shrink:0;line-height:1}
+.gastspieler-box h4{font-family:"DM Serif Display",serif;font-size:1.15rem;color:var(--blue-d);margin-bottom:.5rem}
+.gastspieler-box p{font-size:.9rem;color:var(--tx-l);line-height:1.7;font-weight:300}
+.gastspieler-box strong{color:var(--blue-d);font-weight:600}
+@media(max-width:768px){.gastspieler-box{flex-direction:column;gap:.8rem;padding:1.5rem}}
 .anlage-gallery{cursor:pointer;position:relative}
 .anlage-gallery:hover::after{content:"Galerie durchble4ttern";position:absolute;bottom:1rem;right:1rem;background:rgba(0,0,0,.6);color:#fff;padding:.4rem .8rem;border-radius:8px;font-size:.75rem;backdrop-filter:blur(4px)}
 #lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:2000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(8px)}
@@ -480,6 +486,7 @@ a,button,.tile,.team-tab,.cat-tab,.bew-sc,.nav-cta,.btn{cursor:url("data:image/s
         <div class="news-card news-card-feat fi"><div class="news-card-img" style="background:url(filzkugel.jpg) center/cover"></div><div class="news-body"><div class="news-date">April 2026</div><h3 class="news-title">Saisonstart 2026 — Doppel-Moppel eröffnet die Saison</h3><p class="news-ex">Mit dem traditionellen Doppel-Moppel und gemeinsamem Brunch im Vereinsheim startet der TCM in die neue Saison.</p></div></div>
         <div class="news-card fi"><div class="news-body"><div class="news-date">März 2026</div><h3 class="news-title">Jugend 2026: Ballschule mit über 50 Kindern gestartet</h3><p class="news-ex">Aus der Ballschule wechselten vier Kids ins Tennisland, fünf weitere ins reguläre Training.</p></div></div>
         <div class="news-card fi"><div class="news-body"><div class="news-date">Februar 2026</div><h3 class="news-title">27 Mannschaftsmeldungen für Sommer 2026</h3><p class="news-ex">Von der Badenliga bis zur Bezirksklasse — der TCM geht mit 27 Teams in die Medenrunde.</p></div></div>
+        <div class="news-card fi" style="background:linear-gradient(135deg,rgba(11,11,122,.03),rgba(235,10,11,.03));border:1px solid rgba(11,11,122,.1)"><div class="news-card-img" style="background:var(--blue-d);color:#fff;font-size:2.8rem">🏖️🎾</div><div class="news-body"><div class="news-date">Sommer-Tipp</div><h3 class="news-title">Urlaub am Bodensee? Spielt bei uns!</h3><p class="news-ex">Gästemarken gibt's in der Panda-Apotheke oder am Wirthshof. Werktags bis 17 Uhr, 15 €/Std. — wir freuen uns auf euch!</p></div></div>
     </div>
 <div id="saisonkalender" class="scal u-panel fi"></div>
 </section>
@@ -595,6 +602,7 @@ a,button,.tile,.team-tab,.cat-tab,.bew-sc,.nav-cta,.btn{cursor:url("data:image/s
         
         <div class="card fi"><div class="card-icon">🧱</div><h3>Ballwand</h3><p>Individuelles Training jederzeit. Die Ballwand steht allen Mitgliedern zur Verfügung.</p></div>
         <div class="card fi"><div class="card-icon">📋</div><h3>Platzbelegung</h3><p>First come, first to play — Eintragung in die Liste am Clubhaus. 8 Sandplätze, April bis Oktober.</p></div>
+        <div class="card fi" style="border-left:3px solid var(--red)"><div class="card-icon">🏖️</div><h3>Gastspieler & Urlauber</h3><p>Gästemarken in der Panda-Apotheke (ggü. ProMa) oder am Campingplatz Wirthshof im Steibensteg. Werktags bis 17 Uhr, 15 €/Std.</p></div>
     </div>
 </section>
 <section id="bewirtung" class="bg-w"><div class="fi"><span class="s-label">Bewirtung</span><h2 class="s-title">Sonnenterrasse & Vereinsheim</h2><p class="s-sub">Geselligkeit gehört zum TCM — unsere Terrasse mit Panoramablick ist der perfekte Ort.</p></div>
@@ -640,6 +648,13 @@ a,button,.tile,.team-tab,.cat-tab,.bew-sc,.nav-cta,.btn{cursor:url("data:image/s
         <div class="anlage-f fi"><div class="anlage-f-icon">👶</div><h4>Spielplatz</h4><p>Sandkasten & Rutsche</p></div>
         <div class="anlage-f fi"><div class="anlage-f-icon">🌲</div><h4>Am Waldrand</h4><p>Idyllische Lage</p></div>
         <div class="anlage-f fi"><div class="anlage-f-icon">🏔️</div><h4>Alpenpanorama</h4><p>Einmaliger Ausblick</p></div>
+    </div>
+    <div class="gastspieler-box fi">
+        <div class="gastspieler-box-icon">🏖️</div>
+        <div>
+            <h4>Urlauber & Gastspieler willkommen!</h4>
+            <p>Ihr macht Urlaub am Bodensee und wollt eine Runde Tennis spielen? <strong>Gästemarken</strong> gibt es in der <strong>Panda-Apotheke</strong> (gegenüber ProMa) oder am <strong>Campingplatz Wirthshof</strong> im Steibensteg. Spielberechtigung werktags bis 17 Uhr, <strong>15 €/Stunde</strong>. Wir freuen uns auf euch!</p>
+        </div>
     </div>
 </section>
 <section id="kontakt" class="bg-d"><div class="fi"><span class="s-label">Kontakt</span><h2 class="s-title">Fragen? Meld dich!</h2></div>
