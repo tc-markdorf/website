@@ -877,17 +877,14 @@ function convertExcelRows(rows){
 function loadBewData(){
   var url='Liste_Bewirtung.xlsx?t='+Date.now();
   return fetch(url,{cache:'no-store'})
-    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.arrayBuffer();})
+    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status+' beim Laden von '+url);return r.arrayBuffer();})
     .then(function(ab){
+      if(typeof XLSX==='undefined')throw new Error('SheetJS-Bibliothek nicht geladen (Internetverbindung prüfen)');
       var wb=XLSX.read(ab,{type:'array'});
       var sheet=wb.Sheets[wb.SheetNames[0]];
       var rows=XLSX.utils.sheet_to_json(sheet,{defval:null});
       bewData=convertExcelRows(rows);
-    })
-    .catch(function(err){
-      console.error('Bewirtungsliste konnte nicht geladen werden:',err);
-      var w=document.getElementById('bew-next-widget');
-      if(w)w.innerHTML='<div class="bew-card" style="text-align:center;color:#ffa500;padding:1rem">⚠ Bewirtungsliste konnte nicht geladen werden. Bitte Seite neu laden.</div>';
+      if(!bewData.length)throw new Error('Excel geladen, aber keine Termine erkannt (Spalten "Datum", "Name 1" etc. vorhanden?)');
     });
 }
 function getNextBewIdx(){
@@ -966,6 +963,11 @@ var sc=document.getElementById('bew-scroll-container');
 var active=sc?sc.querySelector('.bew-sc.active'):null;
 if(sc&&active){sc.scrollLeft=active.offsetLeft-sc.offsetLeft-20;}
 },300);
+}).catch(function(err){
+console.error('Bewirtungsliste konnte nicht geladen werden:',err);
+var w=document.getElementById('bew-next-widget');
+if(w)w.innerHTML='<div class="bew-card" style="text-align:center;color:#ffa500;padding:1rem"><strong>⚠ Bewirtungsliste konnte nicht geladen werden.</strong><br><span style="font-size:.85rem;color:var(--tx-l);display:block;margin-top:.5rem">Fehler: '+(err&&err.message?err.message:err)+'</span><span style="font-size:.8rem;color:var(--tx-l);display:block;margin-top:.3rem">Liegt die Datei <code>Liste_Bewirtung.xlsx</code> im gleichen Ordner wie <code>index.html</code>?</span></div>';
+}).then(function(){
 if(typeof renderSaisonkalender==='function')renderSaisonkalender();
 });
 
