@@ -6,6 +6,7 @@
 <title>TC Markdorf e.V. — Tennis am Gehrenberg</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
 :root{--blue:#0b0b7a;--blue-l:#1a1ab8;--blue-d:#06064d;--blue-b:#1412d8;--red:#eb0a0b;--red-l:#ff3333;--sand:#f5f2ed;--sand-d:#e4ddd3;--tx:#1e1e1e;--tx-l:#5c5c5c;--glass:rgba(255,255,255,.06);--glass-b:rgba(255,255,255,.12)}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
@@ -210,7 +211,7 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 
 .bew-next-type.frei{background:rgba(255,165,0,.15);color:#ffa500;border:1px solid rgba(255,165,0,.3)}
 .bew-next-frei{border-radius:12px;overflow:hidden;background:rgba(255,165,0,.06);border:1px solid rgba(255,165,0,.15);text-align:center;padding:1rem}
-.bew-next-frei img{width:120px;height:auto;margin:0 auto .8rem;display:block;opacity:.7;border-radius:8px}
+.bew-next-frei img{width:100%;max-width:320px;height:auto;margin:0 auto .8rem;display:block;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
 .bew-next-frei p{font-size:.9rem;color:#ffa500;font-weight:500}
 .bew-next-frei small{display:block;margin-top:.3rem;font-size:.75rem;color:rgba(255,255,255,.4);font-weight:300}
 /* Bewirtung next-event widget */
@@ -262,7 +263,7 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 .bew-sc-crew strong{color:#fff;font-weight:500}
 .bew-sc-menu{font-size:.75rem;color:rgba(255,255,255,.5);font-weight:300;line-height:1.4}
 .bew-sc-frei{text-align:center;padding:.3rem 0}
-.bew-sc-frei img{width:60px;height:40px;object-fit:cover;border-radius:6px;margin-bottom:.3rem;opacity:.7}
+.bew-sc-frei img{width:110px;height:70px;object-fit:cover;border-radius:6px;margin-bottom:.4rem;display:block;margin-left:auto;margin-right:auto;box-shadow:0 2px 6px rgba(0,0,0,.12)}
 .bew-sc-frei p{font-size:.78rem;color:#ffa500;font-weight:500}
 .bew-sc-frei a{font-size:.7rem;color:#ffa500;text-decoration:none;border:1px solid rgba(255,165,0,.3);padding:.2rem .5rem;border-radius:4px;display:inline-block;margin-top:.3rem}
 .bew-sc-frei a:hover{background:rgba(255,165,0,.1)}
@@ -802,41 +803,93 @@ function goTeam(cat,team){
     }
 }
 
-// Bewirtung next-event widget
-var bewData=[
-{d:'2026-04-30',day:'Donnerstag, 30. April',p1:'Janina S.',p2:'Madita H.',type:'do'},
-{d:'2026-05-07',day:'Donnerstag, 7. Mai',p1:'Luisa Z.',p2:'Alina S.',type:'do'},
-{d:'2026-05-14',day:'Donnerstag, 14. Mai',p1:null,p2:null,type:'frei'},
-{d:'2026-05-17',day:'Sonntag, 17. Mai',p1:null,p2:null,type:'spieltag',info:'Spieltag Damen 1',menuImg:'img07.png',menu:'Brezeln, Belegte Brötchen',allFrei:true},
-{d:'2026-05-21',day:'Donnerstag, 21. Mai',p1:'Christian Sa.',p2:'Iris E.',type:'do'},
-{d:'2026-05-28',day:'Donnerstag, 28. Mai',p1:null,p2:null,type:'frei'},
-{d:'2026-06-04',day:'Donnerstag, 4. Juni',p1:null,p2:null,type:'frei'},
-{d:'2026-06-11',day:'Donnerstag, 11. Juni',p1:null,p2:null,type:'frei'},
-{d:'2026-06-18',day:'Donnerstag, 18. Juni',p1:null,p2:null,type:'frei'},
-{d:'2026-06-21',day:'Sonntag, 21. Juni',p1:'Melanie K.',p2:null,type:'spieltag',info:'Spieltag Damen 1',menuImg:'img07.png',menu:'Brezeln, Belegte Brötchen',halfFrei:true},
-{d:'2026-06-25',day:'Donnerstag, 25. Juni',p1:'Thorsten W.',p2:'Maximilian W.',type:'do'},
-{d:'2026-07-02',day:'Donnerstag, 2. Juli',p1:null,p2:null,type:'frei'},
-{d:'2026-07-09',day:'Donnerstag, 9. Juli',p1:'Paula W.',p2:'Thorsten W.',type:'do'},
-{d:'2026-07-11',day:'Samstag, 11. Juli',p1:'Ursula B.',p2:'Hans-Peter B.',type:'spieltag',info:'Spieltag Herren 1',menuImg:'img07.png',menu:'Steak/Wurst im Brötchen, Brezeln'},
-{d:'2026-07-12',day:'Sonntag, 12. Juli',p1:'Christian So.',p2:null,type:'spieltag',info:'Spieltag Herren 1 & Damen 1',menuImg:'img07.png',menu:'Steak/Wurst im Brötchen, Brezeln, Belegte Brötchen',halfFrei:true},
-{d:'2026-07-16',day:'Donnerstag, 16. Juli',p1:null,p2:null,type:'frei'},
-{d:'2026-07-18',day:'Samstag, 18. Juli',p1:'Uli K.',p2:'Michael L.',type:'spieltag',info:'Spieltag Herren 1',menuImg:'img07.png',menu:'Steak/Wurst im Brötchen, Brezeln'},
-{d:'2026-07-19',day:'Sonntag, 19. Juli',p1:'Julian S.',p2:'Marvin G.',type:'spieltag',info:'Spieltag Herren 1',menuImg:'img07.png',menu:'Steak/Wurst im Brötchen, Brezeln'},
-{d:'2026-07-23',day:'Donnerstag, 23. Juli',p1:null,p2:null,type:'frei'},
-{d:'2026-07-25',day:'Samstag, 25. Juli',p1:'Lukas M.',p2:null,type:'spieltag',info:'Spieltag Herren 1',menuImg:'img07.png',menu:'Steak/Wurst im Brötchen, Brezeln',halfFrei:true},
-{d:'2026-07-30',day:'Donnerstag, 30. Juli',p1:null,p2:null,type:'frei'},
-{d:'2026-08-06',day:'Donnerstag, 6. August',p1:'Desiree H.',p2:'Sofie R.',type:'do'},
-{d:'2026-08-08',day:'Samstag, 8. August',p1:'Ronja R.',p2:null,type:'awo',info:'Albert Weber Open',menuImg:'logo_awo.jpg',menu:'Nudeln mit diversen Soßen',halfFrei:true},
-{d:'2026-08-09',day:'Sonntag, 9. August',p1:null,p2:null,type:'awo',info:'Albert Weber Open',menuImg:'logo_awo.jpg',menu:'Nudeln mit diversen Soßen',allFrei:true},
-{d:'2026-08-13',day:'Donnerstag, 13. August',p1:null,p2:null,type:'frei'},
-{d:'2026-08-20',day:'Donnerstag, 20. August',p1:null,p2:null,type:'frei'},
-{d:'2026-08-27',day:'Donnerstag, 27. August',p1:null,p2:null,type:'frei'},
-{d:'2026-09-03',day:'Donnerstag, 3. September',p1:null,p2:null,type:'frei'},
-{d:'2026-09-10',day:'Donnerstag, 10. September',p1:null,p2:null,type:'frei'},
-{d:'2026-09-17',day:'Donnerstag, 17. September',p1:null,p2:null,type:'frei'},
-{d:'2026-09-24',day:'Donnerstag, 24. September',p1:null,p2:null,type:'frei'}
-];
+// Bewirtung next-event widget — Daten werden aus Liste_Bewirtung.xlsx geladen
+var bewData=[];
 var bewSelectedIdx=-1;
+
+// Wochentag-Namen für Datums-Formatierung
+var BEW_WT_LONG=['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
+var BEW_MON_LONG=['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+var BEW_SAISON_JAHR=2026;
+
+// Parst ein Datum im Format "30.4." oder "7.5." zu ISO-String "2026-04-30"
+function parseExcelDate(s){
+  if(!s)return null;
+  s=String(s).trim().replace(/\.$/,'');
+  var parts=s.split('.');
+  if(parts.length<2)return null;
+  var tag=parseInt(parts[0],10),mon=parseInt(parts[1],10);
+  if(isNaN(tag)||isNaN(mon))return null;
+  return BEW_SAISON_JAHR+'-'+(mon<10?'0':'')+mon+'-'+(tag<10?'0':'')+tag;
+}
+
+// Formatiert ISO-Datum "2026-04-30" zu "Donnerstag, 30. April"
+function formatExcelDate(iso){
+  var parts=iso.split('-');
+  var dt=new Date(parseInt(parts[0]),parseInt(parts[1])-1,parseInt(parts[2]));
+  return BEW_WT_LONG[dt.getDay()]+', '+parseInt(parts[2])+'. '+BEW_MON_LONG[parseInt(parts[1])-1];
+}
+
+// Erkennt den Event-Typ aus der Event-Spalte (tolerant gegen Tippfehler)
+function detectBewType(ev,p1,p2){
+  var isFrei=(!p1||String(p1).toLowerCase()==='frei')&&(!p2||String(p2).toLowerCase()==='frei');
+  if(isFrei&&(!ev||/donnerstag/i.test(ev)))return {type:'frei'};
+  var evLower=(ev||'').toLowerCase();
+  if(/albert.?weber|awo/i.test(ev||''))return {type:'awo',info:'Albert Weber Open',menuImg:'logo_awo.jpg',menu:'Nudeln mit diversen Soßen'};
+  if(/herren.*damen|damen.*herren/i.test(evLower))return {type:'spieltag',info:'Spieltag Herren 1 & Damen 1',menuImg:'img07.png',menu:'Steak/Wurst im Brötchen, Brezeln, Belegte Brötchen'};
+  if(/herren/i.test(evLower))return {type:'spieltag',info:'Spieltag Herren 1',menuImg:'img07.png',menu:'Steak/Wurst im Brötchen, Brezeln'};
+  if(/damen/i.test(evLower))return {type:'spieltag',info:'Spieltag Damen 1',menuImg:'img07.png',menu:'Brezeln, Belegte Brötchen'};
+  return {type:'do'};
+}
+
+// Konvertiert Excel-Zeilen zu bewData-Format
+function convertExcelRows(rows){
+  var result=[];
+  rows.forEach(function(r){
+    var iso=parseExcelDate(r['Datum']);
+    if(!iso)return;
+    var p1Raw=r['Name 1'],p2Raw=r['Name 2'];
+    var p1=(p1Raw&&String(p1Raw).toLowerCase()!=='frei')?String(p1Raw).trim():null;
+    var p2=(p2Raw&&String(p2Raw).toLowerCase()!=='frei')?String(p2Raw).trim():null;
+    var evInfo=detectBewType(r['Event'],p1Raw,p2Raw);
+    var obj={d:iso,day:formatExcelDate(iso),p1:p1,p2:p2,type:evInfo.type};
+    if(evInfo.info)obj.info=evInfo.info;
+    // Menü aus Excel übernehmen, falls gesetzt (z.B. "Wurst/Steak" → "Steak/Wurst im Brötchen, Brezeln")
+    if(r['Menu']&&String(r['Menu']).trim()&&String(r['Menu']).toLowerCase()!=='#value!'){
+      obj.menu=String(r['Menu']).trim();
+      if(evInfo.menuImg)obj.menuImg=evInfo.menuImg;
+    }else if(evInfo.menu){
+      obj.menu=evInfo.menu;
+      obj.menuImg=evInfo.menuImg;
+    }
+    // halfFrei / allFrei ableiten
+    if(evInfo.type!=='frei'&&evInfo.type!=='do'){
+      if(!p1&&!p2)obj.allFrei=true;
+      else if(p1&&!p2)obj.halfFrei=true;
+    }
+    result.push(obj);
+  });
+  result.sort(function(a,b){return a.d.localeCompare(b.d);});
+  return result;
+}
+
+// Lädt die Excel und rendert anschließend die Widgets
+function loadBewData(){
+  var url='Liste_Bewirtung.xlsx?t='+Date.now();
+  return fetch(url,{cache:'no-store'})
+    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.arrayBuffer();})
+    .then(function(ab){
+      var wb=XLSX.read(ab,{type:'array'});
+      var sheet=wb.Sheets[wb.SheetNames[0]];
+      var rows=XLSX.utils.sheet_to_json(sheet,{defval:null});
+      bewData=convertExcelRows(rows);
+    })
+    .catch(function(err){
+      console.error('Bewirtungsliste konnte nicht geladen werden:',err);
+      var w=document.getElementById('bew-next-widget');
+      if(w)w.innerHTML='<div class="bew-card" style="text-align:center;color:#ffa500;padding:1rem">⚠ Bewirtungsliste konnte nicht geladen werden. Bitte Seite neu laden.</div>';
+    });
+}
 function getNextBewIdx(){
 var today=new Date();today.setHours(0,0,0,0);
 for(var i=0;i<bewData.length;i++){var dd=new Date(bewData[i].d);dd.setHours(23,59,59);if(dd>=today)return i;}
@@ -860,7 +913,7 @@ var isNext=idx===nextIdx;
 var labelText=isNext?'Nächster Termin':ev.day.split(',')[0];
 var foodHtml='';
 if(ev.type==='frei'){
-foodHtml='<div class="bew-next-frei"><img src="leerer_teller.jpg" alt="Leerer Teller"><p>Dieser Termin ist noch frei!</p><a href="mailto:info@tc-markdorf.de?subject=Bewirtung%20'+encodeURIComponent(ev.day)+'&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20mich%20f%C3%BCr%20die%20Bewirtung%20am%20'+encodeURIComponent(ev.day)+'%20anmelden.%0A%0AViele%20Gr%C3%BC%C3%9Fe" class="bew-mail-btn">✉ Ich möchte bewirten</a></div>';
+foodHtml='<div class="bew-next-frei"><img src="Teller_und_Tennisball_auf_dem_Platz.png" alt="Leerer Teller mit Tennisball"><p>Dieser Termin ist noch frei!</p><a href="mailto:info@tc-markdorf.de?subject=Bewirtung%20'+encodeURIComponent(ev.day)+'&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20mich%20f%C3%BCr%20die%20Bewirtung%20am%20'+encodeURIComponent(ev.day)+'%20anmelden.%0A%0AViele%20Gr%C3%BC%C3%9Fe" class="bew-mail-btn">✉ Ich möchte bewirten</a></div>';
 }
 else if(ev.type==='awo'){
 foodHtml='<div class="bew-next-awo-banner"><img src="'+ev.menuImg+'" alt="AWO"><div><strong>'+ev.info+'</strong>🍝 '+ev.menu+'</div></div>';
@@ -883,7 +936,7 @@ var typeLabel={'do':'18–21 Uhr','spieltag':'Spieltag','awo':'AWO','frei':'Frei
 var shortDay=b.day.split(',')[0].substring(0,2)+' '+b.d.substring(8,10)+'.'+b.d.substring(5,7)+'.';
 var bodyHtml='';
 if(b.type==='frei'){
-bodyHtml='<div class="bew-sc-frei"><img src="leerer_teller.jpg" alt=""><p>Noch frei!</p><a href="mailto:info@tc-markdorf.de?subject=Bewirtung%20'+encodeURIComponent(b.day)+'&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20bewirten%20am%20'+encodeURIComponent(b.day)+'.%0A%0AViele%20Gr%C3%BC%C3%9Fe" onclick="event.stopPropagation()">✉ Anmelden</a></div>';
+bodyHtml='<div class="bew-sc-frei"><img src="Teller_und_Tennisball_auf_dem_Platz.png" alt=""><p>Noch frei!</p><a href="mailto:info@tc-markdorf.de?subject=Bewirtung%20'+encodeURIComponent(b.day)+'&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20bewirten%20am%20'+encodeURIComponent(b.day)+'.%0A%0AViele%20Gr%C3%BC%C3%9Fe" onclick="event.stopPropagation()">✉ Anmelden</a></div>';
 }else{
 var crew=b.p1?(b.p1+(b.p2?' & '+b.p2:'')):'';
 bodyHtml='<div class="bew-sc-crew">'+(crew?'👨‍🍳 <strong>'+crew+'</strong>':'')+'</div>';
@@ -904,6 +957,8 @@ foodHtml+
 var sc2=document.getElementById('bew-scroll-widget');
 if(sc2)sc2.innerHTML=scrollHtml;
 }
+// Excel laden, dann Widget rendern
+loadBewData().then(function(){
 renderBewEvent(getNextBewIdx());
 // Auto-scroll to active card (scroll container only, not page)
 setTimeout(function(){
@@ -911,6 +966,8 @@ var sc=document.getElementById('bew-scroll-container');
 var active=sc?sc.querySelector('.bew-sc.active'):null;
 if(sc&&active){sc.scrollLeft=active.offsetLeft-sc.offsetLeft-20;}
 },300);
+if(typeof renderSaisonkalender==='function')renderSaisonkalender();
+});
 
 var tcmTeams=[
 {id:'herren-1',n:'Herren 1',lg:'Badenliga',p:7,tt:8,m:[{d:'05.07',t:'11:00',h:false,vs:'Freiburger TC 1 vs TC Markdorf 1'},{d:'11.07',t:'11:00',h:true,vs:'TC Markdorf 1 vs TC RW Tiengen 1Heim'},{d:'12.07',t:'11:00',h:false,vs:'TC Weinheim 1902 1 vs TC Markdorf 1'},{d:'18.07',t:'11:00',h:true,vs:'TC Markdorf 1 vs MTG BW Mannheim 1Heim'},{d:'19.07',t:'11:00',h:true,vs:'TC Markdorf 1 vs TC Wolfsberg Pforzheim 2Heim'},{d:'25.07',t:'11:00',h:true,vs:'TC Markdorf 1 vs TC Schönberg 1Heim'},{d:'26.07',t:'11:00',h:false,vs:'1.TC RW Wiesloch 1 vs TC Markdorf 1'}]},
