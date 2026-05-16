@@ -877,13 +877,32 @@ function convertExcelRows(rows){
 function loadBewData(){
   var url='Liste_Bewirtung.xlsx?t='+Date.now();
   return fetch(url,{cache:'no-store'})
-    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status+' beim Laden von '+url);return r.arrayBuffer();})
-    .then(function(ab){
+    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status+' beim Laden von '+url);return r.arrayBuffer().then(function(ab){return {ab:ab,headers:r.headers};});})
+    .then(function(res){
       if(typeof XLSX==='undefined')throw new Error('SheetJS-Bibliothek nicht geladen (Internetverbindung prüfen)');
-      var wb=XLSX.read(ab,{type:'array'});
+      var wb=XLSX.read(res.ab,{type:'array'});
       var sheet=wb.Sheets[wb.SheetNames[0]];
       var rows=XLSX.utils.sheet_to_json(sheet,{defval:null});
       bewData=convertExcelRows(rows);
+      // ===== DIAGNOSE-AUSGABE (temporär) =====
+      var lastMod=res.headers.get('last-modified')||'unbekannt';
+      var rowsRaw=rows.length;
+      var entryMai17=bewData.find(function(e){return e.d==='2026-05-17';});
+      var entry3Sep=bewData.find(function(e){return e.d==='2026-09-03';});
+      var debugBox=document.createElement('div');
+      debugBox.style.cssText='position:fixed;bottom:10px;right:10px;background:#000;color:#0f0;font-family:monospace;font-size:11px;padding:10px;z-index:99999;max-width:400px;border:2px solid #0f0;border-radius:4px;line-height:1.4;';
+      debugBox.innerHTML='<strong style="color:#ff0">DIAGNOSE BEWIRTUNG</strong><br>'+
+        'Excel-Größe: '+res.ab.byteLength+' bytes<br>'+
+        'Letzte Änderung: '+lastMod+'<br>'+
+        'Zeilen in Excel: '+rowsRaw+'<br>'+
+        'Einträge in bewData: '+bewData.length+'<br><br>'+
+        '<strong style="color:#ff0">17.5.2026:</strong><br>'+
+        (entryMai17?JSON.stringify(entryMai17):'NICHT GEFUNDEN')+'<br><br>'+
+        '<strong style="color:#ff0">3.9.2026:</strong><br>'+
+        (entry3Sep?JSON.stringify(entry3Sep):'NICHT GEFUNDEN')+'<br><br>'+
+        '<button onclick="this.parentElement.remove()" style="background:#0f0;color:#000;border:none;padding:4px 8px;cursor:pointer">Schließen</button>';
+      document.body.appendChild(debugBox);
+      // ===== ENDE DIAGNOSE =====
       if(!bewData.length)throw new Error('Excel geladen, aber keine Termine erkannt (Spalten "Datum", "Name 1" etc. vorhanden?)');
     });
 }
