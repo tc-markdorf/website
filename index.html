@@ -877,32 +877,13 @@ function convertExcelRows(rows){
 function loadBewData(){
   var url='Liste_Bewirtung.xlsx?t='+Date.now();
   return fetch(url,{cache:'no-store'})
-    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status+' beim Laden von '+url);return r.arrayBuffer().then(function(ab){return {ab:ab,headers:r.headers};});})
-    .then(function(res){
+    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status+' beim Laden von '+url);return r.arrayBuffer();})
+    .then(function(ab){
       if(typeof XLSX==='undefined')throw new Error('SheetJS-Bibliothek nicht geladen (Internetverbindung prüfen)');
-      var wb=XLSX.read(res.ab,{type:'array'});
+      var wb=XLSX.read(ab,{type:'array'});
       var sheet=wb.Sheets[wb.SheetNames[0]];
       var rows=XLSX.utils.sheet_to_json(sheet,{defval:null});
       bewData=convertExcelRows(rows);
-      // ===== DIAGNOSE-AUSGABE (temporär) =====
-      var lastMod=res.headers.get('last-modified')||'unbekannt';
-      var rowsRaw=rows.length;
-      var entryMai17=bewData.find(function(e){return e.d==='2026-05-17';});
-      var entry3Sep=bewData.find(function(e){return e.d==='2026-09-03';});
-      var debugBox=document.createElement('div');
-      debugBox.style.cssText='position:fixed;bottom:10px;right:10px;background:#000;color:#0f0;font-family:monospace;font-size:11px;padding:10px;z-index:99999;max-width:400px;border:2px solid #0f0;border-radius:4px;line-height:1.4;';
-      debugBox.innerHTML='<strong style="color:#ff0">DIAGNOSE BEWIRTUNG</strong><br>'+
-        'Excel-Größe: '+res.ab.byteLength+' bytes<br>'+
-        'Letzte Änderung: '+lastMod+'<br>'+
-        'Zeilen in Excel: '+rowsRaw+'<br>'+
-        'Einträge in bewData: '+bewData.length+'<br><br>'+
-        '<strong style="color:#ff0">17.5.2026:</strong><br>'+
-        (entryMai17?JSON.stringify(entryMai17):'NICHT GEFUNDEN')+'<br><br>'+
-        '<strong style="color:#ff0">3.9.2026:</strong><br>'+
-        (entry3Sep?JSON.stringify(entry3Sep):'NICHT GEFUNDEN')+'<br><br>'+
-        '<button onclick="this.parentElement.remove()" style="background:#0f0;color:#000;border:none;padding:4px 8px;cursor:pointer">Schließen</button>';
-      document.body.appendChild(debugBox);
-      // ===== ENDE DIAGNOSE =====
       if(!bewData.length)throw new Error('Excel geladen, aber keine Termine erkannt (Spalten "Datum", "Name 1" etc. vorhanden?)');
     });
 }
@@ -922,12 +903,6 @@ bewSelectedIdx=idx;
 var today=new Date();today.setHours(0,0,0,0);
 var nextIdx=getNextBewIdx();
 var ev=bewData[idx];
-// ===== DIAGNOSE 2 =====
-var dbg2=document.createElement('div');
-dbg2.style.cssText='position:fixed;top:10px;right:10px;background:#330;color:#ff0;font-family:monospace;font-size:11px;padding:10px;z-index:99999;max-width:400px;border:2px solid #ff0;line-height:1.4;';
-dbg2.innerHTML='<strong>RENDER-AUFRUF idx='+idx+'</strong><br>ev.d='+ev.d+'<br>ev.day='+ev.day+'<br>ev.p1=<span style="color:#0f0">'+ev.p1+'</span><br>ev.p2=<span style="color:#0f0">'+ev.p2+'</span><br>ev.info='+ev.info+'<br>bewData.length='+bewData.length+'<br><button onclick="this.parentElement.remove()">Schließen</button>';
-document.body.appendChild(dbg2);
-// ===== ENDE =====
 var crew=ev.p1?(ev.p1+(ev.p2?' & '+ev.p2:'')):null;
 var typeClass=ev.type==='spieltag'?'spieltag':(ev.type==='awo'?'awo':(ev.type==='frei'?'frei':'donners'));
 var typeText=ev.type==='spieltag'?ev.info:(ev.type==='awo'?ev.info:(ev.type==='frei'?'Noch frei!':'Donnerstag 18–21 Uhr'));
@@ -960,8 +935,8 @@ var bodyHtml='';
 if(b.type==='frei'){
 bodyHtml='<div class="bew-sc-frei"><img src="Teller_und_Tennisball_auf_dem_Platz.png" alt=""><p>Noch frei!</p><a href="mailto:info@tc-markdorf.de?subject=Bewirtung%20'+encodeURIComponent(b.day)+'&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20bewirten%20am%20'+encodeURIComponent(b.day)+'.%0A%0AViele%20Gr%C3%BC%C3%9Fe" onclick="event.stopPropagation()">✉ Anmelden</a></div>';
 }else{
-var crew=b.p1?(b.p1+(b.p2?' & '+b.p2:'')):'';
-bodyHtml='<div class="bew-sc-crew">'+(crew?'👨‍🍳 <strong>'+crew+'</strong>':'')+'</div>';
+var bcrew=b.p1?(b.p1+(b.p2?' & '+b.p2:'')):'';
+bodyHtml='<div class="bew-sc-crew">'+(bcrew?'👨‍🍳 <strong>'+bcrew+'</strong>':'')+'</div>';
 if(b.menu)bodyHtml+='<div class="bew-sc-menu">'+b.menu+'</div>';
 if(b.halfFrei)bodyHtml+='<div class="bew-sc-half"><a href="mailto:info@tc-markdorf.de?subject=Bewirtung%20'+encodeURIComponent(b.day)+'%20(2.Platz)&body=Hallo%2C%0A%0A2.%20Platz%20am%20'+encodeURIComponent(b.day)+'.%0A%0AViele%20Gr%C3%BC%C3%9Fe" onclick="event.stopPropagation()">⚠ 1 Platz frei ✉</a></div>';
 if(b.allFrei&&b.type!=='frei')bodyHtml+='<div class="bew-sc-half"><a href="mailto:info@tc-markdorf.de?subject=Bewirtung%20'+encodeURIComponent(b.day)+'&body=Hallo%2C%0A%0ABewirtung%20am%20'+encodeURIComponent(b.day)+'.%0A%0AViele%20Gr%C3%BC%C3%9Fe" onclick="event.stopPropagation()">⚠ Noch frei ✉</a></div>';
