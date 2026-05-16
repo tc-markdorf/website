@@ -922,6 +922,12 @@ bewSelectedIdx=idx;
 var today=new Date();today.setHours(0,0,0,0);
 var nextIdx=getNextBewIdx();
 var ev=bewData[idx];
+// ===== DIAGNOSE 2 =====
+var dbg2=document.createElement('div');
+dbg2.style.cssText='position:fixed;top:10px;right:10px;background:#330;color:#ff0;font-family:monospace;font-size:11px;padding:10px;z-index:99999;max-width:400px;border:2px solid #ff0;line-height:1.4;';
+dbg2.innerHTML='<strong>RENDER-AUFRUF idx='+idx+'</strong><br>ev.d='+ev.d+'<br>ev.day='+ev.day+'<br>ev.p1=<span style="color:#0f0">'+ev.p1+'</span><br>ev.p2=<span style="color:#0f0">'+ev.p2+'</span><br>ev.info='+ev.info+'<br>bewData.length='+bewData.length+'<br><button onclick="this.parentElement.remove()">Schließen</button>';
+document.body.appendChild(dbg2);
+// ===== ENDE =====
 var crew=ev.p1?(ev.p1+(ev.p2?' & '+ev.p2:'')):null;
 var typeClass=ev.type==='spieltag'?'spieltag':(ev.type==='awo'?'awo':(ev.type==='frei'?'frei':'donners'));
 var typeText=ev.type==='spieltag'?ev.info:(ev.type==='awo'?ev.info:(ev.type==='frei'?'Noch frei!':'Donnerstag 18–21 Uhr'));
